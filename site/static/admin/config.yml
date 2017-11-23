@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  #repo: daredoes/mdmart # Path to your Github repository
+  #repo: daredoes/daredoes-site # Path to your Github repository
   branch: master # Branch to update (master by default)
 
 media_folder: "src/img/uploads" # Folder where user uploaded files should go
@@ -38,7 +38,55 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "URL", name: "url", widget: "string"}
       - {label: "Font Awesome Icon", name: "icon", widget: "string", required: false, default: "fa-compass"}
+      - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
       - {label: "Printable?", name: "printable", widget: "boolean", default: true}
+
+  - name: "skills"
+    label: "Skills"
+    folder: "site/content/skills"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Level", name: "level", widget: "number", min: "0", max: "100", default: "50"}
+      - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
+      - {label: "Printable?", name: "printable", widget: "boolean", default: true}
+
+  - name: "hobbies"
+    label: "Hobbies"
+    folder: "site/content/hobbies"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Font Awesome Icon", name: "icon", widget: "string", default: "fa-heart", required: false, tagname: "i"}
+      - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
+      - {label: "Printable?", name: "printable", widget: "boolean", default: true}
+
+  - name: "experience"
+    label: "Experiences"
+    folder: "site/content/experience"
+    create: true
+    fields:
+      - {label: "Company Name", name: "name", widget: "string"}
+      - {label: "Job Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "URL", name: "external_url", widget: "string"}
+      - {label: "Start Date", name: "date", widget: "datetime"}
+      - {label: "Date", name: "date_display", widget: "string"}
+      - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
+      - {label: "Printable?", name: "printable", widget: "boolean", default: true}
+
+  - name: "education"
+    label: "Education"
+    folder: "site/content/education"
+    create: true
+    fields:
+      - {label: "Name", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Graduation Date", name: "date", widget: "datetime"}
+      - {label: "Date", name: "date_display", widget: "string"}
+      - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
+      - {label: "Printable?", name: "printable", widget: "boolean", default: true}
+
 
   - name: "art"
     label: "Art Pages"

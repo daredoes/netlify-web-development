@@ -1,8 +1,8 @@
 ---
 name: MAGFest Inc.
 title: Co-Chair of MAGWest
-url: 'https://magfest.org/'
-date: December 2015 - Present
+external_url: 'https://magfest.org/'
+display_date: December 2015 - Present
 weight: '50'
 printable: true
 ---

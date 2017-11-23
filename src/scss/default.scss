@@ -11,7 +11,7 @@ $primary-color-dark: false;
 $secondary-color: color("green", "darken-2");
 $success-color: color("green", "base");
 $error-color: color("red", "base");
-
+$tertiary-color: color("grey", "darken-1");
 
   $link-color: color("grey", "darken-3");
 
@@ -28,7 +28,7 @@ $error-color: color("red", "base");
 }
 
 .primary-color-text {
-  @extend .white-text, .text-darken-2
+  @extend .black-text, .text-darken-2
 }
 
 .secondary-color-text {
@@ -36,7 +36,7 @@ $error-color: color("red", "base");
 }
 
 .content-text > *{
-  @extend .secondary-color-text
+  @extend .primary-color-text
 }
 
 .link-color{
@@ -75,15 +75,19 @@ img.gallery{
   width: auto;
 }
 
-.art > h3, .content h1 {
-  font-family: "Disco", Arial;
-}
-
-.nav-wrapper *, .content *{
-  font-family: "Caviar Dreams", Arial;
-}
 .content *{
   font-weight: 800;
+}
+
+.brand-logo {
+  margin-top: 5px;
+  font-family: "Daniel Black", Arial !important;
+
+}
+
+.nav-wrapper *{
+  font-size: 1.2em;
+  font-family: "Shoguns Clan";
 }
 
 nav .button-collapse i{
@@ -91,7 +95,18 @@ nav .button-collapse i{
 }
 
 .page-footer *{
-  font-family: "Caviar Dreams Bold", Arial;
+  font-family: "Daniel Bold", Arial;
+}
+
+.resume hr {
+  border-color: $tertiary-color;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.content-text ul > li {
+  list-style-type: square !important;
+  margin-left: 1em;
 }
 
 .resume-doc{

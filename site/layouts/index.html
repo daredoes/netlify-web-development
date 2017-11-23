@@ -7,37 +7,65 @@
                 <div style="margin-top: -1.5rem;" class="print-header-items print-info">
                     <p class="condensed">123 DareDoes Site, Internet, WRLD 01101</p>
                     <p class="condensed">
-                    CONTACT ITEMS
+                      {{ with .Site.GetPage "section" "contact"}}
+                      {{ range $index,$p := where (.Pages.ByWeight) ".Params.printable" "==" true }}
+                        {{ $p.Summary }} {{ if ne $index 0}}|{{end}}
+                      {{ end }}
+                      {{ end }}
                     </p>
                 </div>
             </div>
 
+
+            {{ with .Content }}
             <hr class="condensed">
             <div class="body">
-               ABOUT ME
+               {{ . }}
             </div>
+            {{ end }}
+            {{ with .Site.GetPage "section" "education" }}
+            {{ $pages := where (.Pages.ByDate.ByWeight) ".Params.printable" "==" true }}
+            {{ if $pages }}
             <h5 class="print-header">Education</h5>
             <hr class="half-condensed">
+            {{ range $pages }}
             <div class="print-header-items">
-                        <h6 class="title">Name <span class="right"> Date</span></h6>
-                        <div class="body condensed">Description</div>
+                        <h6 class="title">{{ .Title }} <span class="right">{{ .Params.display_date }}</span></h6>
+                        <div class="body condensed context-text">{{ .Content }}</div>
             </div>
+            {{ end }}
+            {{ end }}
+            {{ end }}
+            {{ with .Site.GetPage "section" "experience" }}
+            {{ $pages := where (.Pages.ByDate.ByWeight) ".Params.printable" "==" true }}
+            {{ if $pages }}
             <h5 class="print-header">Experiences</h5>
             <hr class="half-condensed">
+            {{ range $pages }}
             <div class="print-header-items">
-                        <h6 class="title">Name - Title <span class="right">Date</span></h6>
+                        <h6 class="title">{{ .Params.name }} - {{ .Title}} <span class="right">{{ .Params.display_date}}</span></h6>
 
-                        <div class="body condensed">Description</div>
+                        <div class="body condensed context-text">{{ .Content }}</div>
             </div>
+            {{ end }}
+            {{ end }}
+            {{ end }}
+            {{ with .Site.GetPage "section" "skills"}}
+            {{ $pages := where (.Pages.ByWeight) ".Params.printable" "==" true }}
+            {{ if $pages }}
             <div>
             <h5 class="print-header">Skills</h5>
                     <hr class="half-condensed">
                 <div class="body row">
-                    <span>Name</span><span> • </span>
+                  {{ range $index, $p := $pages }}
+                    <span>{{ $p.Title }}</span>{{ if ne $index 0 }}<span> • </span>{{end}}
+                    {{end}}
                 </div>
             </div>
+            {{ end }}
+            {{ end }}
         </div>
-        <div class="card tertiary-color lighten-4 no-print">
+        <div class="card tertiary-color lighten-4 no-print resume">
             <div class="row center">
                 <div id="photo" class="tertiary-color lighten-4 circle" >
                     <img src="/img/resume/avatar.jpg" alt="" class="circle responsive-img " style="vertical-align: middle">
@@ -52,59 +80,75 @@
             </div>
             <div class="row">
                 <div class="col s12 l7">
+                  {{ with .Content }}
                     <div class="row">
                     <p class="resume-section-header heavy secondary-color-text">//About Me</p>
-                        <div id="about_text">
-                            About me
+                        <div id="about_text" class="context-text">
+                            {{ . }}
                         </div>
                     </div>
+                    {{ end }}
+                    {{ with .Site.GetPage "section" "education"}}
                     <div class="row">
                     <p class="resume-section-header heavy secondary-color-text">//Education</p>
                         <ul class="collection tertiary-color lighten-4" style="border: 0;">
+                            {{ range .Pages.ByDate.ByWeight }}
                                 <li class="collection-item tertiary-color lighten-4 no-padding" style="border:0; padding: 1em 0em 5em 0.05em !important;" >
                                     <div class="left col no-padding m1 s2 l2">
-                                        <span class="badge boxed tertiary-color">YEAR</span>
+                                        <span class="badge boxed tertiary-color">{{ .Params.date.year}}</span>
                                     </div>
                                     <div class="col m11 s10 l10">
-                                        <span class="experience-title">NAME</span>
+                                        <span class="experience-title">{{ .Title }}</span>
                                         <br>
-                                        <span class="tertiary-color-text text-darken-1 body">
-                                            Description
+                                        <span class="context-text body">
+                                            {{ .Content }}
                                         </span>
                                     </div>
                                 </li>
+                            {{ end }}
                         </ul>
                     </div>
+                    {{ end }}
+                    {{ with .Site.GetPage "section" "experience"}}
                     <div class="row">
                     <p class="resume-section-header heavy secondary-color-text">//Experiences</p>
                         <div class="scroll-box">
                             <div class="row">
+                              {{ range .Pages.ByDate.ByWeight }}
                                 <div class="col s12">
                                     <div class="card tertiary-color lighten-4">
-                                        <div class="card-content black-text">
-                                            <span class="card-title"><a href="#LINK" class="link-color">Name - Title</a></span>
+                                        <div class="card-content black-text content-text">
+                                            <span class="card-title"><a href="{{ .Params.external_url }}" class="link-color">{{.Params.name }} - {{ .Title }}</a></span>
+                                            {{ .Content }}
                                         </div>
                                         <div class="card-action">
-                                            <span class="">Date</span>
+                                            <span class="">{{ .Params.display_date}}</span>
                                         </div>
                                     </div>
                                 </div>
+                                {{ end }}
                             </div>
                         </div>
                     </div>
+                    {{ end }}
                     </div>
 
                 <div class="col s12 l5">
+                  {{ with .Site.GetPage "section" "contact" }}
                     <div class="row">
                     <p class="resume-section-header heavy secondary-color-text">//Contact</p><hr>
                         <ul class="collection tertiary-color lighten-4 " style="border: 0;">
+                          {{ range $p := .Pages.ByTitle.ByWeight}}
                             <li class="collection-item avatar tertiary-color lighten-4" style="margin-bottom: -2em;">
-                                <a href="#LINK"><i class="fa fa-steam circle blue lighten-1"></i></a>
-                            <span class="title heavy">Name</span>
-                                <p>Description</p>
+                                <a href="{{ $p.Params.url }}"><i class="fa {{ $p.Params.icon}} circle blue lighten-1"></i></a>
+                            <span class="title heavy">{{ $p.Title }}</span>
+                                <p>{{ $p.Content }}</p>
                             </li>
+                            {{ end }}
                         </ul>
                     </div>
+                    {{ end }}
+                    {{ with .Site.GetPage "section" "skills"}}
                     <div class="row">
                     <p class="resume-section-header heavy secondary-color-text">//Skills</p>
                     <hr>
@@ -123,18 +167,28 @@
                         </div>
                     </div>
                     <div class="row scroll-box">
+                      {{ range .Pages }}
                         <div class="resume-bar-holder">
-                            <div class="resume-bar secondary-color" style="width: 50%;">
-                                <span class=" resume-bar-text primary-color-text">Name</span>
+                            <div class="resume-bar secondary-color" style="width: {{.Params.level}}%;">
+                                <span class=" resume-bar-text primary-color-text">{{.Title }}</span>
                             </div>
                         </div>
+                        {{ end }}
                     </div>
 
-                    </div><div class="row">
+                  </div>
+                  {{end}}
+                  <div class="row">
                     <p class="resume-section-header heavy secondary-color-text">//Hobbies</p><hr>
+                    <div style="margin-top: 1em;">
+                      {{ with .Site.GetPage "section" "hobbies" }}
+                      {{ range .Pages.ByTitle.ByWeight }}
                     <div class="chip">
-                        <i class="fa fa-heart"></i> Hobby
+                        <i class="fa fa-heart"></i> {{.Title}}
                     </div>
+                    {{ end }}
+                    {{ end }}
+                  </div>
 
                     </div>
 
