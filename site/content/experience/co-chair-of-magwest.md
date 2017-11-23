@@ -3,7 +3,7 @@ name: MAGFest Inc.
 title: Co-Chair of MAGWest
 external_url: 'https://magfest.org/'
 display_date: December 2015 - Present
-weight: '50'
+weight: '1'
 printable: true
 ---
 * Brought together 1200 people for the inaugural MAGWest, a 3-day 24-hour grassroots Music and Gaming Festival

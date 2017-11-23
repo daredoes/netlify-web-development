@@ -4,7 +4,7 @@
         <div class="print-only">
             <div class="" id="print-header">
                 <h1 class="">Daniel Evans</h1>
-                <div style="margin-top: -1.5rem;" class="print-header-items print-info">
+                <div style="margin-top: -1.5rem; margin-bottom: -0.5rem;" class="print-header-items print-info">
                     <p class="condensed">123 DareDoes Site, Internet, WRLD 01101</p>
                     <p class="condensed">
                       {{ with .Site.GetPage "section" "contact"}}
@@ -58,7 +58,7 @@
                     <hr class="half-condensed">
                 <div class="body row">
                   {{ range $index, $p := sort $pages "Params.level" "desc" }}
-                    <span>{{ $p.Title }}</span>{{ if ne $index 0 }}<span> • </span>{{end}}
+                    {{ if ne $index 0 }}<span> • </span>{{end}}<span>{{ $p.Title }}</span>
                     {{end}}
                 </div>
             </div>
@@ -142,7 +142,7 @@
 
                             <li class="collection-item avatar tertiary-color lighten-4" style="margin-bottom: -2em;">
                                   <a href="{{ $p.Params.external_url|safeURL }}">
-                                    <i class="fa {{ $p.Params.icon}} circle blue lighten-1"></i></a>
+                                    <i class="fa {{ $p.Params.icon}} circle secondary-color lighten-1"></i></a>
                             <span class="title heavy">{{ $p.Title }}</span>
                                 <p>{{ $p.Content }}</p>
                             </li>
@@ -172,7 +172,7 @@
                       {{ range sort .Pages "Params.level" "desc" }}
                         <div class="resume-bar-holder secondary-color accent-4">
                             <div class="resume-bar secondary-color" style="width: {{.Params.level}}%;">
-                                <span class=" resume-bar-text primary-color-text">{{.Title }}</span>
+                                <span class=" resume-bar-text tertiary-color-text">{{.Title }}</span>
                             </div>
                         </div>
                         {{ end }}
@@ -180,19 +180,21 @@
 
                   </div>
                   {{end}}
+                  {{ with .Site.GetPage "section" "hobbies" }}
                   <div class="row">
                     <p class="resume-section-header heavy secondary-color-text">//Hobbies</p><hr>
                     <div style="margin-top: 1em;">
-                      {{ with .Site.GetPage "section" "hobbies" }}
+
                       {{ range .Pages.ByTitle.ByWeight }}
                     <div class="chip">
                         <i class="fa fa-heart"></i> {{.Title}}
                     </div>
                     {{ end }}
-                    {{ end }}
+
                   </div>
 
                     </div>
+                              {{ end }}
 
                 </div>
 
