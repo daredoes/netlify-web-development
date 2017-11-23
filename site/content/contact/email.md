@@ -1,6 +1,6 @@
 ---
 title: Email
-url: 'mail:me@daredoes.work'
+external_url: 'mail:me@daredoes.work'
 icon: fa-compass
 printable: true
 ---

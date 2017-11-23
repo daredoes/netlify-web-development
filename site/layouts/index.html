@@ -140,7 +140,7 @@
                         <ul class="collection tertiary-color lighten-4 " style="border: 0;">
                           {{ range $p := .Pages.ByTitle.ByWeight}}
                             <li class="collection-item avatar tertiary-color lighten-4" style="margin-bottom: -2em;">
-                                <a href="{{ $p.Params.url }}"><i class="fa {{ $p.Params.icon}} circle blue lighten-1"></i></a>
+                                <a href="{{ $p.Params.external_url }}"><i class="fa {{ $p.Params.icon}} circle blue lighten-1"></i></a>
                             <span class="title heavy">{{ $p.Title }}</span>
                                 <p>{{ $p.Content }}</p>
                             </li>

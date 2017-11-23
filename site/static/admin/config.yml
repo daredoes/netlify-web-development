@@ -36,7 +36,7 @@ collections: # A list of collections the CMS should be able to edit
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "URL", name: "url", widget: "string"}
+      - {label: "URL", name: "external_url", widget: "string"}
       - {label: "Font Awesome Icon", name: "icon", widget: "string", required: false, default: "fa-compass"}
       - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
       - {label: "Printable?", name: "printable", widget: "boolean", default: true}
