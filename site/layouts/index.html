@@ -118,7 +118,7 @@
                                 <div class="col s12">
                                     <div class="card tertiary-color lighten-4">
                                         <div class="card-content black-text content-text">
-                                            <span class="card-title"><a href="{{ .Params.external_url }}" class="primary-color-text">{{.Params.name }} - {{ .Title }}</a></span>
+                                            <span class="card-title"><a href="{{ .Params.external_url|safeURL }}" class="primary-color-text">{{.Params.name }} - {{ .Title }}</a></span>
                                             {{ .Content }}
                                         </div>
                                         <div class="card-action">
@@ -140,7 +140,7 @@
                         <ul class="collection tertiary-color lighten-4 " style="border: 0;">
                           {{ range $p := .Pages.ByTitle.ByWeight}}
                             <li class="collection-item avatar tertiary-color lighten-4" style="margin-bottom: -2em;">
-                                <a href="{{ $p.Params.external_url }}"><i class="fa {{ $p.Params.icon}} circle blue lighten-1"></i></a>
+                                <a href="{{ $p.Params.external_url|safeURL }}"><i class="fa {{ $p.Params.icon}} circle blue lighten-1"></i></a>
                             <span class="title heavy">{{ $p.Title }}</span>
                                 <p>{{ $p.Content }}</p>
                             </li>
