@@ -74,7 +74,7 @@
 
                     <p class="center heavy" style="margin-top: -0.2em; margin-bottom: 0; font-size: 2.5em;">Hello,</p>
                     <p class="center heavy" style="margin-top: 0; font-size: 2em;">My name is <span class="secondary-color-text print">{{ .Params.first_name }} {{ .Params.last_name}}</span>
-                        <sup class="tertiary-color-text text-lighten-1">22YO</sup> and this is
+                        <sup class="primary-color-text text-lighten-1">22YO</sup> and this is
                       my resume/cv</p>
                 </div>
             </div>
@@ -90,12 +90,12 @@
                     {{ end }}
                     {{ with .Site.GetPage "section" "education"}}
                     <div class="row">
-                    <p class="resume-section-header heavy secondary-color-text">//Education</p>
+                    <p class="resume-section-header heavy secondary-color-text">//Education</p><hr>
                         <ul class="collection tertiary-color lighten-4" style="border: 0;">
                             {{ range .Pages.ByDate.ByWeight }}
                                 <li class="collection-item tertiary-color lighten-4 no-padding" style="border:0; padding: 1em 0em 5em 0.05em !important;" >
                                     <div class="left col no-padding m1 s2 l2">
-                                        <span class="badge boxed tertiary-color">{{ .Params.display_date}}</span>
+                                        <span class="badge boxed tertiary-color tertiary-color-text">{{ .Params.display_date}}</span>
                                     </div>
                                     <div class="col m11 s10 l10">
                                         <span class="experience-title">{{ .Title }}</span>
@@ -111,7 +111,7 @@
                     {{ end }}
                     {{ with .Site.GetPage "section" "experience"}}
                     <div class="row">
-                    <p class="resume-section-header heavy secondary-color-text">//Experiences</p>
+                    <p class="resume-section-header heavy secondary-color-text">//Experiences</p><hr>
                         <div class="scroll-box">
                             <div class="row">
                               {{ range .Pages.ByDate.ByWeight }}
@@ -152,7 +152,7 @@
                     <div class="row">
                     <p class="resume-section-header heavy secondary-color-text">//Skills</p>
                     <hr>
-                    <div class="row resume-bar-level-text tertiary-color-text text-darken-2">
+                    <div class="row resume-bar-level-text primary-color-text text-darken-2">
                         <div class="col s3 center" style="border-top: double; border-left: double">
                             Beginner
                         </div>

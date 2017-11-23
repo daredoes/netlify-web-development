@@ -35,6 +35,10 @@ $tertiary-color: color("grey", "darken-1");
   @extend .light-green-text, .text-darken-4
 }
 
+.tertiary-color-text{
+  @extend .white-text, .text-darken-3;
+}
+
 .content-text > *{
   @extend .primary-color-text
 }

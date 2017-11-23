@@ -71,7 +71,7 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "URL", name: "external_url", widget: "string"}
       - {label: "Start Date", name: "date", widget: "datetime"}
-      - {label: "Date", name: "date_display", widget: "string"}
+      - {label: "Date", name: "display_date", widget: "string"}
       - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
       - {label: "Printable?", name: "printable", widget: "boolean", default: true}
 
@@ -82,8 +82,8 @@ collections: # A list of collections the CMS should be able to edit
     fields:
       - {label: "Name", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Graduation Date", name: "date", widget: "datetime"}
-      - {label: "Date", name: "date_display", widget: "string"}
+      - {label: "Graduation Date", name: "graduation_date", widget: "datetime"}
+      - {label: "Date", name: "display_date", widget: "string"}
       - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
       - {label: "Printable?", name: "printable", widget: "boolean", default: true}
 
