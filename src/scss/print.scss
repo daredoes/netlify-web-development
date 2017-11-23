@@ -11,6 +11,10 @@
         display: block;
     }
 
+    *{
+      font-family: sans-serif !important;
+    }
+
     .print-only > * > h1{
         font-size: 2rem;
         font-weight: 800;

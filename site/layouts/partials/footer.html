@@ -2,17 +2,17 @@
 <footer class="page-footer primary-color darken-4 no-print">
   {{ with .Site.GetPage "page" "footer/main.md" }}
          <div class="container">
-           <div class="row center-align primary-color-text">
+           <div class="row center-align link-color">
              {{ range .Params.icons }}
-             {{ partial "icon_range" (dict "Icon" . "Color" "secondary-color" "TextColor"  "link-color" "IconBrightness" "lighten-3" "URLClass" "social-media" "IconClass" "fa-lg social-media-icon") }}
+             {{ partial "icon_range" (dict "Icon" . "Color" "secondary-color" "TextColor"  "link-color" "IconBrightness" "darken-4" "URLClass" "social-media" "IconClass" "fa-lg social-media-icon") }}
              {{ end }}
 
            </div>
          </div>
-         <div class="footer-copyright primary-color-text">
+         <div class="footer-copyright link-color">
            <div class="container">
            {{ .Params.copyright }}
-           <a class="primary-color-text right" href="#!">{{ .Params.slogan|markdownify }}</a>
+           <a class="link-color right" href="#!">{{ .Params.slogan|markdownify }}</a>
            </div>
          </div>
      {{ end }}
