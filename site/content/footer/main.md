@@ -1,11 +1,11 @@
 ---
 title: main
-copyright: © 2017 Monique Mosbe
+copyright: © 2017 Daniel Alexander Ross Evans
 slogan: Made With Love By Dare
 icons:
   - icon: facebook
     title: Facebook
-    url: 'https://www.facebook.com/kyuupeach'
+    url: 'https://www.facebook.com/daredoes'
   - icon: linkedin
     title: LinkedIn
     url: 'https://www.linkedin.com/in/monique-mosbe-6bb4b5125/'
@@ -19,4 +19,3 @@ icons:
     title: YouTube
     url: 'https://www.youtube.com/channel/UCZVWrSBr4ELVta78JMsCoaQ'
 ---
-
