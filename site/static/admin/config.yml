@@ -42,6 +42,7 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
       - {label: "Printable?", name: "printable", widget: "boolean", default: true}
       - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
+      - {label: "Published?", name: "published", widget: "boolean", default: false}
 
   - name: "skills"
     label: "Skills"
