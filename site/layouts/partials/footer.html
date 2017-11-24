@@ -9,10 +9,10 @@
 
            </div>
          </div>
-         <div class="footer-copyright link-color">
+         <div class="footer-copyright">
            <div class="container">
-           {{ .Params.copyright }}
-           <a class="link-color right" href="#!">{{ .Params.slogan|markdownify }}</a>
+           <span>{{ .Params.copyright }}</span>
+           <span class="context-text right">{{ .Params.slogan|markdownify }}</span>
            </div>
          </div>
      {{ end }}

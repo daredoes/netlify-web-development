@@ -6,6 +6,7 @@ date: 2012-10-01T13:50:46-07:00
 display_date: October 2012 - October 2013
 weight: '50'
 printable: false
+display: true
 ---
 * Wrote a basic user manual for customers receiving in-house IT training
 * Learned the basics of formality when working on a house call

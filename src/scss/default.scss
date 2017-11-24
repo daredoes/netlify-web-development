@@ -43,6 +43,8 @@ $tertiary-color: color("grey", "darken-1");
   @extend .primary-color-text
 }
 
+
+
 .link-color{
   @extend .white-text, .text-darken-3;
 }
@@ -86,6 +88,7 @@ img.gallery{
 .brand-logo {
   font-size: 2.5em !important;
   font-family: "Oswald", Arial !important;
+  text-decoration: none;
 
 }
 
@@ -114,6 +117,12 @@ nav .button-collapse i{
 
 }
 
+.contact-button{
+  :hover{
+    @extend .secondary-color-text;
+  }
+}
+
 .resume-doc{
   width: 850px;
   height: 1100px;
@@ -129,5 +138,17 @@ nav .button-collapse i{
 }
 
 .link-color:hover{
-  color: lighten($link-color, 25%) !important;
+  color: lighten($secondary-color, 30%) !important;
+}
+.link-secondary-color{
+  text-decoration: underline;
+  color: $secondary-color;
+}
+
+.link-secondary-color:hover{
+  color: lighten($secondary-color, 15%) !important;
+}
+
+a{
+  @extend .link-secondary-color
 }

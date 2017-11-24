@@ -6,6 +6,7 @@ date: 2015-01-01T13:44:25-08:00
 display_date: January 2015-2016
 weight: '50'
 printable: false
+display: true
 ---
 An attempted 501(c)(6) for video gaming related events in the South Bay area.
 

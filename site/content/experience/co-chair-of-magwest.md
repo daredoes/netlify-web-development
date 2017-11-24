@@ -5,6 +5,7 @@ external_url: 'https://magfest.org/'
 display_date: December 2015 - Present
 weight: '1'
 printable: true
+display: true
 ---
 * Brought together 1200 people for the inaugural MAGWest, a 3-day 24-hour grassroots Music and Gaming Festival
 * Spent time on the East coast for an internship doing office work, warehouse work, and event work

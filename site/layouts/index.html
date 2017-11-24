@@ -3,7 +3,7 @@
 <div id="mainContainer1" class="container-fluid resume-container tertiary-color">
         <div class="print-only">
             <div class="" id="print-header">
-                <h1 class="">Daniel Evans</h1>
+                <h1 class="">{{ .Params.first_name }} {{ .Params.last_name}}</h1>
                 <div style="margin-top: -1.5rem; margin-bottom: -0.5rem;" class="print-header-items print-info">
                     <p class="condensed">123 DareDoes Site, Internet, WRLD 01101</p>
                     <p class="condensed">
@@ -65,17 +65,24 @@
             {{ end }}
             {{ end }}
         </div>
+
+
+        <!--
+        DISPLAYED AREA
+      -->
+
+
         <div class="card tertiary-color lighten-4 no-print resume">
             <div class="row center">
                 <div id="photo" class="tertiary-color lighten-4 circle" >
-                    <img src="/img/resume/avatar.jpg" alt="" class="circle responsive-img " style="vertical-align: middle">
+                    <img src="{{ .Params.image|default "/img/resume/avatar.jpg"}}" alt="" class="circle responsive-img " style="vertical-align: middle">
                 </div>
                 <div class="col s12 no-print context-text">
 
                     <p class="center heavy" style="margin-top: -0.2em; margin-bottom: 0; font-size: 2.5em;">Hello,</p>
                     <p class="center heavy" style="margin-top: 0; font-size: 2em;">My name is <span class="secondary-color-text print">{{ .Params.first_name }} {{ .Params.last_name}}</span>
-                        <sup class="primary-color-text text-lighten-1">22YO</sup> and this is
-                      my resume/cv</p>
+                        <sup class="primary-color-text text-lighten-1">{{ sub (time now).Year (time .Params.birth_date).Year }}YO</sup> and this is
+                      my <a class="link-secondary-color" href="javascript:window.print()">resume/cv</a></p>
                 </div>
             </div>
             <div class="row">
@@ -91,9 +98,9 @@
                     {{ with .Site.GetPage "section" "education"}}
                     <div class="row">
                     <p class="resume-section-header heavy secondary-color-text">//Education</p><hr>
-                        <ul class="collection tertiary-color lighten-4" style="border: 0;">
-                            {{ range sort (sort .Pages "Params.graduation_date" "desc") "Params.weight" }}
-                                <li class="collection-item tertiary-color lighten-4 no-padding" style="border:0; padding: 1em 0em 5em 0.05em !important;" >
+                        <ul class="z-depth-1 collection tertiary-color lighten-4" style="border: 0;">
+                            {{ range where (sort (sort .Pages "Params.graduation_date" "desc") "Params.weight") "Params.display" "==" true  }}
+                                <li class="collection-item tertiary-color lighten-4 no-padding" style="border:0; padding: 1em 0em 5em 0.5em !important;" >
                                     <div class="left col no-padding m1 s2 l2">
                                         <span class="badge boxed tertiary-color tertiary-color-text">{{ .Params.display_date}}</span>
                                     </div>
@@ -114,11 +121,11 @@
                     <p class="resume-section-header heavy secondary-color-text">//Experiences</p><hr>
                         <div class="scroll-box">
                             <div class="row">
-                              {{ range .Pages.ByDate.ByWeight }}
+                              {{ range where .Pages.ByDate.ByWeight "Params.display" "==" true }}
                                 <div class="col s12">
                                     <div class="card tertiary-color lighten-4">
                                         <div class="card-content black-text content-text">
-                                            <span class="card-title"><a href="{{ .Params.external_url|safeURL }}" class="primary-color-text">{{.Params.name }} - {{ .Title }}</a></span>
+                                            <span class="card-title"><a href="{{ .Params.external_url|safeURL }}" class="link-secondary-color">{{.Params.name }} - {{ .Title }}</a></span>
                                             {{ .Content }}
                                         </div>
                                         <div class="card-action">
@@ -137,11 +144,11 @@
                   {{ with .Site.GetPage "section" "contact" }}
                     <div class="row">
                     <p class="resume-section-header heavy secondary-color-text">//Contact</p><hr>
-                        <ul class="collection tertiary-color lighten-4 " style="border: 0;">
-                          {{ range $p := sort (sort .Pages "Title") "Params.weight"}}
+                        <ul class="collection tertiary-color lighten-4 z-depth-1" style="border: 0;">
+                          {{ range $p := where (sort (sort .Pages "Title") "Params.weight") "Params.display" "==" true}}
 
-                            <li class="collection-item avatar tertiary-color lighten-4" style="margin-bottom: -2em;">
-                                  <a href="{{ $p.Params.external_url|safeURL }}">
+                            <li class="collection-item avatar tertiary-color lighten-4" style="margin-bottom: -1.75em;">
+                                  <a class="contact-button" href="{{ $p.Params.external_url|safeURL }}">
                                     <i class="fa {{ $p.Params.icon}} circle secondary-color lighten-1"></i></a>
                             <span class="title heavy">{{ $p.Title }}</span>
                                 <p>{{ $p.Content }}</p>
@@ -169,7 +176,7 @@
                         </div>
                     </div>
                     <div class="row scroll-box">
-                      {{ range sort .Pages "Params.level" "desc" }}
+                      {{ range where (sort .Pages "Params.level" "desc") "Params.display" "==" true }}
                         <div class="resume-bar-holder secondary-color accent-4">
                             <div class="resume-bar secondary-color" style="width: {{.Params.level}}%;">
                                 <span class=" resume-bar-text tertiary-color-text">{{.Title }}</span>
@@ -185,9 +192,9 @@
                     <p class="resume-section-header heavy secondary-color-text">//Hobbies</p><hr>
                     <div style="margin-top: 1em;">
 
-                      {{ range .Pages.ByTitle.ByWeight }}
-                    <div class="chip">
-                        <i class="fa fa-heart"></i> {{.Title}}
+                      {{ range where .Pages.ByTitle.ByWeight "Params.display" "==" true }}
+                    <div class="chip secondary-color tertiary-color-text">
+                        <i class="fa fa-heart primary-color-text"></i> {{.Title}}
                     </div>
                     {{ end }}
 
