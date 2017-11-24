@@ -6,4 +6,4 @@ weight: '50'
 printable: false
 display: true
 ---
-This was built using Hugo, MaterializeCSS, Git, GitHub, NetlifyCMS, and Netlify. Code can be found [here](https://github.com/magfest/magstock-site)
+This was built using Hugo, MaterializeCSS, Git, GitHub, NetlifyCMS, and Netlify. Code can be found [here](https://github.com/magfest/magstock-site)<!--more-->

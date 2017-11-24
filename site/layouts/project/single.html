@@ -1,13 +1,16 @@
 {{ partial "header" . }}
 
 
-<div class="content container">
+<div class="container-fluid resume-container">
+  <div class="card tertiary-color lighten-4 no-print resume">
   <div class="row">
 
   <div class="col s12">
-    <h1 class='center'>{{ .Title }}</h1>
+    <h1 class='center'>{{ with .NextInSection }}<a href="{{.NextInSection}}"><i class=" left fa fa-arrow-left"></i></a>{{ end }}{{ .Title }}{{ with .PrevInSection }}<a href="{{ .PrevInSection }}"><i class="right fa fa-arrow-right"></i></a>{{ end }}</h1>
   {{ if .Content }}
+  <div class='context-text'>
   {{ .Content }}
+</div>
   {{ end }}
   {{ if isset .Params "albums"}}
   <div class="art ignore-css">
@@ -20,6 +23,7 @@
     {{ end }}
   </div>
   {{ end }}
+</div>
 </div>
 </div>
 </div>

@@ -138,6 +138,39 @@
                         </div>
                     </div>
                     {{ end }}
+                    {{ with .Site.GetPage "section" "project"}}
+                    <div class="row">
+                    <p class="resume-section-header heavy secondary-color-text">//Projects</p><hr>
+                        <div class="scroll-box">
+                            <div class="row">
+                              {{ range where .Pages.ByDate.ByWeight "Params.display" "==" true }}
+                                <div class="col s12">
+                                    <div class="card tertiary-color lighten-4" >
+                                      <span class="activator"><div class="card-image  waves-effect waves-block waves-light">
+                                        <img class="activator" style="margin-bottom: 0;" src="{{ .Params.image }}">
+                                      </div>
+                                    <a href="{{ .URL }}" class="link-color"><div class="card-action center-align secondary-color">
+                                      <span class='link-color'>
+                                        Learn More
+                                      </span>
+                                    </div></a></span>
+                                      <div class="card-reveal">
+
+                                        <span class="card-title secondary-color-text">{{ .Title }}<i class="fa fa-circle-o right"></i></span>
+
+                                        <div class="context-text">
+                                          {{ .Summary }}
+                                        </div>
+
+                                      </div>
+
+                                    </div>
+                                </div>
+                                {{ end }}
+                            </div>
+                        </div>
+                    </div>
+                    {{ end }}
                     </div>
 
                 <div class="col s12 l5">
