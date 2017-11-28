@@ -1,7 +1,7 @@
 ---
 title: MAGWest
 image: /img/uploads/MAGWest_2017_logo_ribbon.png
-date: '08/25/2017 4:20 PM'
+date: 2017-08-25T04:20:00.102Z
 weight: '1'
 printable: true
 display: true
