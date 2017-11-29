@@ -3,10 +3,17 @@
 
 <div class="container-fluid resume-container">
   <div class="card tertiary-color lighten-4 no-print resume">
+    <div class="header-image">
+      {{$nURL := .NextInSection.URL }}
+      {{$pURL := .PrevInSection.URL }}
+      <a href="{{.nURL}}"><i class="left fa fa-5x fa-arrow-left"></i></a>
+      <img class="center-image" src="{{ .Params.image }}" />
+      <a href="{{ .pURL }}"><i class="right fa fa-5x fa-arrow-right"></i></a>
+    </div>
   <div class="row">
 
   <div class="col s12">
-    <h1 class='center'>{{ with .NextInSection }}<a href="{{.NextInSection}}"><i class=" left fa fa-arrow-left"></i></a>{{ end }}{{ .Title }}{{ with .PrevInSection }}<a href="{{ .PrevInSection }}"><i class="right fa fa-arrow-right"></i></a>{{ end }}</h1>
+    <h1 class='center' >{{ .Title }}</h1>
   {{ if .Content }}
   <div class='context-text'>
   {{ .Content }}
