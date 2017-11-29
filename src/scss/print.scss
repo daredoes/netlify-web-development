@@ -99,4 +99,16 @@
 
     }
 
+    .container-fluid{
+      padding: 0;
+      background: white !important;
+    }
+
+    body, main, .resume{
+      background: white !important;
+    }
+
+    img{
+      display: hidden;
+    }
 }

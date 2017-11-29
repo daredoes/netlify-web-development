@@ -43,11 +43,14 @@ $tertiary-color: color("grey", "darken-1");
   @extend .primary-color-text
 }
 
-
+.link-color-disabled{
+  @extend .white-text, .text-darken-3
+}
 
 .link-color{
   @extend .white-text, .text-darken-3;
 }
+
 
 
 div.social-media-row{
@@ -140,6 +143,11 @@ nav .button-collapse i{
 .link-color:hover{
   color: lighten($secondary-color, 30%) !important;
 }
+
+.link-color-disabled:hover{
+  color: lighten(red, 30%) !important;
+}
+
 .link-secondary-color{
   text-decoration: underline;
   color: $secondary-color;
