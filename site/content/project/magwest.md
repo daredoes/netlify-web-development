@@ -44,4 +44,4 @@ We don't advertise and primarily grow by word of mouth.  We don't accept sponsor
 
 ### MAGWest
 
-I am beyond fucking honored to have been the leader of the wonderful amazing fucking people who came together and made MAGWest 1 the spectacular weekend that it was. 
+I am beyond fucking honored to have been the co-chair of the wonderful amazing fucking people who came together and made MAGWest 1 the spectacular weekend that it was. The 100+ volunteers that put together this event are the next generation of MAGFesters. The 1214 unique attendees of MAGWest 1 came to our show, had a blast, and hopefully cannot wait for MAGWest 2 to come soon enough. That's what I should be working on now, not this.
