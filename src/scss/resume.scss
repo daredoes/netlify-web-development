@@ -93,6 +93,20 @@ span.badge.boxed{
 
 }
 
+
+.resume hr {
+  border-color: $tertiary-color;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.resume-doc{
+  width: 850px;
+  height: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .resume-bar-level-text{
     font-weight: 400;
 }
