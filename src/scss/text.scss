@@ -5,15 +5,23 @@
   -webkit-text-stroke-color: black;
 }
 
-@keyframes textInfiniteStarScroll {
+@keyframes Scroll {
   from {background-position: 0 0; }
   to { background-position: 100 0;}
 
 }
 
 .bg-scroll{
-  background-position: 0px 0px;
-  background-repeat: repeat-x;
+  background-repeat: repeat;
 
-  animation: textInfiniteStarScroll 10s linear infinite;
+  animation-name: Scroll;
+  animation-duration: 10s;
+  animation-direction: alternate-reverse;
+  animation-play-state: running;
+  animation-iteration-count: infinite;
+}
+
+.star-scroll{
+  background-image: url(/img/bg.png);
+  @extend .bg-scroll;
 }

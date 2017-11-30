@@ -1,17 +1,10 @@
 {{ partial "header" . }}
 
-<div id="mainContainer1" class="container-fluid resume-container tertiary-color">
-        <div class="card tertiary-color lighten-4 no-print resume">
+<div id="mainContainer1" class="container-fluid resume-container tertiary-color star-scroll">
             <div class="row center">
                 <div id="photo" class="tertiary-color lighten-4 circle" >
                     <img src="{{ .Params.image|default "/img/resume/avatar.gif"}}" alt="" class="resume-icon circle responsive-img " style="vertical-align: middle">
                 </div>
-                <div class="col s12 no-print context-text">
-
-                    <p class="center heavy" style="margin-top: -0.2em; margin-bottom: 0; font-size: 2.5em;">Welcome To</p>
-                    <p class="center heavy" style="margin-top: 0; font-size: 3em;"><span class="secondary-color-text print">{{ .Site.Title }}</span></p>
-                </div>
-            </div>
             <div class="row">
               {{ with .Site.GetPage "section" "gallery" }}
               {{ range $index, $album := .Pages }}
@@ -21,7 +14,6 @@
               {{ end }}
               {{ end }}
             </div>
-        </div>
     </div>
 
 <!--<div class="content container">
