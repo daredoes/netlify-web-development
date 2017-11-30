@@ -4,3 +4,16 @@
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
 }
+
+@keyframes textInfiniteStarScroll {
+  from {background-position: 0 0; }
+  to { background-position: 100 0;}
+
+}
+
+.bg-scroll{
+  background-position: 0px 0px;
+  background-repeat: repeat-x;
+
+  animation: textInfiniteStarScroll 10s linear infinite;
+}
