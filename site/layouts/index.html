@@ -9,7 +9,7 @@
               {{ with .Site.GetPage "section" "gallery" }}
               {{ range $index, $album := .Pages }}
 
-              <div id="{{ $album.Params.user_id }}" data-nanogallery2='{ "userID": "{{ $album.Params.user_id }}", "kind": "flickr", "album": "{{ $album.Params.album_id }}", "thumbnailHeight": "auto", "thumbnailWidth": 300, "thumbnailAlignment": "center", "thumbnailLabel" : { "display": false } }'>
+              <div id="{{ $album.Params.user_id }}" data-nanogallery2='{ "userID": "{{ $album.Params.user_id }}", "kind": "flickr", {{ if isset $album.Params "album_id" }} "album": "{{ $album.Params.album_id }}", {{ end }} "thumbnailHeight": "auto", "thumbnailWidth": 300, "thumbnailAlignment": "center", "thumbnailLabel" : { "display": false } }'>
               </div>
               {{ end }}
               {{ end }}
