@@ -1,10 +1,6 @@
 {{ partial "header" . }}
 
 <div id="mainContainer1" class="container-fluid resume-container tertiary-color star-scroll">
-            <div class="row center">
-                <div id="photo" class="tertiary-color lighten-4 circle" >
-                    <img src="{{ .Params.image|default "/img/resume/avatar.gif"}}" alt="" class="resume-icon circle responsive-img " style="vertical-align: middle">
-                </div>
             <div class="row">
               {{ with .Site.GetPage "section" "gallery" }}
               {{ range $index, $album := .Pages }}
