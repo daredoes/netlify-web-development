@@ -32,4 +32,6 @@ With TechOps, STOPS, and Music having established department heads it was time t
 
 ### A Call For Help
 
-For the next phase of recruitment Sheva and I decided to put out a form where anyone could tell us about themselves, and we'd do our best to reach out and see if they were right for running a department at MAGWest. Now, I don't know if you could guess, but getting information from random strangers online and then calling them for a single conversation to determine if they are the right person for the job can be a hit or miss strategy. We had some hits, and we had some misses.
+For the next phase of recruitment Sheva and I decided to put out a form where anyone could tell us about themselves, and we'd do our best to reach out and see if they were right for running a department at MAGWest. Now, I don't know if you could guess, but getting information from random strangers online, calling them for a single conversation, then determining if they are the right person for the job can be a hit or miss strategy. We had some hits, and we had some misses. Other limitations included the maximum number of staff we could support in our first year, and the amount of event space we could give to department heads.
+
+Honestly, reaching out to these complete strangers was tough for me. I didn't reach out to everyone, and that isn't something I'm proud of. 
