@@ -1,6 +1,6 @@
 ---
 title: The Personal Website
-date: 2017-12-01T02:17:07.496Z
+date: 2012-05-01T18:17:07-07:00
 weight: '50'
 printable: true
 display: true
