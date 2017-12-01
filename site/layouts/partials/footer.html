@@ -1,7 +1,7 @@
 </main>
-<footer class="page-footer star-scroll primary-color darken-4 no-print">
+<footer class="page-footer star-scroll scroll primary-color darken-4 no-print">
   {{ with .Site.GetPage "page" "footer/main.md" }}
-         <div class="container  star-scroll">
+         <div class="container  star-scroll scroll">
            <div class="row center-align link-color">
              {{ range .Params.icons }}
              {{ partial "icon_range" (dict "Icon" . "Color" "secondary-color" "TextColor"  "link-color" "IconBrightness" "darken-4" "URLClass" "social-media" "IconClass" "fa-lg social-media-icon") }}
@@ -9,7 +9,7 @@
 
            </div>
          </div>
-         <div class="footer-copyright  star-scroll">
+         <div class="footer-copyright  star-scroll scroll">
            <div class="container">
            <span>{{ .Params.copyright }}</span>
            <span class="context-text right">{{ .Params.slogan|markdownify }}</span>
