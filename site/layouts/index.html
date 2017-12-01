@@ -1,6 +1,6 @@
 {{ partial "header" . }}
 
-<div id="mainContainer1" class="container-fluid resume-container tertiary-color">
+<div id="mainContainer1" class="container-fluid resume-container scroll tertiary-color">
         <div class="print-only">
             <div class="" id="print-header">
                 <h1 class="">{{ .Params.first_name }} {{ .Params.last_name}}</h1>
@@ -71,7 +71,7 @@
       -->
 
 
-        <div class="card tertiary-color lighten-4 no-print resume">
+        <div class="card tertiary-color lighten-4 no-print resume reverseScroll">
             <div class="row center">
                 <div id="photo" class="tertiary-color lighten-4 circle" >
                     <img src="{{ .Params.image|default "/img/resume/avatar.gif"}}" alt="" class="resume-icon circle responsive-img " style="vertical-align: middle">
