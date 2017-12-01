@@ -1,7 +1,7 @@
 ---
 title: MAGFest
 image: /img/uploads/trust-squarewave.png
-date: 2014-02-08T04:38:53.000Z
+date: 2014-02-07T04:38:53.000Z
 weight: '50'
 printable: true
 display: true
@@ -38,14 +38,16 @@ Throughout my time at MAGFest I have been repeatedly informed that my life decis
 
 That weekend was 2 years and 8 months before the first ever MAGWest 1.
 
+I am beyond honored to have been the co-chair of the wonderful amazing people who came together and made MAGWest 1 the spectacular weekend that it was. The 100+ volunteers that put together this event are the next generation of MAGFesters. The 1214 unique attendees of MAGWest 1 came to our show, had a blast, and hopefully cannot wait for MAGWest 2 to come soon enough.
+
+### Final Thoughts
+
 MAGFest is really special. Truly, dearly, incredibly special. The places and actions where people say "this is how we do it right", MAGFest tends to say "this is how we do it left".
 
 We don't advertise and primarily grow by word of mouth. We don't accept sponsorship deals, we're not an industry expo, and we take extreme lengths to preserve the grassroots vibe that creates the magic MAGFest is so famous for among our insane, diehard fans. We strive to break down the distinction between attendees and staff- People don't just come to MAGFest to consume, they come to create their own content in areas like our indie developer showcases, makerspaces, or cramming every last inch of available hallway spaces with musical performances. At MAGFest, videogame music tracks from NES and SNES are like old-school jazz standards, riffed on and played by everyone everywhere.
 
-{{< center >}}
-# Come Party With Us.
-{{< /center >}}
+{{< div class="center-align" >}}
+# [Come Party With Us](http://magfest.org)
 
-### MAGWest
-
-I am beyond honored to have been the co-chair of the wonderful amazing people who came together and made MAGWest 1 the spectacular weekend that it was. The 100+ volunteers that put together this event are the next generation of MAGFesters. The 1214 unique attendees of MAGWest 1 came to our show, had a blast, and hopefully cannot wait for MAGWest 2 to come soon enough.
+{{< youtube RipSfQSkGAU >}}
+{{< /div >}}
