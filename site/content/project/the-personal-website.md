@@ -5,13 +5,10 @@ weight: '50'
 printable: true
 display: true
 ---
-{{< image_slider >}}
-{{< image_slide img="/img/uploads/its_a_onepage.PNG" >}}
-{{< /image_slider >}}
 
 ### It All Starts With A Name
 
-Many things in this world revolves around names. Everybody has one. Me, you, my father. My father was born David Alexander Richard Evans, and he was the son of Derek Alexander Evans. I am Daniel Alexander Ross Evans, and I am the son of David Alexander Richard Evans. 
+Many things in this world revolves around names. Everybody has one. Me, you, my father. My father was born David Alexander Richard Evans, and he was the son of Derek Alexander Evans. I am Daniel Alexander Ross Evans, and I am the son of David Alexander Richard Evans.
 
 I can't quite explain why. Honestly, I don't think I really need to. I just, I can't explain why this lineage of names is important to me. Its important enough to me that I commonly go by the name 'Dare', the name being a composition of my initials. Its important enough to me that I hope to one day name my son 'Dante Alexander Red Evans', a name created during a vacation dinner with my family.
 
@@ -35,11 +32,11 @@ My contact page was simple and function, it included links to my social media or
 
 ### It Can Be So Hard To Pick An Internet Handle.
 
-To continue onto the next iteration of my site, I feel it is important to first talk about some of the internet handles I've had in the past. I was eight when I first went on the internet. At the time my mother had me in Tae Kwon Do classes. My name is important to me. Thus, `danielkungfu8` was born. 
+To continue onto the next iteration of my site, I feel it is important to first talk about some of the internet handles I've had in the past. I was eight when I first went on the internet. At the time my mother had me in Tae Kwon Do classes. My name is important to me. Thus, `danielkungfu8` was born.
 
-Then, it was time for A.I.M., or A.O.L., or America OnLine, Instant Messenger. I was with my older sister and her two friends. I was the shortest person in my grade. I was eight. English is hard. `migetman9` was born. I swear, I didn't know there was a d in midget. Also, I understand that using language to describe myself with a medical affliction I do not possess can be viewed as an offensive action. Give me a break, I was nine. 
+Then, it was time for A.I.M., or A.O.L., or America OnLine, Instant Messenger. I was with my older sister and her two friends. I was the shortest person in my grade. I was eight. English is hard. `migetman9` was born. I swear, I didn't know there was a d in midget. Also, I understand that using language to describe myself with a medical affliction I do not possess can be viewed as an offensive action. Give me a break, I was nine.
 
-High school is here. I'm Team Xbox, not Team PlayStation. `migetman9` doesn't feel like a name I want to carry anymore. Its late, like 1am. I'm eating an entire box of cheez-its. I like cheez-its. I love cheez-its. My birthday is on July 31st. Alright Xbox Live, I'll pay you your money, so make `cheezin31` my name. 
+High school is here. I'm Team Xbox, not Team PlayStation. `migetman9` doesn't feel like a name I want to carry anymore. Its late, like 1am. I'm eating an entire box of cheez-its. I like cheez-its. I love cheez-its. My birthday is on July 31st. Alright Xbox Live, I'll pay you your money, so make `cheezin31` my name.
 
 Now we're at University. Computer Science class is a bit too elementary for me. `me@danielarevans.com` is incredibly long to write and people never understand it means Daniel A.R. Evans. I'm [Dare](/project/magfest). New gTLDs are available. `daredoes` is who I'll be, and `DareDoes.Work` will be my domain. `daredoestweets`, `daredoesgithub`, `daredoeshishomework`. So many use cases. I think this is it for me. Here I am.
 
