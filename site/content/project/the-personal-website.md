@@ -5,6 +5,10 @@ weight: '50'
 printable: true
 display: true
 ---
+{{< image_slider >}}
+{{< image_slide img="/img/uploads/its_a_onepage.PNG" >}}
+{{< /image_slider >}}
+
 ### It All Starts With A Name
 
 Many things in this world revolves around names. Everybody has one. Me, you, my father. My father was born David Alexander Richard Evans, and he was the son of Derek Alexander Evans. I am Daniel Alexander Ross Evans, and I am the son of David Alexander Richard Evans. 
