@@ -56,13 +56,13 @@
           {{ else }}
           <li><a href="{{$p.URL}}" class="primary-color-text "> {{ $p.Name }} </a></li>
           {{ end }}
+          {{end}}
           {{ if .PrevInSection }}
           <li><a href="{{.PrevInSection.URL}}" class="primary-color-text "> Previous </a></li>
           {{ end }}
           {{ if .NextInSection }}
           <li><a href="{{.NextInSection.URL}}" class="primary-color-text"> Next </a></li>
           {{ end }}
-          {{end}}
           {{ with .Site.GetPage "section" "sidebar" }}
           <li><div class="divider"></div></li>
           <li><a class="subheader">Useful Links</a></li>
