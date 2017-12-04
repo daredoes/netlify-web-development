@@ -1,5 +1,5 @@
 @import "./node_modules/materialize-css/sass/materialize.scss";
-$primary-color: color("red", "darken-4");
+$primary-color: color("grey", "darken-4");
 $primary-color-light: false;
 $primary-color-dark: false;
 @if not $primary-color-light {
@@ -16,7 +16,7 @@ $tertiary-color: color("grey", "darken-1");
   $link-color: color("grey", "darken-3");
 
 .primary-color {
-  @extend .red, .darken-4
+  @extend .grey, .darken-4
 }
 
 .secondary-color {
@@ -28,7 +28,7 @@ $tertiary-color: color("grey", "darken-1");
 }
 
 .primary-color-text {
-  @extend .black-text, .text-darken-2
+  @extend .grey-text, .text-darken-4
 }
 
 .secondary-color-text {
@@ -36,7 +36,7 @@ $tertiary-color: color("grey", "darken-1");
 }
 
 .tertiary-color-text{
-  @extend .white-text, .text-darken-3;
+  @extend .grey-text, .text-lighten-4
 }
 
 .content-text > *{

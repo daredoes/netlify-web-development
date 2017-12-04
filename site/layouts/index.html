@@ -1,11 +1,10 @@
 {{ partial "header" . }}
 
-<div id="mainContainer1" class="container-fluid resume-container tertiary-color">
+<div id="mainContainer1" class="container-fluid resume-container scroll tertiary-color">
         <div class="print-only">
             <div class="" id="print-header">
                 <h1 class="">{{ .Params.first_name }} {{ .Params.last_name}}</h1>
                 <div style="margin-top: -1.5rem; margin-bottom: -0.5rem;" class="print-header-items print-info">
-                    <p class="condensed">123 DareDoes Site, Internet, WRLD 01101</p>
                     <p class="condensed">
                       {{ with .Site.GetPage "section" "contact"}}
                       {{ $pages := where (.Pages) ".Params.printable" "==" true }}
@@ -75,13 +74,13 @@
         <div class="card tertiary-color lighten-4 no-print resume">
             <div class="row center">
                 <div id="photo" class="tertiary-color lighten-4 circle" >
-                    <img src="{{ .Params.image|default "/img/resume/avatar.gif"}}" alt="" class="resume-icon circle responsive-img " style="vertical-align: middle">
+                    <img src="{{ .Params.image|default "/img/icons/avatar.gif"}}" alt="" class="darkness reverseScrollSlow circle responsive-img " style="vertical-align: middle">
                 </div>
                 <div class="col s12 no-print context-text">
 
                     <p class="center heavy" style="margin-top: -0.2em; margin-bottom: 0; font-size: 2.5em;">Hello,</p>
                     <p class="center heavy" style="margin-top: 0; font-size: 2em;">My name is <span class="secondary-color-text print">{{ .Params.first_name }} {{ .Params.last_name}}</span>
-                        <sup class="primary-color-text text-lighten-1">{{ sub (time now).Year (time .Params.birth_date).Year }}YO</sup> and this is
+                        <sup class="primary-color-text">{{ sub (time now).Year (time .Params.birth_date).Year }}YO</sup> and this is
                       my <a class="link-secondary-color" href="javascript:window.print()">resume/cv</a></p>
                 </div>
             </div>
@@ -147,7 +146,7 @@
                                 <div class="col s12">
                                     <div class="card tertiary-color lighten-4" >
                                       <span class="activator"><div class="card-image  waves-effect waves-block waves-light">
-                                        <img class="activator tertiary-color lighten-4" style="margin-bottom: 0;" src="{{ .Params.image }}">
+                                        <img class="activator tertiary-color lighten-4 darkness reverseScrollSlow" style="margin-bottom: 0;" src="{{ .Params.image| default "/img/project.png" }}">
                                       </div>
                                     <a href="{{ .URL }}" class="link-color"><div class="card-action center-align secondary-color">
                                       <span class='link-color'>
@@ -156,7 +155,7 @@
                                     </div></a></span>
                                       <div class="card-reveal">
 
-                                        <span class="card-title secondary-color-text">{{ .Title }}<i class="fa fa-circle-o right"></i></span>
+                                        <span class="card-title secondary-color-text">{{ .Title }}<i class="fa fa-times-circle-o right"></i></span>
 
                                         <div class="context-text">
                                           {{ .Summary }}
