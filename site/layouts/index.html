@@ -89,9 +89,18 @@
                   {{ with .Content }}
                     <div class="row">
                     <p class="resume-section-header heavy secondary-color-text">//About Me</p>
-                        <div id="about_text" class="context-text">
-                            {{ . }}
-                        </div>
+                    <div class="row">
+                      <div class="col s12">
+                        <div class="card tertiary-color lighten-4">
+                            <div class="card-content black-text content-text">
+                              <div id="about_text" class="context-text">
+
+                                  {{ . }}
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
                     </div>
                     {{ end }}
                     {{ with .Site.GetPage "section" "education"}}

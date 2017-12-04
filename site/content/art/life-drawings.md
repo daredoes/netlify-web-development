@@ -3,8 +3,9 @@ title: Life Drawings
 albums:
   - album_id: '72157680119101370'
     title: Figure Drawings
-  - album_id: '72157681843149775'
+  - album_id: '72157690180947235'
     title: Observational Art
-  - title: Traditional Work
+  - album_id: '72157663069371478'
+    title: Traditional Work
 ---
 

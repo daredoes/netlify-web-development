@@ -2,14 +2,16 @@
 title: The Sunken Forest
 image: /img/uploads/the_sunken_forest_poster.jpeg
 date: 2017-11-22T00:53:04.436Z
+display: true
 albums:
-  - album_id: '72157686622488282'
+  - album_id: '72157689702278784'
     title: Concept Art
-  - title: Backgrounds
+  - album_id: '72157688957538071'
+    title: Backgrounds
 ---
 The "Sunken Forest" is about the aspirations of an African-American father who wants to escape sharecropping and gain ownership of land in order to build a better life for his son; even if that means trusting in the good will of others.
 
-This film is extremely personal to our Director as it deals with African-American migration and mobility in the United States during the 1920s and 1930s. Members of Mister Kennedy's family were heavily affected by the Great Depression, the Great Migration of blacks from within the Jim Crow south, and the Dust Bowl. 
+This film is extremely personal to our Director as it deals with African-American migration and mobility in the United States during the 1920s and 1930s. Members of Mister Kennedy's family were heavily affected by the Great Depression, the Great Migration of blacks from within the Jim Crow south, and the Dust Bowl.
 
 This film is his homage to the sacrifices made by his forefathers living in South and North Carolina as sharecroppers so that he could follow his own dreams.
 

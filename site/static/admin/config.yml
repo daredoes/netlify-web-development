@@ -1,7 +1,8 @@
 backend:
-  name: git-gateway
-  #repo: daredoes/mdmart # Path to your Github repository
-  branch: master # Branch to update (master by default)
+  #name: git-gateway
+  name: github
+  repo: daredoes/netlify-web-development # Path to your Github repository
+  branch: mdmart-production # Branch to update (master by default)
 
 media_folder: "src/img/uploads" # Folder where user uploaded files should go
 public_folder: "img/uploads"
@@ -24,6 +25,11 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Title", name: "title", widget: "string", tagname: "h1"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "URL", name: "url", widget: "string"}
+      - {label: "Profile Picture", name: "image", widget: "image", required: false}
+      - {label: "First Name", name: "first_name", widget: "string"}
+      - {label: "Middle Name(s)", name: "middle_name", widget: "string", required: false}
+      - {label: "Last Name", name: "last_name", widget: "string"}
+      - {label: "Birth Date", name: "birth_date", widget: "datetime"}
 
   - name: "art"
     label: "Art Pages"
@@ -67,6 +73,9 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Body", name: "body", widget: "markdown", required: false}
       - {label: "Cover Image", name: "image", widget: "image", required: false}
       - {label: "Project Date (For Sorting Purposes)", name: "date", widget: "datetime"}
+      - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
+      - {label: "Printable?", name: "printable", widget: "boolean", default: true}
+      - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
       - name: "albums"
         label: "Flickr Albums"
         widget: "list"
@@ -75,3 +84,67 @@ collections: # A list of collections the CMS should be able to edit
           - {label: "Album Title", name: "title", widget: "string", required: false}
           - {label: "Flickr User ID", name: "user_id", widget: "string", default: "144498668@N03", required: false}
           - {label: "Flickr Album ID", name: "album_id", widget: "string"}
+
+  - name: "contact"
+    label: "Contact Items"
+    folder: "site/content/contact"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "URL", name: "external_url", widget: "string"}
+      - {label: "Font Awesome Icon", name: "icon", widget: "string", required: false, default: "fa-compass"}
+      - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
+      - {label: "Printable?", name: "printable", widget: "boolean", default: true}
+      - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
+      - {label: "Published?", name: "published", widget: "boolean", default: false}
+
+  - name: "skills"
+    label: "Skills"
+    folder: "site/content/skills"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Level", name: "level", widget: "number", min: "0", max: "100", default: "50"}
+      - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
+      - {label: "Printable?", name: "printable", widget: "boolean", default: true}
+      - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
+
+  - name: "hobbies"
+    label: "Hobbies"
+    folder: "site/content/hobbies"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Font Awesome Icon", name: "icon", widget: "string", default: "fa-heart", required: false, tagname: "i"}
+      - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
+      - {label: "Printable?", name: "printable", widget: "boolean", default: true}
+      - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
+
+  - name: "experience"
+    label: "Experiences"
+    folder: "site/content/experience"
+    create: true
+    fields:
+      - {label: "Company Name", name: "name", widget: "string"}
+      - {label: "Job Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "URL", name: "external_url", widget: "string"}
+      - {label: "Start Date", name: "date", widget: "datetime"}
+      - {label: "Date", name: "display_date", widget: "string"}
+      - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
+      - {label: "Printable?", name: "printable", widget: "boolean", default: true}
+      - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
+
+  - name: "education"
+    label: "Education"
+    folder: "site/content/education"
+    create: true
+    fields:
+      - {label: "Name", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Graduation Date", name: "graduation_date", widget: "datetime"}
+      - {label: "Date", name: "display_date", widget: "string"}
+      - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
+      - {label: "Printable?", name: "printable", widget: "boolean", default: true}
+      - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
