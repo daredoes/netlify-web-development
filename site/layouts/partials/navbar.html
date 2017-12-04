@@ -1,5 +1,5 @@
 <header class="no-print" style="z-index: 10">
-  <nav class="primary-color darken-4 darkness">
+  <nav class="primary-color">
     <div class="nav-wrapper">
       <style scoped>
       @media only screen and (max-width:992px){
@@ -56,13 +56,14 @@
           {{ else }}
           <li><a href="{{$p.URL}}" class="primary-color-text "> {{ $p.Name }} </a></li>
           {{ end }}
-          {{ if .PrevInSection }}
-          <li><a href="{{.PrevInSection.URL}}" class="primary-color-text "> Previous </a></li>
-          {{ end }}
-          {{ if .NextInSection }}
-          <li><a href="{{.NextInSection.URL}}" class="primary-color-text"> Next </a></li>
-          {{ end }}
+
           {{end}}
+          {{ with .PrevInSection }}
+          <li><a href="{{.URL}}" class="primary-color-text "> Previous </a></li>
+          {{ end }}
+          {{ with .NextInSection }}
+          <li><a href="{{.URL}}" class="primary-color-text"> Next </a></li>
+          {{ end }}
           {{ with .Site.GetPage "section" "sidebar" }}
           <li><div class="divider"></div></li>
           <li><a class="subheader">Useful Links</a></li>

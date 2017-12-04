@@ -1,6 +1,43 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "DareDoes.Work"
+title = "Monique Denelia Mosbe"
 
 [params]
-  description = "The homepage of Daniel A.R. Evans, or Dare."
+  description = "The homepage of Monique Mosbe."
+
+
+  [[menu.main]]
+      name = "About"
+      url  = "/"
+      weight = 1
+
+  [[menu.main]]
+      name = "Digital Art"
+      url = "/art/digital-art"
+      weight = 2
+
+  [[menu.main]]
+      name = "Animation"
+      url = "/art/animation"
+      weight = 2
+
+  [[menu.main]]
+      name = "Life Drawings"
+      url = "/art/life-drawings"
+      weight = 3
+
+  [[menu.main]]
+      name = "Other"
+      url = "/art/other"
+      weight = 3
+
+  [[menu.main]]
+      name = "Projects"
+      identifier = "project"
+      weight = 2
+      url = "/project"
+
+  [[menu.main]]
+      name = "Resume"
+      weight = 1
+      url = "/resume"
