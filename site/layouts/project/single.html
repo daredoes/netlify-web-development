@@ -1,13 +1,16 @@
 {{ partial "header" . }}
 
 
+
 <div class="container-fluid resume-container bg-stardust scroll">
   <div class="card tertiary-color lighten-4 bg-witewall_3">
+    {{ if isset .Params "image" }}
     <div class="header-image">
       <div class="row">
           <img class="center-image" src="{{ .Params.image }}" />
       </div>
     </div>
+    {{ end }}
   <div class="row">
 
   <div class="col s12">
