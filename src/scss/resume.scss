@@ -131,11 +131,11 @@ ul.list > li {
     list-style-type: square;
 }
 .resume-container{
-  background: url(/img/patterns/stardust.png)
+  background: url(/img/resume/stardust.png)
 }
 
 .resume{
-  background: url(/img/patterns/small_steps.png)
+  background: url(/img/resume/small_steps.png)
 }
 
 @media only screen and (max-width: 600px){
@@ -183,7 +183,7 @@ body{
   font-family: 'Open Sans', Arial, Tahoma;
   font-weight: 400;
   font-size: 1em;
-  background: url(/img/patterns/stardust_@2X.png);
+  background: url(/img/resume/stardust_@2X.png);
 }
 /*******************************************
 CONTAINER
@@ -231,7 +231,7 @@ PHOTO (AVATAR)
 #text-header:after{
   width: 100%;
   height: 3px;
-  background: url(/img/patterns/line.png);
+  background: url(../images/line.png);
   margin-top: 15px;
   content: '';
   display: block;
@@ -444,6 +444,23 @@ SKILLS
 }
 .legend-right{
   text-align: right;
+}
+/*******************************************
+LANGUAGES
+*******************************************/
+#language-skills .skill{
+  font-size: 1.3em;
+  margin: 10px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+#language-skills .skill .icons{
+  width: 111px;
+  height: 14px;
+  background: url(../images/star-grey.png) no-repeat;
+}
+#language-skills .skill .icons-red{
+  background: url(../images/star-red.png) no-repeat;
 }
 /*******************************************
 HOBBIES
