@@ -1,6 +1,6 @@
 {{ partial "header" . }}
 
-<div id="mainContainer1" class="container-fluid resume-container scroll tertiary-color">
+<div id="mainContainer1" class="container-fluid resume-container">
         <div class="print-only">
             <div class="" id="print-header">
                 <h1 class="">{{ .Params.first_name }} {{ .Params.last_name}}</h1>
@@ -71,17 +71,17 @@
       -->
 
 
-        <div class="card tertiary-color lighten-4 no-print resume">
+        <div class="card tertiary-color lighten-2 z-depth-4 bg-notebook no-print resume">
             <div class="row center">
                 <div id="photo" class="tertiary-color lighten-4 circle" >
-                    <img src="{{ .Params.image|default "/img/icons/avatar.gif"}}" alt="" class="darkness reverseScrollSlow circle responsive-img " style="vertical-align: middle">
+                    <img src="{{ .Params.image|default "/img/icons/avatar.png"}}" alt="" class="bg-dimension reverseScrollSlow circle responsive-img " style="vertical-align: middle">
                 </div>
                 <div class="col s12 no-print context-text">
 
                     <p class="center heavy" style="margin-top: -0.2em; margin-bottom: 0; font-size: 2.5em;">Hello,</p>
                     <p class="center heavy" style="margin-top: 0; font-size: 2em;">My name is <span class="secondary-color-text print">{{ .Params.first_name }} {{ .Params.last_name}}</span>
                         <sup class="primary-color-text">{{ sub (time now).Year (time .Params.birth_date).Year }}YO</sup> and this is
-                      my <a class="link-secondary-color" href="//daredoes.work">resume/cv</a></p>
+                      my <a class="link-secondary-color" href="javascript:window.print()">portfolio</a></p>
                 </div>
             </div>
             <div class="row">
