@@ -33,7 +33,7 @@ title = "Sierra Jones"
 [[menu.main]]
   name = "For Sale"
   parent = "shop"
-  url = "#"
+  url = "http://dracowolfie.tictail.com/"
 
 [[menu.main]]
   name = "Commissions"

@@ -1,7 +1,7 @@
 ---
 title: main
 copyright: © 2017 Daniel Alexander Ross Evans
-slogan: Check Out [MAGWest](http://magwest.org)
+slogan: Hail Satan!
 icons:
   - icon: facebook
     title: Print Me!

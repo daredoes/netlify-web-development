@@ -1,7 +1,7 @@
 {{ partial "header" . }}
 <div class="background-space no-print">
 </div>
-<div id="mainContainer1" class="container-fluid resume-container bg-body tertiary-color" style="padding-top: 1em;">
+<div id="mainContainer1" class="container-fluid resume-container bg-body tertiary-color" >
         <div class="print-only">
             <div class="" id="print-header">
                 <h1 class="">{{ .Params.first_name }} {{ .Params.last_name}}</h1>
@@ -138,42 +138,7 @@
                         </div>
                     </div>
                     {{ end }}
-                    {{ with .Site.GetPage "section" "project"}}
-                    {{ $items := where .Pages.ByDate.ByWeight "Params.display" "==" true }}
-                    {{ if $items }}
-                    <div class="row">
-                    <p class="resume-section-header heavy secondary-color-text">//Projects</p><hr>
-                        <div class="scroll-box">
-                            <div class="row">
-                              {{ range $items }}
-                                <div class="col s12">
-                                    <div class="card tertiary-color lighten-4" >
-                                      <span class="activator"><div class="card-image  waves-effect waves-block waves-light">
-                                        <img class="activator tertiary-color lighten-4 darkness reverseScrollSlow" style="margin-bottom: 0;" src="{{ .Params.image| default "/img/project.png" }}">
-                                      </div>
-                                    <a href="{{ .URL }}" class="link-color"><div class="card-action center-align secondary-color">
-                                      <span class='link-color'>
-                                        Learn More
-                                      </span>
-                                    </div></a></span>
-                                      <div class="card-reveal">
 
-                                        <span class="card-title secondary-color-text">{{ .Title }}<i class="fa fa-times-circle-o right"></i></span>
-
-                                        <div class="context-text">
-                                          {{ .Summary }}
-                                        </div>
-
-                                      </div>
-
-                                    </div>
-                                </div>
-                                {{ end }}
-                            </div>
-                        </div>
-                    </div>
-                    {{ end }}
-                    {{ end }}
                     </div>
 
                 <div class="col s12 l5">
@@ -193,6 +158,43 @@
                             </li>
                             {{ end }}
                         </ul>
+                    </div>
+                    {{ end }}
+                    {{ end }}
+
+                    {{ with .Site.GetPage "section" "project"}}
+                    {{ $items := where .Pages.ByDate.ByWeight "Params.display" "==" true }}
+                    {{ if $items }}
+                    <div class="row">
+                    <p class="resume-section-header heavy secondary-color-text">//Projects</p><hr>
+                        <div class="scroll-box">
+                            <div class="row">
+                              {{ range $items }}
+                                <div class="col s12">
+                                    <div class="card tertiary-color lighten-4" >
+                                      <span class="activator"><div class="card-image  waves-effect waves-block waves-light">
+                                        <img class="activator tertiary-color lighten-4 darkness reverseScrollSlow" style="margin-bottom: 0;" src="{{ .Params.image| default "/img/project.png" }}">
+                                      </div>
+                                    <a href="{{ .URL }}" class="link-color"><div class="card-action center-align bg-nav">
+                                      <span class='link-color'>
+                                        Learn More about {{ .Title }}
+                                      </span>
+                                    </div></a></span>
+                                      <div class="card-reveal">
+
+                                        <span class="card-title secondary-color-text">{{ .Title }}<i class="fa fa-times-circle-o right"></i></span>
+
+                                        <div class="context-text">
+                                          {{ .Summary }}
+                                        </div>
+
+                                      </div>
+
+                                    </div>
+                                </div>
+                                {{ end }}
+                            </div>
+                        </div>
                     </div>
                     {{ end }}
                     {{ end }}
@@ -248,6 +250,9 @@
                 </div>
 
 
+            </div>
+            <div class="row">
+              Concept Art
             </div>
         </div>
     </div>
