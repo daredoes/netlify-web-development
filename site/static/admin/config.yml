@@ -146,6 +146,13 @@ collections: # A list of collections the CMS should be able to edit
           - {label: "Album Title", name: "title", widget: "string", required: false}
           - {label: "Flickr User ID", name: "user_id", widget: "string", default: "144498668@N03", required: false}
           - {label: "Flickr Album ID", name: "album_id", widget: "string"}
+      - name: "videos"
+        label: "YouTube Videos"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Title", name: "title", widget: "string", required: false}
+          - {label: "Video URL", name: "url", widget: "string", required: true}
 
 
   - name: "project"

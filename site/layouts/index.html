@@ -251,9 +251,23 @@
 
 
             </div>
+            {{ with .Site.GetPage "section" "art" }}
             <div class="row">
-              Concept Art
+              <div class="col s12">
+              <ul class="tabs tabs-fixed-width bg-nav">
+                {{ range .Pages.ByWeight }}
+                <li class="tab"><a href="#{{ .Title|urlize }}" class="link-color">{{ .Title }}</a></li>
+                {{ end }}
+              </ul>
             </div>
+            {{ range .Pages.ByWeight }}
+            <div class="col s12" id="{{ .Title|urlize }}">
+              {{ .Title }}
+            </div>
+            {{ end }}
+
+            </div>
+            {{ end }}
         </div>
     </div>
 
