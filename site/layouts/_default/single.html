@@ -1,13 +1,10 @@
 {{ partial "header" . }}
 
-<div class="container-fluid resume-container {{ .Section|urlize }}">
-  <div class="card tertiary-color lighten-4 no-print resume">
-    <div class="row">
-      <div class="context-text">
-  {{ .Content }}
-</div>
-</div>
-</div>
-</div>sss
+<div id="mainContainer1" class="container-fluid resume-container bg-body tertiary-color" >
+  <h3 class="center-align">{{ .Title }}</h3>
+  <div class="context-text">
+    {{ .Content }}
+  </div>
 
+</div>
 {{ partial "footer" . }}
