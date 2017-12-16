@@ -131,6 +131,22 @@ collections: # A list of collections the CMS should be able to edit
           - {label: "Title", name: "title", widget: "string", required: false}
           - {label: "Image", name: "image", widget: "image", required: true}
 
+  - name : "art"
+    label: "Art Types"
+    folder: "site/content/art"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown", required: false }
+      - name: "albums"
+        label: "Flickr Albums"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Album Title", name: "title", widget: "string", required: false}
+          - {label: "Flickr User ID", name: "user_id", widget: "string", default: "144498668@N03", required: false}
+          - {label: "Flickr Album ID", name: "album_id", widget: "string"}
+
 
   - name: "project"
     label: "Projects"
