@@ -25,9 +25,6 @@ title = "Sierra Jones"
   url = "#"
   parent = "portfolio"
 
-[[menu.main]]
-  name = "Resume"
-  url = "#"
 
 [[menu.main]]
   name = "Shop"

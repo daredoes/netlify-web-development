@@ -2,7 +2,7 @@ backend:
   #name: git-gateway
   name: github #comment me out on development
   repo: daredoes/netlify-web-development # comment me out on production
-  branch: master # Branch to update (master by default)
+  branch: dracowolfie # Branch to update (master by default)
 
 media_folder: "src/img/uploads" # Folder where user uploaded files should go
 public_folder: "img/uploads"

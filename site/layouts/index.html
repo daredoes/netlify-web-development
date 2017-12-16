@@ -1,7 +1,7 @@
 {{ partial "header" . }}
-<div class="background-space">
+<div class="background-space no-print">
 </div>
-<div id="mainContainer1" class="container-fluid resume-container bg-body tertiary-color">
+<div id="mainContainer1" class="container-fluid resume-container bg-body tertiary-color" style="padding-top: 1em;">
         <div class="print-only">
             <div class="" id="print-header">
                 <h1 class="">{{ .Params.first_name }} {{ .Params.last_name}}</h1>
@@ -17,12 +17,12 @@
                 </div>
             </div>
 
-            {{ with .Content }}
+            <!-- {{ with .Content }}
             <hr class="condensed">
             <div class="body">
                {{ . }}
             </div>
-            {{ end }}
+            {{ end }}-->
             {{ with .Site.GetPage "section" "education" }}
             {{ $pages := where (.Pages) ".Params.printable" "==" true }}
             {{ if $pages }}
@@ -72,17 +72,17 @@
       -->
 
 
-        <div class="card tertiary-color lighten-4 no-print resume">
+        <div class=" no-print resume">
             <div class="row center">
-                <div id="photo" class="tertiary-color lighten-4 circle" >
+                <!--<div id="photo" class="tertiary-color lighten-4 circle" >
                     <img src="{{ .Params.image|default "/img/icons/avatar.gif"}}" alt="" class="darkness reverseScrollSlow circle responsive-img " style="vertical-align: middle">
-                </div>
+                </div>-->
                 <div class="col s12 no-print context-text">
 
-                    <p class="center heavy" style="margin-top: -0.2em; margin-bottom: 0; font-size: 2.5em;">Hello,</p>
-                    <p class="center heavy" style="margin-top: 0; font-size: 2em;">My name is <span class="secondary-color-text print">{{ .Params.first_name }} {{ .Params.last_name}}</span>
+                    <p class="center heavy" style="margin-top: -0.2em; margin-bottom: 0; font-size: 2.5em;">Game Designer - Concept Artist</p>
+                    <!--<p class="center heavy" style="margin-top: 0; font-size: 2em;">My name is <span class="secondary-color-text print">{{ .Params.first_name }} {{ .Params.last_name}}</span>
                         <sup class="primary-color-text">{{ sub (time now).Year (time .Params.birth_date).Year }}YO</sup> and this is
-                      my <a class="link-secondary-color" href="//daredoes.work">resume/cv</a></p>
+                      my <a class="link-secondary-color" href="//daredoes.work">resume/cv</a></p>-->
                 </div>
             </div>
             <div class="row">
@@ -139,11 +139,13 @@
                     </div>
                     {{ end }}
                     {{ with .Site.GetPage "section" "project"}}
+                    {{ $items := where .Pages.ByDate.ByWeight "Params.display" "==" true }}
+                    {{ if $items }}
                     <div class="row">
                     <p class="resume-section-header heavy secondary-color-text">//Projects</p><hr>
                         <div class="scroll-box">
                             <div class="row">
-                              {{ range where .Pages.ByDate.ByWeight "Params.display" "==" true }}
+                              {{ range $items }}
                                 <div class="col s12">
                                     <div class="card tertiary-color lighten-4" >
                                       <span class="activator"><div class="card-image  waves-effect waves-block waves-light">
@@ -171,14 +173,17 @@
                         </div>
                     </div>
                     {{ end }}
+                    {{ end }}
                     </div>
 
                 <div class="col s12 l5">
                   {{ with .Site.GetPage "section" "contact" }}
+                  {{ $items := where (sort (sort .Pages "Title") "Params.weight") "Params.display" "==" true}}
+                  {{ if $items }}
                     <div class="row">
                     <p class="resume-section-header heavy secondary-color-text">//Contact</p><hr>
                         <ul class="collection tertiary-color lighten-4 z-depth-1" style="border: 0;">
-                          {{ range $p := where (sort (sort .Pages "Title") "Params.weight") "Params.display" "==" true}}
+                          {{ range $p := $items }}
 
                             <li class="collection-item avatar tertiary-color lighten-4" style="margin-bottom: -1.75em;">
                                   <a class="contact-button" href="{{ $p.Params.external_url|safeURL }}">
@@ -190,7 +195,10 @@
                         </ul>
                     </div>
                     {{ end }}
+                    {{ end }}
                     {{ with .Site.GetPage "section" "skills"}}
+                    {{ $items := where (sort .Pages "Params.level" "desc") "Params.display" "==" true}}
+                    {{ if $items }}
                     <div class="row">
                     <p class="resume-section-header heavy secondary-color-text">//Skills</p>
                     <hr>
@@ -209,7 +217,7 @@
                         </div>
                     </div>
                     <div class="row scroll-box">
-                      {{ range where (sort .Pages "Params.level" "desc") "Params.display" "==" true }}
+                      {{ range $items }}
                         <div class="resume-bar-holder secondary-color accent-4">
                             <div class="resume-bar secondary-color" style="width: {{.Params.level}}%;">
                                 <span class=" resume-bar-text tertiary-color-text">{{.Title }}</span>
@@ -219,6 +227,7 @@
                     </div>
 
                   </div>
+                  {{ end }}
                   {{end}}
                   {{ with .Site.GetPage "section" "hobbies" }}
                   <div class="row">

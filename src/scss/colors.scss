@@ -9,7 +9,7 @@ $primary-color-dark: false;
   $primary-color-dark: darken($primary-color, 15%);
 }
 $secondary-color: color("red", "darken-2");
-$success-color: color("green", "base");
+$success-color: color("red", "base");
 $error-color: color("red", "base");
 $tertiary-color: color("grey", "lighten-3");
 
@@ -32,7 +32,7 @@ $tertiary-color: color("grey", "lighten-3");
 }
 
 .secondary-color-text {
-  @extend .light-green-text, .text-darken-4
+  @extend .red-text, .text-darken-2
 }
 
 .tertiary-color-text{
