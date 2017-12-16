@@ -262,7 +262,16 @@
             </div>
             {{ range .Pages.ByWeight }}
             <div class="col s12" id="{{ .Title|urlize }}">
-              {{ .Title }}
+              {{ with .Content }}
+              {{ . }}
+              {{ end }}
+              {{ range $album := .Params.albums }}
+              <div id="{{ $album.user_id }}" data-nanogallery2='{ "userID": "{{ $album.user_id }}", "kind": "flickr", "album": "{{ $album.album_id }}", "thumbnailHeight": "auto", "thumbnailWidth": 150, "thumbnailAlignment": "center", "thumbnailLabel" : { "display": false } }'>
+              </div>
+              {{ end }}
+              {{ range $videos := .Params.videos }}
+
+              {{ end }}
             </div>
             {{ end }}
 
