@@ -8,10 +8,10 @@ $primary-color-dark: false;
 @if not $primary-color-dark {
   $primary-color-dark: darken($primary-color, 15%);
 }
-$secondary-color: color("green", "darken-2");
+$secondary-color: color("red", "darken-2");
 $success-color: color("green", "base");
 $error-color: color("red", "base");
-$tertiary-color: color("grey", "darken-1");
+$tertiary-color: color("grey", "lighten-3");
 
   $link-color: color("grey", "darken-3");
 
@@ -20,11 +20,11 @@ $tertiary-color: color("grey", "darken-1");
 }
 
 .secondary-color {
-  @extend .green, .darken-2
+  @extend .red, .darken-2
 }
 
 .tertiary-color {
-  @extend .grey, .darken-1
+  @extend .grey, .lighten-3
 }
 
 .primary-color-text {
@@ -36,7 +36,7 @@ $tertiary-color: color("grey", "darken-1");
 }
 
 .tertiary-color-text{
-  @extend .grey-text, .text-lighten-4
+  @extend .grey-text, .text-darken-3
 }
 
 .content-text > *{
@@ -44,27 +44,20 @@ $tertiary-color: color("grey", "darken-1");
 }
 
 .link-color-disabled{
-  @extend .white-text, .text-darken-3
+  @extend .grey-text, .text-darken-3
 }
 
 .link-color{
-  @extend .white-text, .text-darken-3;
+  @extend .grey-text, .text-darken-3;
 }
 
 
-.link-color:hover{
-  color: lighten($secondary-color, 30%) !important;
+.link-color:hover, .link-color-disabled:hover, .link-secondary-color:hover{
+  color: darken($secondary-color, 10%) !important;
 }
 
-.link-color-disabled:hover{
-  color: lighten(red, 30%) !important;
-}
 
 .link-secondary-color{
   text-decoration: underline;
   color: $secondary-color;
-}
-
-.link-secondary-color:hover{
-  color: lighten($secondary-color, 15%) !important;
 }

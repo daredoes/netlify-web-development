@@ -1,6 +1,7 @@
 {{ partial "header" . }}
-
-<div id="mainContainer1" class="container-fluid resume-container scroll tertiary-color">
+<div class="background-space">
+</div>
+<div id="mainContainer1" class="container-fluid resume-container bg-body tertiary-color">
         <div class="print-only">
             <div class="" id="print-header">
                 <h1 class="">{{ .Params.first_name }} {{ .Params.last_name}}</h1>
@@ -88,7 +89,7 @@
                 <div class="col s12 l7">
                   {{ with .Content }}
                     <div class="row">
-                    <p class="resume-section-header heavy secondary-color-text">//About Me</p>
+                    <p class="resume-section-header heavy secondary-color-text">//About Me</p><hr>
                         <div id="about_text" class="context-text">
                             {{ . }}
                         </div>

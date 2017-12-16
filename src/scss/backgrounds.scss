@@ -1,3 +1,5 @@
+@import "./node_modules/materialize-css/sass/materialize.scss";
+
 .darkness{
   background-image: url(/img/patterns/darkness.png);
 }
@@ -92,3 +94,32 @@
 .bg-pixel_weave-2x{
   background-image: url(/img/patterns/pixel_weave_@2X.png);
 }
+
+.bg-nav{
+  @extend .bg-pixel_weave
+}
+
+.bg-body{
+  @extend .bg-witewall_3
+}
+
+.bg-footer{
+  @extend .bg-nav
+}
+
+.background-space{
+  height: 150px;
+  width: 100%;
+  background-image: url(/img/background.jpg);
+  background-position: 25% 40%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+}
+
+@media #{$large-and-up} {
+    .background-space{
+      height: 400px;
+      background-position: 25% 40%;
+    }
+  }

@@ -42,6 +42,12 @@ img.gallery{
 
 }
 
+@media #{$large-and-up}{
+  .brand-logo{
+    padding-left: 1em !important;
+  }
+}
+
 .nav-wrapper *{
   font-size: 1.2rem;
   font-family: "Oswald";

@@ -1,15 +1,15 @@
 </main>
-<footer class="page-footer primary-color darken-4 no-print darkness z-depth-4">
+<footer class="page-footer primary-color darken-4 no-print bg-footer z-depth-4">
   {{ with .Site.GetPage "page" "footer/main.md" }}
          <div class="container">
            <div class="row center-align link-color">
              {{ range .Params.icons }}
-             {{ partial "icon_range" (dict "Icon" . "Color" "primary-color" "TextColor"  "link-color" "BackgroundBrightness" "darken-2" "URLClass" "social-media" "IconClass" "fa-lg social-media-icon") }}
+             {{ partial "icon_range" (dict "Icon" . "Color" "primary-color" "TextColor"  "link-color" "BackgroundBrightness" "lighten-3" "URLClass" "social-media" "IconClass" "fa-lg social-media-icon") }}
              {{ end }}
 
            </div>
          </div>
-         <div class="footer-copyright">
+         <div class="footer-copyright primary-color-text">
            <div class="container">
            <span>{{ .Params.copyright }}</span>
            <span class="context-text right">{{ .Params.slogan|markdownify }}</span>

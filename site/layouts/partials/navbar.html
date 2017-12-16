@@ -1,5 +1,5 @@
 <header class="no-print">
-  <nav class="primary-color darken-4 darkness">
+  <nav class="primary-color darken-4 bg-nav">
     <div class="nav-wrapper">
       <style scoped>
       @media only screen and (max-width:992px){
@@ -14,9 +14,9 @@
         <ul class="right hide-on-med-and-down">
           {{ range $p := .Site.Menus.main }}
             {{ if $p.HasChildren }}
-            <ul id="n{{.Identifier}}" class="dropdown-content">
+            <ul id="n{{.Identifier}}" class="dropdown-content bg-nav">
               {{ range $c := $p.Children }}
-              <li><a href="{{$c.URL}}" class="primary-color-text "> {{ $c.Name }} </a></li>
+              <li class="bg-nav"><a href="{{$c.URL}}" class="primary-color-text "> {{ $c.Name }} </a></li>
               {{ end }}
             </ul>
             <li><a class="dropdown-button link-color" data-hover="true" data-beloworigin="true" href="#!" data-activates="n{{$p.Identifier}}">{{ $p.Name }}<i class="fa fa-caret-down right"></i></a></li>
