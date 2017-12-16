@@ -2,7 +2,7 @@
 title: Character Sketches
 published: true
 images:
-  - {}
+  - image: /img/uploads/dreadsmoke_2_orig.png
   - image: /img/uploads/bluewolfdude_1_orig.png
   - image: /img/uploads/teifling_orig.png
   - image: /img/uploads/rhikternewish_orig.jpg

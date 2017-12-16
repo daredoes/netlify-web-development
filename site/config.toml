@@ -38,4 +38,4 @@ title = "Sierra Jones"
 [[menu.main]]
   name = "Commissions"
   parent = "shop"
-  url = "#"
+  url = "/commission"

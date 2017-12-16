@@ -119,7 +119,7 @@ collections: # A list of collections the CMS should be able to edit
     folder: "site/content/commission"
     create: true
     fields:
-      - {label: "Title", name: "title", widget: "string", required: true, default: "Portal"}
+      - {label: "Title", name: "title", widget: "string", required: true}
       - {label: "Body", name: "body", widget: "markdown", required: false }
       - {label: "Pricing Structure", name: "pricing", widget: "markdown", required: false }
       - {label: "Display?", name: "published", widget: "boolean", default: true}

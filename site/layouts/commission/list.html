@@ -1,0 +1,57 @@
+{{ partial "header" . }}
+
+<div id="mainContainer1" class="container-fluid resume-container bg-body tertiary-color" >
+  <h3 class="center-align">{{ .Title }}</h3>
+  <div class="context-text">
+    {{ .Content }}
+  </div>
+  <hr>
+  <div class="rows">
+    {{ range $index, $p := .Pages }}
+    <div class="row">
+      {{ if modBool $index 2 }}
+      <div class="col s12 l8">
+        <div class="row">
+        <h4 class="center-align">{{ $p.Title }}</h4>
+      </div>
+        <div class="context-text">
+          {{ .Content }}
+        </div>
+      </div>
+
+      <div class="col s12 l4">
+        <div class="carousel carousel-slider">
+            {{ range $img := $p.Params.images }}
+            <a class="carousel-item" href="#"><img class="slider-img" src="{{ $img.image }}"></a>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+      {{ else }}
+      <div class="col s12 l4">
+        <div class="carousel carousel-slider">
+            {{ range $img := $p.Params.images }}
+            <a class="carousel-item" href="#"><img class="slider-img" src="{{ $img.image }}"></a>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+      <div class="col s12 l8">
+        <div class="row">
+        <h4 class="center-align">{{ $p.Title }}</h4>
+      </div>
+        <div class="context-text">
+          {{ .Content }}
+        </div>
+      </div>
+
+
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+
+</div>
+
+
+{{ partial "footer" . }}
