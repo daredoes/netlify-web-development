@@ -49,6 +49,18 @@
       {{ end }}
     </div>
     {{ end }}
+    <div class="row">
+      <h2 class="center-align underline">Request A Commission</h2>
+      <div class="row">
+        <ul class="collapsible popout" data-collapsible="accordion">
+          {{ range $index, $p := .Pages }}
+          <li>
+            <div class="collapsible-header">{{.Title}}</div>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
   </div>
 
 </div>

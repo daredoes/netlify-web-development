@@ -4,38 +4,11 @@ title = "Sierra Jones"
 
 [params]
   description = "The homepage of Daniel A.R. Evans, or Dare."
-
-[[menu.main]]
-  name = "Portfolio"
-  url = "#"
-  identifier = "portfolio"
-
-[[menu.main]]
-  name = "Video Games"
-  url = "#"
-  parent = "portfolio"
-
-[[menu.main]]
-  name = "2D Artwork"
-  url = "#"
-  parent = "portfolio"
-
-[[menu.main]]
-  name = "3D Artwork"
-  url = "#"
-  parent = "portfolio"
-
-
+  
 [[menu.main]]
   name = "Shop"
-  identifier = "shop"
-
-[[menu.main]]
-  name = "For Sale"
-  parent = "shop"
   url = "http://dracowolfie.tictail.com/"
 
 [[menu.main]]
   name = "Commissions"
-  parent = "shop"
   url = "/commission"
