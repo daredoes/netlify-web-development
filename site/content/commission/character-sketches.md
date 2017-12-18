@@ -1,11 +1,32 @@
 ---
 title: Character Artwork
-pricing: |-
-  * +$8 for sketch character headshot
+pricing: >-
+  * +$8 for sketch character headshot*
     * add torso: +$4
-  * +$15 for shaded character headshot
+  * +$15 for shaded character headshot*
     * add torso: +$4
     * add color: +$4
+  * +$20 for full shaded and detailed full color character headshot
+    * add torso: +$4
+  * +$16 for sketch character full-body*
+
+  * +$24 for shaded character full-body*
+    * add color: +$4
+  * +$36 for full shaded and detailed full color character full-body
+
+
+  Other Additions:
+
+
+  * Backgrounds
+    * Simple Colors: +$3
+    * Simple Setting: +$10
+    * Complex Setting: +$20~ (Varies)
+  * Additional Characters
+    * +50% of original price
+
+  \*Sketches and Fully-Shaded commissions may be done in \_either\_ traditional
+  or digital media. If you have a preference, please let me know beforehand.
 published: true
 images:
   - image: /img/uploads/dreadsmoke_2_orig.png
