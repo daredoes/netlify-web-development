@@ -21,8 +21,8 @@ const defaultArgs = ["-d", "../dist", "-s", "site", "-v"];
 gulp.task("hugo", (cb) => buildSite(cb));
 gulp.task("hugo-preview", (cb) => buildSite(cb, ["--buildDrafts", "--buildFuture"]));
 
-gulp.task("build", ["css", "js", "videos", "images", "hugo", "fonts", "scss"]);
-gulp.task("build-preview", ["css", "js", "videos", "images", "fonts", "hugo-preview", "scss"]);
+gulp.task("build", ["css", "js", "videos", "images", "hugo", "fonts", "scss" , "lazyload"]);
+gulp.task("build-preview", ["css", "js", "videos", "images", "fonts", "hugo-preview", "scss", "lazyload"]);
 
 gulp.task("css", () => (
   gulp.src("./src/css/*.css")
@@ -85,7 +85,13 @@ gulp.task("images", () => (
     .pipe(browserSync.stream())
 ));
 
-gulp.task("server", ["hugo", "css", "js", "videos", "images", "fonts", "scss"], () => {
+gulp.task("lazyload", () => (
+  gulp.src("./src/lazy/**/*")
+    .pipe(gulp.dest("./dist/lazy"))
+    .pipe(browserSync.stream())
+));
+
+gulp.task("server", ["hugo", "css", "js", "videos", "images", "fonts", "scss", "lazyload"], () => {
   browserSync.init({
     server: {
       baseDir: "./dist"
@@ -99,6 +105,7 @@ gulp.task("server", ["hugo", "css", "js", "videos", "images", "fonts", "scss"], 
   gulp.watch("./src/videos/**/*", ["videos"]);
   gulp.watch("./src/fonts/**/*", ["fonts"])
   gulp.watch("./site/**/*", ["hugo"]);
+  gulp.watch("./src/lazy/**/*", ["lazyload"]);
 });
 
 function buildSite(cb, options) {

@@ -48,15 +48,17 @@
 <script src="/js/jquery.min.js"></script>
 <script src="/js/materialize.min.js"></script>
 <script src="/js/jquery.nanogallery2.min.js"></script>
+<script src="/js/lity.min.js"></script>
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>
 $(document).ready(function() {
    $(".button-collapse").sideNav();
    $('.slider').slider();
    $('.carousel.carousel-slider').carousel({
-     fullWidth: true,
      indicators: true,
-     duration: 200
+     duration: 200,
+     padding: 50,
+     dist: -200
    });
    $(".contact-modal").modal();
    $(".default-children *").addClass("browser-default");

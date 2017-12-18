@@ -22,7 +22,7 @@
       <div class="col s12 l4">
         <div class="carousel carousel-slider">
             {{ range $img := $p.Params.images }}
-            <a class="carousel-item" href="#!"><img class="slider-img" src="{{ $img.image }}"></a>
+            <a class="carousel-item" data-lity href="{{ $img.image }}"><img class="slider-img" src="{{ $img.image }}"></a>
             {{ end }}
           </ul>
         </div>
@@ -31,7 +31,7 @@
       <div class="col s12 l4">
         <div class="carousel carousel-slider">
             {{ range $img := $p.Params.images }}
-            <a class="carousel-item" href="#!"><img class="slider-img" src="{{ $img.image }}"></a>
+            <a class="carousel-item" data-lity href="{{ $img.image }}"><img class="slider-img" src="{{ $img.image }}"></a>
             {{ end }}
           </ul>
         </div>
