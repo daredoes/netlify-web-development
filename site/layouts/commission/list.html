@@ -71,22 +71,13 @@
           </div>
         </div>
         <div class="modal-footer">
-          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+          <a href="#contact-modal" class="modal-trigger modal-action modal-close waves-effect waves-green btn-flat ">Request A Commission</a>
         </div>
       </div>
 
-      </div>
+
       {{ end }}
-      <div class="row">
-        <ul class="collapsible popout" data-collapsible="accordion">
-          {{ range $index, $p := where .Pages "Params.pricing" "!=" nil }}
-          <li>
-            <div class="collapsible-header bg-nav">{{.Title}}</div>
-            <div class="collapsible-body bg-body"> <div class="context-text">{{ .Params.pricing|markdownify }}</div></div>
-          </li>
-          {{ end }}
-        </ul>
-      </div>
+
     </div>
   </div>
 

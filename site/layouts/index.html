@@ -31,7 +31,7 @@
             {{ range sort (sort $pages "Params.graduation_date" "desc") "Params.weight" }}
             <div class="print-header-items">
                         <h6 class="title">{{ .Title }} <span class="right">{{ .Params.display_date }}</span></h6>
-                        <div class="body condensed context-text">{{ .Content }}</div>
+                        <div class="body condensed context-text default-children">{{ .Content }}</div>
             </div>
             {{ end }}
             {{ end }}
@@ -45,7 +45,7 @@
             <div class="print-header-items">
                         <h6 class="title">{{ .Params.name }} - {{ .Title}} <span class="right">{{ .Params.display_date}}</span></h6>
 
-                        <div class="body condensed context-text">{{ .Content }}</div>
+                        <div class="body condensed context-text default-children">{{ .Content }}</div>
             </div>
             {{ end }}
             {{ end }}

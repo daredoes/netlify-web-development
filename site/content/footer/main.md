@@ -20,5 +20,5 @@ icons:
     url: http://linkedin.com/in/Dracowolfie
   - icon: envelope
     title: Print Me!
-    url: mailto:dracowolfie@gmail.com
+    url: "#contact-modal"
 ---
