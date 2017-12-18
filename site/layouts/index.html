@@ -172,23 +172,29 @@
                               {{ range $items }}
                                 <div class="col s12">
                                     <div class="card tertiary-color lighten-4" >
-                                      <span class="activator"><div class="card-image  waves-effect waves-block waves-light">
-                                        <img class="activator tertiary-color lighten-4 darkness reverseScrollSlow" style="margin-bottom: 0;" src="{{ .Params.image| default "/img/project.png" }}">
+                                      <a href="#{{ .Title|urlize }}" class="link-color modal-trigger"><div class="card-image  waves-effect waves-block waves-light">
+                                        <img class="tertiary-color lighten-4 darkness reverseScrollSlow" style="margin-bottom: 0;" src="{{ .Params.image| default "/img/project.png" }}">
                                       </div>
-                                    <a href="{{ .URL }}" class="link-color"><div class="card-action center-align bg-nav">
+                                    <div class="card-action center-align bg-nav">
                                       <span class='link-color'>
                                         Learn More about {{ .Title }}
                                       </span>
-                                    </div></a></span>
-                                      <div class="card-reveal">
-
-                                        <span class="card-title secondary-color-text">{{ .Title }}<i class="fa fa-times-circle-o right"></i></span>
-
-                                        <div class="context-text">
-                                          {{ .Summary }}
+                                    </div></a>
+                                    <div class="modal project-modal modal-fixed-footer" id="{{ .Title|urlize }}">
+                                      <div class="modal-content">
+                                        <h3 class="center-align">{{ .Title }}</h3>
+                                        <div class="content-text default-children">
+                                          {{ .Content }}
                                         </div>
-
+                                        {{ range $album := .Params.albums }}
+                                        <div id="{{ $album.user_id }}" data-nanogallery2='{ "userID": "{{ $album.user_id }}", "kind": "flickr", "album": "{{ $album.album_id }}", "thumbnailHeight": "auto", "thumbnailWidth": 150, "thumbnailAlignment": "center", "thumbnailLabel" : { "display": false } }'>
+                                        </div>
+                                        {{ end }}
                                       </div>
+                                      <div class="modal-footer">
+                                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Close</a>
+                                      </div>
+                                    </div>
 
                                     </div>
                                 </div>
@@ -302,3 +308,7 @@
   }
 </script>
 {{ partial "footer" . }}
+
+{{ define "jquery" }}
+$(".project-modal").modal();
+{{ end }}
