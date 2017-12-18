@@ -1,5 +1,13 @@
 ---
 title: Event Graphic Design
+pricing: |-
+  Please email me with:
+
+  * Desired size/dimensions
+  * Any relevant event information
+    * Title, times, dates, location, sponsors, entertainment acts, etc. Anything you want displayed.
+  * Your PayPal email
+  * Any extra information is always helpful! <3
 published: true
 images:
   - image: /img/uploads/lifeposterpng_orig.png
