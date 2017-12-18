@@ -27,6 +27,9 @@
 $(document).ready(function() {
    $(".button-collapse").sideNav();
    $('.slider').slider();
+   $(".default-children *").addClass("browser-default");
+   {{ block "jquery" . }}
+   {{ end}}
 });
 </script>
 </body>
