@@ -50,12 +50,38 @@
     </div>
     {{ end }}
     <div class="row">
-      <h2 class="center-align underline">Request A Commission</h2>
+      <h2 class="center-align underline">Pricing Information</h2>
+      <div class="row">
+        <div class="col s12">
+          <ul class="tabs tabs-fixed-width bg-nav">
+            {{ range where .Pages "Params.pricing" "!=" nil }}
+            <li class="tab">
+              <a href="#{{ .Title|urlize }}" class="link-color modal-trigger waves-effect waves-light">{{ .Title }}</a>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+      {{ range where .Pages "Params.pricing" "!=" nil }}
+      <div class="modal pricing-modal modal-fixed-footer" id="{{ .Title|urlize }}">
+        <div class="modal-content">
+          <div class="content-text">
+            {{ .Params.pricing|markdownify}}
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+        </div>
+      </div>
+
+      </div>
+      {{ end }}
       <div class="row">
         <ul class="collapsible popout" data-collapsible="accordion">
-          {{ range $index, $p := .Pages }}
+          {{ range $index, $p := where .Pages "Params.pricing" "!=" nil }}
           <li>
-            <div class="collapsible-header">{{.Title}}</div>
+            <div class="collapsible-header bg-nav">{{.Title}}</div>
+            <div class="collapsible-body bg-body"> <div class="context-text">{{ .Params.pricing|markdownify }}</div></div>
           </li>
           {{ end }}
         </ul>
@@ -67,3 +93,9 @@
 
 
 {{ partial "footer" . }}
+
+{{ define "jquery" }}
+$(".pricing-modal").modal({
+  
+});
+{{ end }}
