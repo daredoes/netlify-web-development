@@ -61,6 +61,9 @@ nav .button-collapse i{
   font-family: "Oswald", Arial;
 }
 
+.indicator{
+  @extend .secondary-color
+}
 
 .contact-button{
   :hover{
