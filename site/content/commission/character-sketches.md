@@ -1,14 +1,11 @@
 ---
 title: Character Artwork
-pricing: |
-  \+ $8 for sketch character headshot*
-
-  * add torso: +$4
-
-  \+ $15 for shaded character headshot*
-
-  * add torso: +$4
-  * add color: +$4
+pricing: |-
+  * +$8 for sketch character headshot
+    * add torso: +$4
+  * +$15 for shaded character headshot
+    * add torso: +$4
+    * add color: +$4
 published: true
 images:
   - image: /img/uploads/dreadsmoke_2_orig.png
