@@ -175,3 +175,10 @@ collections: # A list of collections the CMS should be able to edit
           - {label: "Album Title", name: "title", widget: "string", required: false}
           - {label: "Flickr User ID", name: "user_id", widget: "string", default: "144498668@N03", required: false}
           - {label: "Flickr Album ID", name: "album_id", widget: "string"}
+      - name: "images"
+        label: "Image"
+        widget: "list"
+        required: true
+        fields:
+          - {label: "Title", name: "title", widget: "string", required: false}
+          - {label: "Image", name: "image", widget: "image", required: true}

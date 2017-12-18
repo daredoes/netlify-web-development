@@ -186,6 +186,12 @@
                                         <div class="content-text default-children">
                                           {{ .Content }}
                                         </div>
+                                        <div class="carousel carousel-slider">
+                                            {{ range $img := .Params.images }}
+                                            <a class="carousel-item" data-lity href="{{ $img.image }}"><img class="slider-img" src="{{ $img.image }}"></a>
+                                            {{ end }}
+                                          </ul>
+                                        </div>
 
                                       </div>
                                       <div class="modal-footer">
