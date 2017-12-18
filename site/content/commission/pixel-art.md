@@ -1,5 +1,19 @@
 ---
 title: Pixel Art
+pricing: >-
+  Please email me with:
+
+
+  * Name of the character(s)
+
+  * A visual reference/detailed physical description (the more reference the
+  merrier! Please provide the URL to an image.)
+
+  * Any personality traits of the character
+
+  * Your PayPal email
+
+  * Any extra information is always helpful! <3
 published: true
 images:
   - image: /img/uploads/pixeldr0_orig.png
