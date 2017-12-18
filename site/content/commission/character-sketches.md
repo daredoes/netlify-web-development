@@ -27,6 +27,21 @@ pricing: >-
 
   \*Sketches and Fully-Shaded commissions may be done in \_either\_ traditional
   or digital media. If you have a preference, please let me know beforehand.
+
+
+  Please email me with:
+
+
+  * Name of the character(s)
+
+  * A visual reference/detailed physical description (the more reference the
+  merrier! Please provide the URL to an image.)
+
+  * Any personality traits of the character
+
+  * Your PayPal email
+
+  * Any extra information is always helpful! <3
 published: true
 images:
   - image: /img/uploads/dreadsmoke_2_orig.png
