@@ -7,6 +7,11 @@ display: true
 albums:
   - album_id: '72157688482001662'
     user_id: 154835180@N04
+images:
+  - image: /img/uploads/5739844_orig.png
+  - image: /img/uploads/1099324_orig.png
+  - image: /img/uploads/6457655_orig.png
+  - image: /img/uploads/7856233_orig.png
 ---
 Here is another game I made in high school, entitled_Zorua Saves the World!
 
