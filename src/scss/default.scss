@@ -62,12 +62,6 @@ nav .button-collapse i{
 }
 
 
-.content-text ul > li {
-  list-style-type: square !important;
-  list-style-position: inside;
-
-}
-
 .contact-button{
   :hover{
     @extend .secondary-color-text;
