@@ -65,6 +65,7 @@
       {{ range where .Pages "Params.pricing" "!=" nil }}
       <div class="modal pricing-modal modal-fixed-footer" id="{{ .Title|urlize }}">
         <div class="modal-content">
+          <h3 class="center-align">{{ .Title }}</h3>
           <div class="content-text">
             {{ .Params.pricing|markdownify}}
           </div>
@@ -96,6 +97,6 @@
 
 {{ define "jquery" }}
 $(".pricing-modal").modal({
-  
+
 });
 {{ end }}
