@@ -38,7 +38,7 @@ $tertiary-color: color("grey", "darken-1");
 }
 
 .tertiary-color-text{
-  @extend .grey-text, .text-lighten-4
+  @extend .grey-text, .text-darken-3
 }
 
 .content-text > *{
@@ -46,11 +46,11 @@ $tertiary-color: color("grey", "darken-1");
 }
 
 .link-color-disabled{
-  @extend .white-text, .text-darken-3
+  @extend .grey-text, .text-darken-3
 }
 
 .link-color{
-  @extend .white-text, .text-darken-3;
+  @extend .grey-text, .text-darken-3;
 }
 
 

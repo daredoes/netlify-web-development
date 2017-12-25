@@ -1,6 +1,6 @@
 ---
 title: main
 copyright: © 2017 Daniel Alexander Ross Evans
-slogan: Where Sharks Meet Space
+slogan: A Space For Sharks To Sin
 
 ---
