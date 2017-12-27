@@ -6,7 +6,7 @@ weight: '50'
 printable: true
 display: true
 ---
-_Expected B.S. Software Engineering_
+_B.S. Software Engineering_
 
 {{< no_print >}}
 _Transferred in after 2 years at SJSU_
