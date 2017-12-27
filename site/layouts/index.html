@@ -1,69 +1,70 @@
 {{ partial "header" . }}
+<div class="print-only">
+    <div class="" id="print-header">
+        <h1 class="">{{ .Params.first_name }} {{ .Params.last_name}}</h1>
+        <div style="margin-top: -1.5rem; margin-bottom: -0.5rem;" class="print-header-items print-info">
+            <p class="condensed">
+              {{ with .Site.GetPage "section" "contact"}}
+              {{ $pages := where (.Pages) ".Params.printable" "==" true }}
+              {{ range $index,$p := sort (sort $pages "Title") "Params.weight" }}
+                 {{ if ne $index 0}}| {{end}}{{ $p.Summary }}
+              {{ end }}
+              {{ end }}
+            </p>
+        </div>
+    </div>
+
+    {{ with .Content }}
+    <hr class="condensed">
+    <div class="body">
+       {{ . }}
+    </div>
+    {{ end }}
+    {{ with .Site.GetPage "section" "education" }}
+    {{ $pages := where (.Pages) ".Params.printable" "==" true }}
+    {{ if $pages }}
+    <h5 class="print-header">Education</h5>
+    <hr class="half-condensed">
+    {{ range sort (sort $pages "Params.graduation_date" "desc") "Params.weight" }}
+    <div class="print-header-items">
+                <h6 class="title">{{ .Title }} <span class="right">{{ .Params.display_date }}</span></h6>
+                <div class="body condensed context-text default-children">{{ .Content }}</div>
+    </div>
+    {{ end }}
+    {{ end }}
+    {{ end }}
+    {{ with .Site.GetPage "section" "experience" }}
+    {{ $pages := where (.Pages) ".Params.printable" "==" true }}
+    {{ if $pages }}
+    <h5 class="print-header">Experiences</h5>
+    <hr class="half-condensed">
+    {{ range sort $pages "Params.weight" }}
+    <div class="print-header-items">
+                <h6 class="title">{{ .Params.name }} - {{ .Title}} <span class="right">{{ .Params.display_date}}</span></h6>
+
+                <div class="body condensed context-text default-children">{{ .Content }}</div>
+    </div>
+    {{ end }}
+    {{ end }}
+    {{ end }}
+    {{ with .Site.GetPage "section" "skills"}}
+    {{ $pages := where (.Pages.ByWeight) ".Params.printable" "==" true }}
+    {{ if $pages }}
+    <div>
+    <h5 class="print-header">Skills</h5>
+            <hr class="half-condensed">
+        <div class="body row">
+          {{ range $index, $p := sort $pages "Params.level" "desc" }}
+            {{ if ne $index 0 }}<span> • </span>{{end}}<span>{{ $p.Title }}</span>
+            {{end}}
+        </div>
+    </div>
+    {{ end }}
+    {{ end }}
+</div>
 
 <div id="mainContainer1" class="container-fluid resume-container scroll bg-stardust tertiary-color">
-        <div class="print-only">
-            <div class="" id="print-header">
-                <h1 class="">{{ .Params.first_name }} {{ .Params.last_name}}</h1>
-                <div style="margin-top: -1.5rem; margin-bottom: -0.5rem;" class="print-header-items print-info">
-                    <p class="condensed">
-                      {{ with .Site.GetPage "section" "contact"}}
-                      {{ $pages := where (.Pages) ".Params.printable" "==" true }}
-                      {{ range $index,$p := sort (sort $pages "Title") "Params.weight" }}
-                         {{ if ne $index 0}}| {{end}}{{ $p.Summary }}
-                      {{ end }}
-                      {{ end }}
-                    </p>
-                </div>
-            </div>
 
-            {{ with .Content }}
-            <hr class="condensed">
-            <div class="body">
-               {{ . }}
-            </div>
-            {{ end }}
-            {{ with .Site.GetPage "section" "education" }}
-            {{ $pages := where (.Pages) ".Params.printable" "==" true }}
-            {{ if $pages }}
-            <h5 class="print-header">Education</h5>
-            <hr class="half-condensed">
-            {{ range sort (sort $pages "Params.graduation_date" "desc") "Params.weight" }}
-            <div class="print-header-items">
-                        <h6 class="title">{{ .Title }} <span class="right">{{ .Params.display_date }}</span></h6>
-                        <div class="body condensed context-text default-children">{{ .Content }}</div>
-            </div>
-            {{ end }}
-            {{ end }}
-            {{ end }}
-            {{ with .Site.GetPage "section" "experience" }}
-            {{ $pages := where (.Pages) ".Params.printable" "==" true }}
-            {{ if $pages }}
-            <h5 class="print-header">Experiences</h5>
-            <hr class="half-condensed">
-            {{ range sort $pages "Params.weight" }}
-            <div class="print-header-items">
-                        <h6 class="title">{{ .Params.name }} - {{ .Title}} <span class="right">{{ .Params.display_date}}</span></h6>
-
-                        <div class="body condensed context-text default-children">{{ .Content }}</div>
-            </div>
-            {{ end }}
-            {{ end }}
-            {{ end }}
-            {{ with .Site.GetPage "section" "skills"}}
-            {{ $pages := where (.Pages.ByWeight) ".Params.printable" "==" true }}
-            {{ if $pages }}
-            <div>
-            <h5 class="print-header">Skills</h5>
-                    <hr class="half-condensed">
-                <div class="body row">
-                  {{ range $index, $p := sort $pages "Params.level" "desc" }}
-                    {{ if ne $index 0 }}<span> • </span>{{end}}<span>{{ $p.Title }}</span>
-                    {{end}}
-                </div>
-            </div>
-            {{ end }}
-            {{ end }}
-        </div>
 
 
         <!--
@@ -123,7 +124,7 @@
                               {{ range where .Pages.ByDate.ByWeight "Params.display" "==" true }}
                                 <div class="col s12">
                                     <div class="card tertiary-color lighten-4">
-                                        <div class="card-content black-text content-text">
+                                        <div class="card-content black-text content-text default-children">
                                             <span class="card-title"><a href="{{ .Params.external_url|safeURL }}" class="link-secondary-color">{{.Params.name }} - {{ .Title }}</a></span>
                                             {{ .Content }}
                                         </div>
@@ -145,25 +146,31 @@
                               {{ range where .Pages.ByDate.ByWeight "Params.display" "==" true }}
                                 <div class="col s12">
                                     <div class="card tertiary-color lighten-4" >
-                                      <span class="activator"><div class="card-image  waves-effect waves-block waves-light">
-                                        <img class="activator tertiary-color lighten-4 darkness reverseScrollSlow" style="margin-bottom: 0;" src="{{ .Params.image| default "/img/project_transparent.png" }}">
+                                      <a class="modal-trigger" href="#{{ .Title|urlize }}"><div class="card-image  waves-effect waves-block waves-light">
+                                        <img class="tertiary-color lighten-4 darkness reverseScrollSlow" style="margin-bottom: 0;" src="{{ .Params.image| default "/img/project_transparent.png" }}">
                                       </div>
-                                    <a href="{{ .URL }}" class="link-color"><div class="card-action center-align secondary-color">
+                                    <a href="#{{ .Title|urlize }}" class="link-color modal-trigger"><div class="card-action center-align secondary-color">
                                       <span class='link-color'>
                                         Learn More
                                       </span>
-                                    </div></a></span>
-                                      <div class="card-reveal">
-
-                                        <span class="card-title secondary-color-text">{{ .Title }}<i class="fa fa-times-circle-o right"></i></span>
-
-                                        <div class="context-text">
-                                          {{ .Summary }}
-                                        </div>
-
-                                      </div>
+                                    </div></a></a>
 
                                     </div>
+                                </div>
+                                <div id="{{ .Title|urlize }}" class="modal modal-fixed-footer">
+                                  <div class="modal-header">
+
+                                  </div>
+                                  <div class="modal-content">
+
+                                    <div class="context-text default-children">
+                                      {{ .Content }}
+                                    </div>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <span class="primary-color-text left btn-flat">{{ .Title }}</span>
+                                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+                                  </div>
                                 </div>
                                 {{ end }}
                             </div>
