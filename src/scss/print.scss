@@ -19,7 +19,7 @@
 
     .context-text > ul > li{
       list-style-type: square;
-      list-style-position: inside;
+      list-style-position: outside !important;
     }
 
     .print-only > * > h1{
