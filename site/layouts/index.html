@@ -12,7 +12,10 @@
               {{ end }}
             </p>
         </div>
+
     </div>
+    <hr>
+
 
     {{ with .Content }}
     <hr class="condensed">
@@ -36,7 +39,7 @@
     {{ with .Site.GetPage "section" "experience" }}
     {{ $pages := where (.Pages) ".Params.printable" "==" true }}
     {{ if $pages }}
-    <h5 class="print-header">Experiences</h5>
+    <h5 class="print-header">Experience</h5>
     <hr class="half-condensed">
     {{ range sort $pages "Params.weight" }}
     <div class="print-header-items">
