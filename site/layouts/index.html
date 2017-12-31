@@ -50,15 +50,15 @@
     {{ end }}
     {{ end }}
     {{ end }}
-    {{ with .Site.GetPage "section" "skills"}}
-    {{ $pages := where (.Pages.ByWeight) ".Params.printable" "==" true }}
+    {{ with .Site.GetPage "page" "pages/skills.md"}}
+    {{ $pages := where (sort .Params.skill "weight" "desc") "printable" "==" true }}
     {{ if $pages }}
     <div>
     <h5 class="print-header">Skills</h5>
             <hr class="half-condensed">
         <div class="body row">
-          {{ range $index, $p := sort $pages "Params.level" "desc" }}
-            {{ if ne $index 0 }}<span> • </span>{{end}}<span>{{ $p.Title }}</span>
+          {{ range $index, $p := sort $pages "level" "desc" }}
+            {{ if ne $index 0 }}<span> • </span>{{end}}<span>{{ $p.title }}</span>
             {{end}}
         </div>
     </div>
@@ -199,9 +199,9 @@
                         </ul>
                     </div>
                     {{ end }}
-                    {{ with .Site.GetPage "section" "skills"}}
+                    {{ with .Site.GetPage "page" "pages/skills.md"}}
                     <div class="row">
-                    <p class="resume-section-header heavy secondary-color-text">//Skills</p>
+                    <p class="resume-section-header heavy secondary-color-text">//{{ .Title }}</p>
                     <hr>
                     <div class="row resume-bar-level-text primary-color-text text-darken-2">
                         <div class="col s3 center" style="border-top: double; border-left: double">
@@ -218,10 +218,10 @@
                         </div>
                     </div>
                     <div class="row scroll-box">
-                      {{ range where (sort .Pages "Params.level" "desc") "Params.display" "==" true }}
+                      {{ range where (sort .Params.skill "level" "desc") "display" "==" true }}
                         <div class="resume-bar-holder secondary-color accent-4">
-                            <div class="resume-bar secondary-color" style="width: {{.Params.level}}%;">
-                                <span class=" resume-bar-text tertiary-color-text">{{.Title }}</span>
+                            <div class="resume-bar secondary-color" style="width: {{.level}}%;">
+                                <span class=" resume-bar-text tertiary-color-text">{{.title }}</span>
                             </div>
                         </div>
                         {{ end }}
