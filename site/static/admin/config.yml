@@ -10,12 +10,115 @@ public_folder: "img/uploads"
 collections: # A list of collections the CMS should be able to edit
   - name: "pages"
     label: "Pages"
-    folder: "site/content/pages"
-    create: true
-    fields:
-      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "URL", name: "url", widget: "string"}
+    files:
+      - label: "Skills Page"
+        name: "skills"
+        file: "site/content/skills.yml"
+        fields:
+          - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+          - {label: "Body", name: "body", widget: "markdown", required: "false"}
+          - name: "skill"
+            widget: "list"
+            label: "Skill"
+            required: false
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Level", name: "level", widget: "number", min: "0", max: "100", default: "50"}
+              - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
+              - {label: "Printable?", name: "printable", widget: "boolean", default: true}
+              - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
+      - label: "Contacts Page"
+        name: "contacts"
+        file: "site/content/contacts.yml"
+        fields:
+          - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+          - {label: "Body", name: "body", widget: "markdown", required: "false"}
+          - name: "contact"
+            widget: "list"
+            label: "Contact Item"
+            required: false
+            fields:
+            - {label: "Title", name: "title", widget: "string"}
+            - {label: "Body", name: "body", widget: "markdown"}
+            - {label: "URL", name: "external_url", widget: "string"}
+            - {label: "Font Awesome Icon", name: "icon", widget: "string", required: false, default: "fa-compass"}
+            - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
+            - {label: "Printable?", name: "printable", widget: "boolean", default: true}
+            - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
+            - {label: "Published?", name: "published", widget: "boolean", default: false}
+      - label: "Hobbies Page"
+        name: "hobbies"
+        file: "site/content/hobbies.yml"
+        fields:
+          - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+          - {label: "Body", name: "body", widget: "markdown", required: "false"}
+          - name: "hobby"
+            widget: "list"
+            label: "Hobby"
+            required: false
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Font Awesome Icon", name: "icon", widget: "string", default: "fa-heart", required: false, tagname: "i"}
+              - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
+              - {label: "Printable?", name: "printable", widget: "boolean", default: true}
+              - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
+      - label: "Experiences Page"
+        name: "experiences"
+        file: "site/content/experiences.yml"
+        fields:
+          - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+          - {label: "Body", name: "body", widget: "markdown", required: "false"}
+          - name: "experience"
+            widget: "list"
+            label: "Experience Item"
+            required: false
+            fields:
+              - {label: "Company Name", name: "name", widget: "string"}
+              - {label: "Job Title", name: "title", widget: "string"}
+              - {label: "Body", name: "body", widget: "markdown"}
+              - {label: "URL", name: "external_url", widget: "string"}
+              - {label: "Start Date", name: "date", widget: "datetime"}
+              - {label: "Date", name: "display_date", widget: "string"}
+              - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
+              - {label: "Printable?", name: "printable", widget: "boolean", default: true}
+              - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
+      - label: "Education Page"
+        name: "education"
+        file: "site/content/education.yml"
+        fields:
+          - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+          - {label: "Body", name: "body", widget: "markdown", required: "false"}
+          - name: "item"
+            widget: "list"
+            label: "Education Item"
+            required: false
+            fields:
+              - {label: "Company Name", name: "name", widget: "string"}
+              - {label: "Job Title", name: "title", widget: "string"}
+              - {label: "Body", name: "body", widget: "markdown"}
+              - {label: "URL", name: "external_url", widget: "string"}
+              - {label: "Start Date", name: "date", widget: "datetime"}
+              - {label: "Date", name: "display_date", widget: "string"}
+              - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
+              - {label: "Printable?", name: "printable", widget: "boolean", default: true}
+              - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
+      - label: "Footer"
+        name: "footer"
+        file: "site/content/footer.yml"
+        fields:
+          - {label: "Title", name: "title", widget: "string", required: true, default: "main"}
+          - {label: "Copyright Info", name: "copyright", widget: "string", required: false}
+          - {label: "Footer Slogan", name: "slogan", widget: "string", required: false}
+          - name: "icons"
+            label: "Social Media Icon"
+            widget: "list"
+            required: false
+            fields:
+              - {label: "Service Name", name: "title", widget: "string", required: false}
+              - {label: "Service URL", name: "url", widget: "string", required: false}
+              - {label: "Service Icon Available Here: https://material.io/icons/", name: "icon", widget: "string", required: false, default: "explore"}
+              - {label: "On Click", name: "onclick", widget: "markdown", required: false}
+
 
   - name: "index"
     label: "Homepage"
