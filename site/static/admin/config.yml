@@ -13,7 +13,7 @@ collections: # A list of collections the CMS should be able to edit
     files:
       - label: "Skills Page"
         name: "skills"
-        file: "site/content/pages/skills.yml"
+        file: "site/content/pages/skills.md"
         fields:
           - {label: "Title", name: "title", widget: "string", tagname: "h1"}
           - {label: "Body", name: "body", widget: "markdown", required: "false"}
@@ -29,7 +29,7 @@ collections: # A list of collections the CMS should be able to edit
               - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
       - label: "Contacts Page"
         name: "contacts"
-        file: "site/content/pages/contacts.yml"
+        file: "site/content/pages/contacts.md"
         fields:
           - {label: "Title", name: "title", widget: "string", tagname: "h1"}
           - {label: "Body", name: "body", widget: "markdown", required: "false"}
@@ -48,7 +48,7 @@ collections: # A list of collections the CMS should be able to edit
             - {label: "Published?", name: "published", widget: "boolean", default: false}
       - label: "Hobbies Page"
         name: "hobbies"
-        file: "site/content/pages/hobbies.yml"
+        file: "site/content/pages/hobbies.md"
         fields:
           - {label: "Title", name: "title", widget: "string", tagname: "h1"}
           - {label: "Body", name: "body", widget: "markdown", required: "false"}
@@ -64,7 +64,7 @@ collections: # A list of collections the CMS should be able to edit
               - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
       - label: "Experiences Page"
         name: "experiences"
-        file: "site/content/pages/experiences.yml"
+        file: "site/content/pages/experiences.md"
         fields:
           - {label: "Title", name: "title", widget: "string", tagname: "h1"}
           - {label: "Body", name: "body", widget: "markdown", required: "false"}
@@ -84,7 +84,7 @@ collections: # A list of collections the CMS should be able to edit
               - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
       - label: "Education Page"
         name: "education"
-        file: "site/content/pages/education.yml"
+        file: "site/content/pages/education.md"
         fields:
           - {label: "Title", name: "title", widget: "string", tagname: "h1"}
           - {label: "Body", name: "body", widget: "markdown", required: "false"}
@@ -104,7 +104,7 @@ collections: # A list of collections the CMS should be able to edit
               - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
       - label: "Footer"
         name: "footer"
-        file: "site/content/pages/footer.yml"
+        file: "site/content/pages/footer.md"
         fields:
           - {label: "Title", name: "title", widget: "string", required: true, default: "main"}
           - {label: "Copyright Info", name: "copyright", widget: "string", required: false}
@@ -197,33 +197,6 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
       - {label: "Printable?", name: "printable", widget: "boolean", default: true}
       - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
-
-
-  - name: "footer"
-    label: "Footer Details"
-    folder: "site/content/footer"
-    create: false
-    fields:
-      - {label: "Title", name: "title", widget: "string", required: true, default: "main"}
-      - {label: "Copyright Info", name: "copyright", widget: "string", required: false}
-      - {label: "Footer Slogan", name: "slogan", widget: "string", required: false}
-      - name: "icons"
-        label: "Social Media Icon"
-        widget: "list"
-        required: false
-        fields:
-          - {label: "Service Name", name: "title", widget: "string", required: false}
-          - {label: "Service URL", name: "url", widget: "string", required: false}
-          - {label: "Service Icon Available Here: https://material.io/icons/", name: "icon", widget: "string", required: false, default: "explore"}
-          - {label: "On Click", name: "onclick", widget: "markdown", required: false}
-
-  - name: "portal"
-    label: "Redirect Portal"
-    folder: "site/content/portal"
-    create: true
-    fields:
-      - {label: "Title", name: "title", widget: "string", required: true, default: "Portal"}
-      - name: ""
 
   - name: "project"
     label: "Projects"
