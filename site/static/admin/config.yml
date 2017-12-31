@@ -13,7 +13,7 @@ collections: # A list of collections the CMS should be able to edit
     files:
       - label: "Skills Page"
         name: "skills"
-        file: "site/content/pages/skills.md"
+        file: "site/content/pages/skills.yml"
         fields:
           - {label: "Title", name: "title", widget: "string", tagname: "h1"}
           - {label: "Body", name: "body", widget: "markdown", required: "false"}
@@ -29,7 +29,7 @@ collections: # A list of collections the CMS should be able to edit
               - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
       - label: "Contacts Page"
         name: "contacts"
-        file: "site/content/pages/contacts.md"
+        file: "site/content/pages/contacts.yml"
         fields:
           - {label: "Title", name: "title", widget: "string", tagname: "h1"}
           - {label: "Body", name: "body", widget: "markdown", required: "false"}
@@ -48,7 +48,7 @@ collections: # A list of collections the CMS should be able to edit
             - {label: "Published?", name: "published", widget: "boolean", default: false}
       - label: "Hobbies Page"
         name: "hobbies"
-        file: "site/content/pages/hobbies.md"
+        file: "site/content/pages/hobbies.yml"
         fields:
           - {label: "Title", name: "title", widget: "string", tagname: "h1"}
           - {label: "Body", name: "body", widget: "markdown", required: "false"}
@@ -64,7 +64,7 @@ collections: # A list of collections the CMS should be able to edit
               - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
       - label: "Experiences Page"
         name: "experiences"
-        file: "site/content/pages/experiences.md"
+        file: "site/content/pages/experiences.yml"
         fields:
           - {label: "Title", name: "title", widget: "string", tagname: "h1"}
           - {label: "Body", name: "body", widget: "markdown", required: "false"}
@@ -84,7 +84,7 @@ collections: # A list of collections the CMS should be able to edit
               - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
       - label: "Education Page"
         name: "education"
-        file: "site/content/pages/education.md"
+        file: "site/content/pages/education.yml"
         fields:
           - {label: "Title", name: "title", widget: "string", tagname: "h1"}
           - {label: "Body", name: "body", widget: "markdown", required: "false"}
@@ -104,7 +104,7 @@ collections: # A list of collections the CMS should be able to edit
               - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
       - label: "Footer"
         name: "footer"
-        file: "site/content/pages/footer.md"
+        file: "site/content/pages/footer.yml"
         fields:
           - {label: "Title", name: "title", widget: "string", required: true, default: "main"}
           - {label: "Copyright Info", name: "copyright", widget: "string", required: false}
