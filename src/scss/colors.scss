@@ -13,18 +13,18 @@ $success-color: color("green", "base");
 $error-color: color("red", "base");
 $tertiary-color: color("grey", "darken-1");
 
-  $link-color: color("grey", "darken-3");
+  $link-color: color("grey", "lighten-3");
 
 .primary-color {
-  @extend .grey, .darken-4
+  @extend .red, .darken-4
 }
 
 .secondary-color {
-  @extend .green, .darken-2
+  @extend .yellow, .darken-2
 }
 
 .tertiary-color {
-  @extend .grey, .darken-1
+  @extend .amber, .lighten-3
 }
 
 .primary-color-text {
@@ -32,11 +32,11 @@ $tertiary-color: color("grey", "darken-1");
 }
 
 .secondary-color-text {
-  @extend .light-green-text, .text-darken-4
+  @extend .light-blue-text, .text-darken-4
 }
 
 .tertiary-color-text{
-  @extend .grey-text, .text-lighten-4
+  @extend .light-blue-text, .text-lighten-2
 }
 
 .content-text > *{
@@ -44,11 +44,11 @@ $tertiary-color: color("grey", "darken-1");
 }
 
 .link-color-disabled{
-  @extend .white-text, .text-darken-3
+  @extend .grey-text, .text-lighten-3
 }
 
 .link-color{
-  @extend .white-text, .text-darken-3;
+  @extend .grey-text, .text-lighten-3;
 }
 
 
@@ -61,7 +61,6 @@ $tertiary-color: color("grey", "darken-1");
 }
 
 .link-secondary-color{
-  text-decoration: underline;
   color: $secondary-color;
 }
 

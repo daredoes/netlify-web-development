@@ -1,11 +1,12 @@
 {{ partial "header" . }}
 
-<div class="container-fluid resume-container {{ .Section|urlize }}">
-  <div class="card tertiary-color lighten-4 no-print resume">
-    <div class="row">
-  {{ .Title }}
-</div>
-</div>
+<div class="container {{ .Title }} {{ .Section | urlize }}">
+  <h1 class="secondary-color-text">{{ .Title }}</h1>
+  {{ if .Data.Pages }}
+  {{ partial "gallery" .Data.Pages }}
+  {{ else }}
+  <p class="secondary-color-text"> Information coming soon!</p>
+  {{ end }}
 </div>
 
 {{ partial "footer" . }}
