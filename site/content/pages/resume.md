@@ -1,10 +1,10 @@
 ---
 title: Resume
-image: /img/uploads/bounce_headshot_gost.gif
-first_name: Daniel
-middle_name: Alexander Ross
-last_name: Evans
-birth_date: 1995-07-31T00:00:00-07:00
+image: ''
+first_name: Monique
+middle_name: Denalia
+last_name: Mosbe
+birth_date: 1996-04-19T00:00:00-07:00
 skill:
   - display: true
     level: '80'
@@ -51,36 +51,6 @@ skill:
     printable: true
     title: SQL
     weight: '50'
-hobby:
-  - display: true
-    icon: fa-heart
-    printable: false
-    title: Waiting For Death
-    weight: '0'
-  - display: true
-    icon: fa-heart
-    title: 3D Printing
-    weight: '50'
-  - display: true
-    icon: fa-heart
-    title: Billiards
-    weight: '50'
-  - display: true
-    icon: fa-heart
-    title: Bowling
-    weight: '50'
-  - display: true
-    icon: fa-heart
-    title: King Of All Sharks In Space
-    weight: '50'
-  - display: true
-    icon: fa-heart
-    title: Programming
-    weight: '50'
-  - display: true
-    icon: fa-heart
-    title: Video Games
-    weight: '50'
 contact:
   - title: Email
     body: me@daredoes.work
@@ -113,4 +83,43 @@ contact:
     icon: fa-steam
     published: true
     weight: '0'
+hobby:
+  - display: true
+    icon: fa-heart
+    printable: false
+    title: Waiting For Death
+    weight: '0'
+  - display: true
+    icon: fa-heart
+    title: 3D Printing
+    weight: '50'
+  - display: true
+    icon: fa-heart
+    title: Billiards
+    weight: '50'
+  - display: true
+    icon: fa-heart
+    title: Bowling
+    weight: '50'
+  - display: true
+    icon: fa-heart
+    title: King Of All Sharks In Space
+    weight: '50'
+  - display: true
+    icon: fa-heart
+    title: Programming
+    weight: '50'
+  - display: true
+    icon: fa-heart
+    title: Video Games
+    weight: '50'
 ---
+I live in California working as a student and aspiring artist studying at California College of the Arts on my way towards a BA in Animation.
+
+As an artist I enjoy drawing a variety of things in a variety of styles - I'm open to all imaginations.
+
+Aside from art and drawing, I also take great pleasure in DIY crafts, volunteering, cooking/baking, games, and television.
+
+Making the most out of life is what I do best, and I hope to lead a successful life in my career someday with the help of my peers, family and friends.
+
+###### \- Monique Mosbe
