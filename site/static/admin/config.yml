@@ -2,7 +2,7 @@ backend:
   #name: git-gateway
   name: github #comment me out on development
   repo: daredoes/netlify-web-development # comment me out on production
-  branch: master # Branch to update (master by default)
+  branch: west # Branch to update (master by default)
 
 media_folder: "src/img/uploads" # Folder where user uploaded files should go
 public_folder: "img/uploads"
@@ -11,6 +11,18 @@ collections: # A list of collections the CMS should be able to edit
   - name: "pages"
     label: "Pages"
     files:
+      - label: "Sidebar"
+        name: "sidebar"
+        file: "site/content/pages/sidebar.md"
+        fields:
+          - name: "items"
+            label: "Sidebar Links"
+            widget: "list"
+            required: false
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "URL", name: "href", widget: "string"}
+              - {label: "Display?", name: "display", widget: "boolean", default: true}
       - label: "Footer"
         name: "footer"
         file: "site/content/pages/footer.md"
@@ -42,87 +54,88 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Last Name", name: "last_name", widget: "string"}
       - {label: "Birth Date", name: "birth_date", widget: "datetime"}
 
-  - name: "contact"
-    label: "Contact Items"
-    folder: "site/content/contact"
+  - name: "announcements"
+    label: "Announcements"
+    folder: "site/content/announcements"
     create: true
     fields:
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Cover Image", name: "image", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "URL", name: "external_url", widget: "string"}
-      - {label: "Font Awesome Icon", name: "icon", widget: "string", required: false, default: "fa-compass"}
-      - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
-      - {label: "Printable?", name: "printable", widget: "boolean", default: true}
-      - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
-      - {label: "Published?", name: "published", widget: "boolean", default: false}
+      - {label: "Published Date", name: "publishDate", widget: "datetime"}
 
-  - name: "skills"
-    label: "Skills"
-    folder: "site/content/skills"
+  - name: "guests"
+    label: "Guests"
+    folder: "site/content/guests"
     create: true
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Level", name: "level", widget: "number", min: "0", max: "100", default: "50"}
-      - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
-      - {label: "Printable?", name: "printable", widget: "boolean", default: true}
-      - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
-
-  - name: "hobbies"
-    label: "Hobbies"
-    folder: "site/content/hobbies"
-    create: true
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Font Awesome Icon", name: "icon", widget: "string", default: "fa-heart", required: false, tagname: "i"}
-      - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
-      - {label: "Printable?", name: "printable", widget: "boolean", default: true}
-      - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
-
-  - name: "experience"
-    label: "Experiences"
-    folder: "site/content/experience"
-    create: true
-    fields:
-      - {label: "Company Name", name: "name", widget: "string"}
-      - {label: "Job Title", name: "title", widget: "string"}
+      - {label: "Cover Image", name: "image", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "URL", name: "external_url", widget: "string"}
-      - {label: "Start Date", name: "date", widget: "datetime"}
-      - {label: "Date", name: "display_date", widget: "string"}
-      - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
-      - {label: "Printable?", name: "printable", widget: "boolean", default: true}
-      - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
-
-  - name: "education"
-    label: "Education"
-    folder: "site/content/education"
-    create: true
-    fields:
-      - {label: "Name", name: "title", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Graduation Date", name: "graduation_date", widget: "datetime"}
-      - {label: "Date", name: "display_date", widget: "string"}
-      - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
-      - {label: "Printable?", name: "printable", widget: "boolean", default: true}
-      - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
-
-  - name: "project"
-    label: "Projects"
-    folder: "site/content/project"
-    create: true
-    fields:
-      - {label: "Title", name: "title", widget: "string", required: false}
-      - {label: "Body", name: "body", widget: "markdown", required: false}
-      - {label: "Cover Image", name: "image", widget: "image", required: false}
-      - {label: "Project Date (For Sorting Purposes)", name: "date", widget: "datetime"}
-      - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
-      - {label: "Printable?", name: "printable", widget: "boolean", default: true}
-      - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
-      - name: "albums"
-        label: "Flickr Albums"
+      - {label: "Published Date", name: "publishDate", widget: "datetime"}
+      - name: "icons"
+        label: "Social Media Icon"
         widget: "list"
         required: false
         fields:
-          - {label: "Album Title", name: "title", widget: "string", required: false}
-          - {label: "Flickr User ID", name: "user_id", widget: "string", default: "144498668@N03", required: false}
-          - {label: "Flickr Album ID", name: "album_id", widget: "string"}
+          - {label: "Service Name", name: "title", widget: "string", required: false}
+          - {label: "Service URL", name: "url", widget: "string", required: false}
+          - {label: "Service Icon Available Here: http://fontawesome.io/icons/", name: "icon", widget: "string", required: false, default: "compass"}
+
+  - name: "events"
+    label: "Events"
+    folder: "site/content/events"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Logo", name: "image", widget: "image"}
+      - {label: "Date", name: "date_string", widget: "string"}
+      - {label: "Location", name: "location", widget: "string"}
+      - {label: "Tagline", name: "tagline", widget: "string"}
+      - {label: "Weight", name: "weight", widget: "number", default: "0"}
+
+  - name: "bands"
+    label: "Bands"
+    folder: "site/content/bands"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Cover Image", name: "image", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Published Date", name: "publishDate", widget: "datetime"}
+      - name: "icons"
+        label: "Social Media Icon"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Service Name", name: "title", widget: "string", required: false}
+          - {label: "Service URL", name: "url", widget: "string", required: false}
+          - {label: "Service Icon Available Here: http://fontawesome.io/icons/", name: "icon", widget: "string", required: false, default: "compass"}
+
+  - name: "visualists"
+    label: "Visualists"
+    folder: "site/content/visualists"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Cover Image", name: "image", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Published Date", name: "publishDate", widget: "datetime"}
+      - name: "icons"
+        label: "Social Media Icon"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Service Name", name: "title", widget: "string", required: false}
+          - {label: "Service URL", name: "url", widget: "string", required: false}
+          - {label: "Service Icon Available Here: http://fontawesome.io/icons/", name: "icon", widget: "string", required: false, default: "compass"}
+
+  - name: "faq"
+    label: "Frequently Asked Questions"
+    title: "Frequently Asked Questions"
+    folder: "site/content/faq"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Weight", name: "weight", widget: "number"}
