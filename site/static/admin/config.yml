@@ -1,8 +1,8 @@
 backend:
   name: git-gateway
   #name: github
-  #repo: daredoes/daredoes-site # Path to your Github repository
-  branch: main-site # Branch to update (master by default)
+  #repo: daredoes/netlify-web-development # Path to your Github repository
+  branch: dev # Branch to update (master by default)
 
 media_folder: "src/img/uploads" # Folder where user uploaded files should go
 public_folder: "img/uploads"
@@ -10,12 +10,90 @@ public_folder: "img/uploads"
 collections: # A list of collections the CMS should be able to edit
   - name: "pages"
     label: "Pages"
-    folder: "site/content/pages"
-    create: true
-    fields:
-      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "URL", name: "url", widget: "string"}
+    files:
+      - label: "Resume"
+        name: "resume"
+        file: "site/content/pages/resume.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "About Me", name: "body", widget: "markdown", required: false}
+          - {label: "Profile Picture", name: "image", widget: "image", required: false}
+          - {label: "First Name", name: "first_name", widget: "string"}
+          - {label: "Middle Name(s)", name: "middle_name", widget: "string", required: false}
+          - {label: "Last Name", name: "last_name", widget: "string"}
+          - {label: "Birth Date", name: "birth_date", widget: "datetime"}
+          - name: "skill"
+            widget: "list"
+            label: "Skill"
+            required: false
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Level", name: "level", widget: "number", min: "0", max: "100", default: "50"}
+              - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
+              - {label: "Printable?", name: "printable", widget: "boolean", default: true}
+              - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
+          - name: "contact"
+            widget: "list"
+            label: "Contact Item"
+            required: false
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Body", name: "body", widget: "markdown"}
+              - {label: "URL", name: "external_url", widget: "string"}
+              - {label: "Font Awesome Icon", name: "icon", widget: "string", required: false, default: "fa-compass"}
+              - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
+              - {label: "Printable?", name: "printable", widget: "boolean", default: true}
+              - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
+              - {label: "Published?", name: "published", widget: "boolean", default: false}
+          - name: "hobby"
+            widget: "list"
+            label: "Hobby"
+            required: false
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Font Awesome Icon", name: "icon", widget: "string", default: fa-heart, required: false, tagname: "i"}
+              - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
+              - {label: "Printable?", name: "printable", widget: "boolean", default: true}
+              - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
+
+      - label: "Skills Page"
+        name: "skills"
+        file: "site/content/pages/skills.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+          - {label: "Body", name: "body", widget: "markdown", required: false}
+
+      - label: "Contacts Page"
+        name: "contacts"
+        file: "site/content/pages/contacts.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+          - {label: "Body", name: "body", widget: "markdown", required: false}
+
+      - label: "Hobbies Page"
+        name: "hobbies"
+        file: "site/content/pages/hobbies.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+          - {label: "Body", name: "body", widget: "markdown", required: false}
+
+      - label: "Footer"
+        name: "footer"
+        file: "site/content/pages/footer.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string", required: true, default: "main"}
+          - {label: "Copyright Info", name: "copyright", widget: "string", required: false}
+          - {label: "Footer Slogan", name: "slogan", widget: "string", required: false}
+          - name: "icons"
+            label: "Social Media Icon"
+            widget: "list"
+            required: false
+            fields:
+              - {label: "Service Name", name: "title", widget: "string", required: false}
+              - {label: "Service URL", name: "url", widget: "string", required: false}
+              - {label: "Service Icon Available Here: https://material.io/icons/", name: "icon", widget: "string", required: false, default: "explore"}
+              - {label: "On Click", name: "onclick", widget: "markdown", required: false}
+
 
   - name: "index"
     label: "Homepage"
@@ -68,7 +146,7 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
 
   - name: "experience"
-    label: "Experiences"
+    label: "Experience"
     folder: "site/content/experience"
     create: true
     fields:
@@ -91,36 +169,10 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Graduation Date", name: "graduation_date", widget: "datetime"}
       - {label: "Date", name: "display_date", widget: "string"}
+      - {label: "Date Pre-Label", name: "pre_date", widget: "string", required: false}
       - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
       - {label: "Printable?", name: "printable", widget: "boolean", default: true}
       - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
-
-
-  - name: "footer"
-    label: "Footer Details"
-    folder: "site/content/footer"
-    create: false
-    fields:
-      - {label: "Title", name: "title", widget: "string", required: true, default: "main"}
-      - {label: "Copyright Info", name: "copyright", widget: "string", required: false}
-      - {label: "Footer Slogan", name: "slogan", widget: "string", required: false}
-      - name: "icons"
-        label: "Social Media Icon"
-        widget: "list"
-        required: false
-        fields:
-          - {label: "Service Name", name: "title", widget: "string", required: false}
-          - {label: "Service URL", name: "url", widget: "string", required: false}
-          - {label: "Service Icon Available Here: https://material.io/icons/", name: "icon", widget: "string", required: false, default: "explore"}
-          - {label: "On Click", name: "onclick", widget: "markdown", required: false}
-
-  - name: "portal"
-    label: "Redirect Portal"
-    folder: "site/content/portal"
-    create: true
-    fields:
-      - {label: "Title", name: "title", widget: "string", required: true, default: "Portal"}
-      - name: ""
 
   - name: "project"
     label: "Projects"
