@@ -11,12 +11,17 @@ collections: # A list of collections the CMS should be able to edit
   - name: "pages"
     label: "Pages"
     files:
-      - label: "Skills Page"
-        name: "skills"
-        file: "site/content/pages/skills.md"
+      - label: "Resume"
+        name: "resume"
+        file: "site/content/pages/resume.md"
         fields:
-          - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-          - {label: "Body", name: "body", widget: "markdown", required: "false"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "About Me", name: "body", widget: "markdown", required: false}
+          - {label: "Profile Picture", name: "image", widget: "image", required: false}
+          - {label: "First Name", name: "first_name", widget: "string"}
+          - {label: "Middle Name(s)", name: "middle_name", widget: "string", required: false}
+          - {label: "Last Name", name: "last_name", widget: "string"}
+          - {label: "Birth Date", name: "birth_date", widget: "datetime"}
           - name: "skill"
             widget: "list"
             label: "Skill"
@@ -27,81 +32,51 @@ collections: # A list of collections the CMS should be able to edit
               - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
               - {label: "Printable?", name: "printable", widget: "boolean", default: true}
               - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
-      - label: "Contacts Page"
-        name: "contacts"
-        file: "site/content/pages/contacts.md"
-        fields:
-          - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-          - {label: "Body", name: "body", widget: "markdown", required: "false"}
           - name: "contact"
             widget: "list"
             label: "Contact Item"
             required: false
             fields:
-            - {label: "Title", name: "title", widget: "string"}
-            - {label: "Body", name: "body", widget: "markdown"}
-            - {label: "URL", name: "external_url", widget: "string"}
-            - {label: "Font Awesome Icon", name: "icon", widget: "string", required: false, default: "fa-compass"}
-            - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
-            - {label: "Printable?", name: "printable", widget: "boolean", default: true}
-            - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
-            - {label: "Published?", name: "published", widget: "boolean", default: false}
-      - label: "Hobbies Page"
-        name: "hobbies"
-        file: "site/content/pages/hobbies.md"
-        fields:
-          - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-          - {label: "Body", name: "body", widget: "markdown", required: "false"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Body", name: "body", widget: "markdown"}
+              - {label: "URL", name: "external_url", widget: "string"}
+              - {label: "Font Awesome Icon", name: "icon", widget: "string", required: false, default: "fa-compass"}
+              - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
+              - {label: "Printable?", name: "printable", widget: "boolean", default: true}
+              - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
+              - {label: "Published?", name: "published", widget: "boolean", default: false}
           - name: "hobby"
             widget: "list"
             label: "Hobby"
             required: false
             fields:
               - {label: "Title", name: "title", widget: "string"}
-              - {label: "Font Awesome Icon", name: "icon", widget: "string", default: "fa-heart", required: false, tagname: "i"}
+              - {label: "Font Awesome Icon", name: "icon", widget: "string", default: fa-heart, required: false, tagname: "i"}
               - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
               - {label: "Printable?", name: "printable", widget: "boolean", default: true}
               - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
-      - label: "Experiences Page"
-        name: "experiences"
-        file: "site/content/pages/experiences.md"
+
+      - label: "Skills Page"
+        name: "skills"
+        file: "site/content/pages/skills.md"
         fields:
           - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-          - {label: "Body", name: "body", widget: "markdown", required: "false"}
-          - name: "experience"
-            widget: "list"
-            label: "Experience Item"
-            required: false
-            fields:
-              - {label: "Company Name", name: "name", widget: "string"}
-              - {label: "Job Title", name: "title", widget: "string"}
-              - {label: "Body", name: "body", widget: "markdown"}
-              - {label: "URL", name: "external_url", widget: "string"}
-              - {label: "Start Date", name: "date", widget: "datetime"}
-              - {label: "Date", name: "display_date", widget: "string"}
-              - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
-              - {label: "Printable?", name: "printable", widget: "boolean", default: true}
-              - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
-      - label: "Education Page"
-        name: "education"
-        file: "site/content/pages/education.md"
+          - {label: "Body", name: "body", widget: "markdown", required: false}
+
+      - label: "Contacts Page"
+        name: "contacts"
+        file: "site/content/pages/contacts.md"
         fields:
           - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-          - {label: "Body", name: "body", widget: "markdown", required: "false"}
-          - name: "item"
-            widget: "list"
-            label: "Education Item"
-            required: false
-            fields:
-              - {label: "Company Name", name: "name", widget: "string"}
-              - {label: "Job Title", name: "title", widget: "string"}
-              - {label: "Body", name: "body", widget: "markdown"}
-              - {label: "URL", name: "external_url", widget: "string"}
-              - {label: "Start Date", name: "date", widget: "datetime"}
-              - {label: "Date", name: "display_date", widget: "string"}
-              - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
-              - {label: "Printable?", name: "printable", widget: "boolean", default: true}
-              - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
+          - {label: "Body", name: "body", widget: "markdown", required: false}
+
+      - label: "Hobbies Page"
+        name: "hobbies"
+        file: "site/content/pages/hobbies.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+          - {label: "Body", name: "body", widget: "markdown", required: false}
+
       - label: "Footer"
         name: "footer"
         file: "site/content/pages/footer.md"
@@ -171,7 +146,7 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
 
   - name: "experience"
-    label: "Experiences"
+    label: "Experience"
     folder: "site/content/experience"
     create: true
     fields:
@@ -194,6 +169,7 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Graduation Date", name: "graduation_date", widget: "datetime"}
       - {label: "Date", name: "display_date", widget: "string"}
+      - {label: "Date Pre-Label", name: "pre_date", widget: "string", required: false}
       - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
       - {label: "Printable?", name: "printable", widget: "boolean", default: true}
       - {label: "Display on Site?", name: "display", widget: "boolean", default: true}

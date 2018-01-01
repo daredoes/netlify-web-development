@@ -4,10 +4,10 @@
         <h1 class="">{{ .Params.first_name }} {{ .Params.last_name}}</h1>
         <div style="margin-top: -1.5rem; margin-bottom: -0.5rem;" class="print-header-items print-info">
             <p class="condensed">
-              {{ with .Site.GetPage "section" "contact"}}
-              {{ $pages := where (.Pages) ".Params.printable" "==" true }}
-              {{ range $index,$p := sort (sort $pages "Title") "Params.weight" }}
-                 {{ if ne $index 0}}| {{end}}{{ $p.Summary }}
+              {{ with .Site.GetPage "page" "pages/contacts.md"}}
+              {{ $pages := where (.Params.contact) "printable" "==" true }}
+              {{ range $index,$p := sort (sort $pages "title") "weight" }}
+                 {{ if ne $index 0}}| {{end}}{{ $p.body|markdownify }}
               {{ end }}
               {{ end }}
             </p>
@@ -30,7 +30,7 @@
     <hr class="half-condensed">
     {{ range sort (sort $pages "Params.graduation_date" "desc") "Params.weight" }}
     <div class="print-header-items">
-                <h6 class="title">{{ .Title }} <span class="right">{{ .Params.display_date }}</span></h6>
+                <h6 class="title">{{ .Title }} <span class="right">{{ .Params.pre_date|default "" }} {{ .Params.display_date }}</span></h6>
                 <div class="body condensed context-text default-children">{{ .Content }}</div>
     </div>
     {{ end }}
@@ -121,7 +121,7 @@
                     {{ end }}
                     {{ with .Site.GetPage "section" "experience"}}
                     <div class="row">
-                    <p class="resume-section-header heavy secondary-color-text">//Experiences</p><hr>
+                    <p class="resume-section-header heavy secondary-color-text">//Experience</p><hr>
                         <div class="scroll-box">
                             <div class="row">
                               {{ range where .Pages.ByDate.ByWeight "Params.display" "==" true }}
@@ -183,17 +183,17 @@
                     </div>
 
                 <div class="col s12 l5">
-                  {{ with .Site.GetPage "section" "contact" }}
+                  {{ with .Site.GetPage "page" "pages/contacts.md" }}
                     <div class="row">
-                    <p class="resume-section-header heavy secondary-color-text">//Contact</p><hr>
+                    <p class="resume-section-header heavy secondary-color-text">//{{ .Title }}</p><hr>
                         <ul class="collection tertiary-color lighten-4 z-depth-1" style="border: 0;">
-                          {{ range $p := where (sort (sort .Pages "Title") "Params.weight") "Params.display" "==" true}}
+                          {{ range $p := where (sort (sort .Params.contact "title") "weight") "display" "==" true}}
 
                             <li class="collection-item avatar tertiary-color lighten-4" style="margin-bottom: -1.75em;">
-                                  <a class="contact-button" href="{{ $p.Params.external_url|safeURL }}">
-                                    <i class="fa {{ $p.Params.icon}} circle secondary-color lighten-1"></i></a>
-                            <span class="title heavy">{{ $p.Title }}</span>
-                                <p>{{ $p.Content }}</p>
+                                  <a class="contact-button" href="{{ $p.external_url|safeURL }}">
+                                    <i class="fa {{ $p.icon}} circle secondary-color lighten-1"></i></a>
+                            <span class="title heavy">{{ $p.title }}</span>
+                                <p>{{ $p.body|markdownify }}</p>
                             </li>
                             {{ end }}
                         </ul>
@@ -229,14 +229,14 @@
 
                   </div>
                   {{end}}
-                  {{ with .Site.GetPage "section" "hobbies" }}
+                  {{ with .Site.GetPage "page" "pages/hobbies.md" }}
                   <div class="row">
-                    <p class="resume-section-header heavy secondary-color-text">//Hobbies</p><hr>
+                    <p class="resume-section-header heavy secondary-color-text">//{{ .Title }}</p><hr>
                     <div style="margin-top: 1em;">
 
-                      {{ range where .Pages.ByTitle.ByWeight "Params.display" "==" true }}
+                      {{ range where (sort (sort .Params.hobby "title") "weight") "display" "==" true }}
                     <div class="chip secondary-color tertiary-color-text">
-                        <i class="fa fa-heart primary-color-text"></i> {{.Title}}
+                        <i class="fa fa-heart primary-color-text"></i> {{.title|title}}
                     </div>
                     {{ end }}
 
