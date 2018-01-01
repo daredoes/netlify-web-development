@@ -1,5 +1,5 @@
 ---
-title: 'California College of the Arts (CCA) -- Oakland, CA'
+title: 'California College of the Arts (CCA)'
 graduation_date: 2018-05-15T18:47:17-07:00
 pre_date: ''
 display_date: 2015 - Current

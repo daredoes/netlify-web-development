@@ -64,6 +64,20 @@
     </div>
     {{ end }}
     {{ end }}
+    {{ if .Params.achievements }}
+    {{ $pages := where (sort .Params.achievements "weight" "desc") "printable" "==" true }}
+    {{ if $pages }}
+    <div>
+    <h5 class="print-header resume-large">Achievements</h5>
+            <hr class="half-condensed">
+        <div class="body row resume-small">
+          {{ range $index, $p := $pages }}
+            <span> • {{ $p.body|markdownify }}</span><br>
+            {{end}}
+        </div>
+    </div>
+    {{ end }}
+    {{ end }}
 </div>
 
 <div id="mainContainer1" class="container-fluid resume-container no-print">
@@ -121,45 +135,6 @@
                                             <span class="">{{ .Params.display_date}}</span>
                                         </div>
                                     </div>
-                                </div>
-                                {{ end }}
-                            </div>
-                        </div>
-                    </div>
-                    {{ end }}
-                    {{ with .Site.GetPage "section" "project"}}
-                    <div class="row">
-                    <p class="resume-section-header heavy secondary-color-text">//Projects</p><hr>
-                        <div class="scroll-box">
-                            <div class="row">
-                              {{ range where .Pages.ByDate.ByWeight "Params.display" "==" true }}
-                                <div class="col s12">
-                                    <div class="card tertiary-color lighten-4" >
-                                      <a class="modal-trigger" href="#{{ .Title|urlize }}"><div class="card-image  waves-effect waves-block waves-light">
-                                        <img class="tertiary-color lighten-4 darkness reverseScrollSlow" style="margin-bottom: 0;" src="{{ .Params.image| default "/img/project_transparent.png" }}">
-                                      </div>
-                                    <a href="#{{ .Title|urlize }}" class="link-color modal-trigger"><div class="card-action center-align secondary-color">
-                                      <span class='link-color'>
-                                        Learn More
-                                      </span>
-                                    </div></a></a>
-
-                                    </div>
-                                </div>
-                                <div id="{{ .Title|urlize }}" class="modal modal-fixed-footer">
-                                  <div class="modal-header">
-
-                                  </div>
-                                  <div class="modal-content">
-
-                                    <div class="context-text default-children">
-                                      {{ .Content }}
-                                    </div>
-                                  </div>
-                                  <div class="modal-footer">
-                                    <span class="primary-color-text left btn-flat">{{ .Title }}</span>
-                                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-                                  </div>
                                 </div>
                                 {{ end }}
                             </div>

@@ -2,6 +2,7 @@
 title: Senior Film
 image: /img/uploads/SeniorCover.jpg
 date: 2017-11-15T20:28:58.598Z
+display: true
 albums:
   - album_id: '72157689750699454'
     title: Characters & Concepts

@@ -1,5 +1,5 @@
 ---
-title: 'California State University of Northridge – Northridge, CA'
+title: 'California State University of Northridge'
 graduation_date: 2015-05-22T00:00:00-07:00
 display_date: 2014 - 2015
 weight: '50'
