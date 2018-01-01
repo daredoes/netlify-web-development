@@ -13,7 +13,7 @@ collections: # A list of collections the CMS should be able to edit
     files:
       - label: "Resume"
         name: "resume"
-        file: "site/content/resume.md"
+        file: "site/content/resume/_index.md"
         fields:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "About Me", name: "body", widget: "markdown", required: false}
