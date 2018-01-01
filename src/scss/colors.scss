@@ -36,7 +36,7 @@ $tertiary-color: color("grey", "darken-1");
 }
 
 .tertiary-color-text{
-  @extend .deep-purple-text, .text-lighten-4
+  @extend .deep-purple-text, .text-darken-4
 }
 
 .content-text > *{
