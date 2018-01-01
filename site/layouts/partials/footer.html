@@ -1,6 +1,6 @@
 </main>
 <footer class="page-footer primary-color darken-4 no-print darkness z-depth-4">
-  {{ with .Site.GetPage "page" "footer/main.md" }}
+  {{ with .Site.GetPage "page" "pages/footer.md" }}
          <div class="container">
            <div class="row center-align link-color">
              {{ range .Params.icons }}
@@ -28,6 +28,7 @@ $(document).ready(function() {
    $(".button-collapse").sideNav();
    $('.slider').slider();
    $(".default-children *").addClass("browser-default");
+   $(".modal").modal();
    {{ block "jquery" . }}
    {{ end}}
 });
