@@ -14,7 +14,7 @@
     }
 
     *{
-      font-family: sans-serif !important;
+      font-family: arial !important;
     }
 
     .context-text > ul > li{
@@ -23,8 +23,16 @@
     }
 
     .print-only > * > h1{
-        font-size: 2rem;
+        font-size: 1.25rem;
         font-weight: 600;
+    }
+
+    .context-text p{
+      font-size: 0.5em;
+    }
+
+    ul, li{
+      font-size: 0.75em;
     }
 
     .print-info > *{
@@ -44,23 +52,22 @@
     }
 
     .print-header-items > .body {
-        padding-left: 1rem;
+        padding-left: 0.75rem;
     }
 
     .print-header-items > .title {
         font-weight:600;
         padding-bottom: 1rem;
+        font-size: 0.75em;
     }
     .print-header-items > h5 {
-        font-size: 1.5rem;
+        font-size: 1rem;
         font-weight: 500;
     }
 
-    .print-header {
+    h5.print-header {
         font-weight: 600;
-        h5{
-          font-size: 0.75rem;
-        }
+        font-size: 1em;
     }
 
     hr{
@@ -94,6 +101,10 @@
 
     .body > p, .body > div{
         margin: 0;
+    }
+
+    .body span{
+      font-size: 0.5em;
     }
 
 
