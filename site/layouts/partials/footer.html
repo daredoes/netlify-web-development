@@ -53,9 +53,8 @@
 $(document).ready(function() {
    $(".button-collapse").sideNav();
    $('.slider').slider();
-   $(".contact-modal").modal();
    $(".default-children *").addClass("browser-default");
-   $(".modal").modal();
+   $(".modal").modal({});
    {{ block "jquery" . }}
    {{ end}}
 });
