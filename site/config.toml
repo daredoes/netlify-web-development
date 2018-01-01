@@ -4,3 +4,7 @@ title = "Monique Denelia Mosbe"
 
 [params]
   description = "The homepage of Monique Mosbe."
+
+[[menu.main]]
+  name = "Resume"
+  url = "/resume"

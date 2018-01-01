@@ -92,3 +92,7 @@
 .bg-pixel_weave-2x{
   background-image: url(/img/patterns/pixel_weave_@2X.png);
 }
+
+.bg-body{
+  @extend .bg-pixel_weave
+}
