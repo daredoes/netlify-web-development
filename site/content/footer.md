@@ -18,5 +18,7 @@ icons:
   - icon: youtube
     title: YouTube
     url: 'https://www.youtube.com/channel/UCZVWrSBr4ELVta78JMsCoaQ'
+  - icon: envelope
+    title: Print Me!
+    url: "#contact-modal"
 ---
-
