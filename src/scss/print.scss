@@ -23,16 +23,7 @@
     }
 
     .print-only > * > h1{
-        font-size: 1.25rem;
         font-weight: 600;
-    }
-
-    .context-text p{
-      font-size: 0.5em;
-    }
-
-    ul, li{
-      font-size: 0.75em;
     }
 
     .print-info > *{
@@ -58,16 +49,13 @@
     .print-header-items > .title {
         font-weight:600;
         padding-bottom: 1rem;
-        font-size: 0.75em;
     }
     .print-header-items > h5 {
-        font-size: 1rem;
         font-weight: 500;
     }
 
     h5.print-header {
         font-weight: 600;
-        font-size: 1em;
     }
 
     hr{
@@ -80,6 +68,34 @@
         background-color: #000000;
         padding: 0.5em;
         border-radius: 1px;
+    }
+
+    #resume-name{
+      font-size: 24px;
+    }
+
+    .resume-large{
+      font-size: 24px;
+    }
+
+    .resume-medium{
+      font-size: 16px;
+    }
+
+    .resume-small{
+      font-size: 12px;
+    }
+
+    .resume-large *{
+      @extend .resume-large
+    }
+
+    .resume-medium *{
+      @extend .resume-medium
+    }
+
+    .resume-small *{
+      @extend .resume-small
     }
 
     .resume-bar-holder {
@@ -101,15 +117,6 @@
 
     .body > p, .body > div{
         margin: 0;
-    }
-
-    .body span{
-      font-size: 0.5em;
-    }
-
-
-    .title {
-
     }
 
     .container-fluid{

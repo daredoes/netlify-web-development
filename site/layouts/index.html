@@ -1,9 +1,9 @@
 {{ partial "header" . }}
 <div class="print-only">
     <div class="" id="print-header">
-        <h1 class="">{{ .Params.first_name }} {{ .Params.last_name}}</h1>
+        <h1 class="resume-large">{{ .Params.first_name }} {{ .Params.last_name}}</h1>
         <div style="margin-top: -1.5rem; margin-bottom: -0.5rem;" class="print-header-items print-info">
-            <p class="condensed">
+            <p class="condensed resume-medium" >
               {{ with .Site.GetPage "page" "pages/resume.md"}}
               {{ if .Params.contact}}
               {{ $pages := where (.Params.contact) "printable" "==" true }}
@@ -16,8 +16,6 @@
         </div>
 
     </div>
-    <hr>
-
 
     {{ with .Content }}
     <hr class="condensed">
@@ -28,12 +26,12 @@
     {{ with .Site.GetPage "section" "education" }}
     {{ $pages := where (.Pages) ".Params.printable" "==" true }}
     {{ if $pages }}
-    <h5 class="print-header">Education</h5>
+    <h5 class="print-header resume-large">Education</h5>
     <hr class="half-condensed">
     {{ range sort (sort $pages "Params.graduation_date" "desc") "Params.weight" }}
     <div class="print-header-items">
-                <h6 class="title">{{ .Title }} <span class="right">{{ .Params.pre_date|default "" }} {{ .Params.display_date }}</span></h6>
-                <div class="body condensed context-text default-children">{{ .Content }}</div>
+                <h6 class="title resume-medium">{{ .Title }} <span class="right">{{ .Params.pre_date|default "" }} {{ .Params.display_date }}</span></h6>
+                <div class="body condensed context-text resume-small default-children">{{ .Content }}</div>
     </div>
     {{ end }}
     {{ end }}
@@ -41,13 +39,13 @@
     {{ with .Site.GetPage "section" "experience" }}
     {{ $pages := where (.Pages) ".Params.printable" "==" true }}
     {{ if $pages }}
-    <h5 class="print-header">Experience</h5>
+    <h5 class="print-header resume-large">Experience</h5>
     <hr class="half-condensed">
     {{ range sort $pages "Params.weight" }}
     <div class="print-header-items">
-                <h6 class="title">{{ .Params.name }} - {{ .Title}} <span class="right">{{ .Params.display_date}}</span></h6>
+                <h6 class="title resume-medium">{{ .Params.name }} - {{ .Title}} <span class="right">{{ .Params.display_date}}</span></h6>
 
-                <div class="body condensed context-text default-children">{{ .Content }}</div>
+                <div class="body condensed context-text resume-small default-children">{{ .Content }}</div>
     </div>
     {{ end }}
     {{ end }}
@@ -57,9 +55,9 @@
     {{ $pages := where (sort .Params.skill "weight" "desc") "printable" "==" true }}
     {{ if $pages }}
     <div>
-    <h5 class="print-header">Skills</h5>
+    <h5 class="print-header resume-large">Skills</h5>
             <hr class="half-condensed">
-        <div class="body row">
+        <div class="body row resume-small">
           {{ range $index, $p := sort $pages "level" "desc" }}
             {{ if ne $index 0 }}<span> • </span>{{end}}<span>{{ $p.title }}</span>
             {{end}}
