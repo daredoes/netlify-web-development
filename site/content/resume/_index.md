@@ -71,6 +71,35 @@ hobby:
     icon: fa-heart
     title: Video Games
     weight: '50'
+achievements:
+  - body: >-
+      Co-directed The Sunken Forest group project – an animated short film
+      directed by a colleague for his senior thesis project
+    display: true
+    printable: true
+    weight: '50'
+  - body: >-
+      Received an Excellence in Student Leadership Award for outstanding
+      community service to the CCA art community
+    display: true
+    printable: true
+    weight: '50'
+  - body: >-
+      Won second place in Earth Day art contest for design of a sculpture made
+      exclusively from recycled products (collaborated with four other artists)
+    display: true
+    printable: true
+    weight: '50'
+  - body: >-
+      Original design selected to be painted on one of eleven trash bins as a
+      community art project for beautification of the city of Northridge, CA
+    display: true
+    printable: true
+    weight: '50'
+  - body: Received Scholastic Gold Key Award for digital artwork
+    display: true
+    printable: true
+    weight: '50'
 ---
 
 I live in California working as a student and aspiring artist studying at California College of the Arts on my way towards a BA in Animation.
