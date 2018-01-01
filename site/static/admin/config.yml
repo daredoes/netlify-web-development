@@ -56,27 +56,6 @@ collections: # A list of collections the CMS should be able to edit
               - {label: "Printable?", name: "printable", widget: "boolean", default: true}
               - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
 
-      - label: "Skills Page"
-        name: "skills"
-        file: "site/content/pages/skills.md"
-        fields:
-          - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-          - {label: "Body", name: "body", widget: "markdown", required: false}
-
-      - label: "Contacts Page"
-        name: "contacts"
-        file: "site/content/pages/contacts.md"
-        fields:
-          - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-          - {label: "Body", name: "body", widget: "markdown", required: false}
-
-      - label: "Hobbies Page"
-        name: "hobbies"
-        file: "site/content/pages/hobbies.md"
-        fields:
-          - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-          - {label: "Body", name: "body", widget: "markdown", required: false}
-
       - label: "Footer"
         name: "footer"
         file: "site/content/pages/footer.md"
