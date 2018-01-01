@@ -4,10 +4,12 @@
         <h1 class="">{{ .Params.first_name }} {{ .Params.last_name}}</h1>
         <div style="margin-top: -1.5rem; margin-bottom: -0.5rem;" class="print-header-items print-info">
             <p class="condensed">
-              {{ with .Site.GetPage "page" "pages/contacts.md"}}
+              {{ with .Site.GetPage "page" "pages/resume.md"}}
+              {{ if .Params.contact}}
               {{ $pages := where (.Params.contact) "printable" "==" true }}
               {{ range $index,$p := sort (sort $pages "title") "weight" }}
                  {{ if ne $index 0}}| {{end}}{{ $p.body|markdownify }}
+              {{ end }}
               {{ end }}
               {{ end }}
             </p>
@@ -50,7 +52,8 @@
     {{ end }}
     {{ end }}
     {{ end }}
-    {{ with .Site.GetPage "page" "pages/skills.md"}}
+    {{ with .Site.GetPage "page" "pages/resume.md"}}
+    {{ if .Params.skill }}
     {{ $pages := where (sort .Params.skill "weight" "desc") "printable" "==" true }}
     {{ if $pages }}
     <div>
@@ -64,6 +67,7 @@
     </div>
     {{ end }}
     {{ end }}
+    {{ end }}
 </div>
 
 <div id="mainContainer1" class="container-fluid resume-container scroll bg-stardust tertiary-color">
@@ -74,7 +78,7 @@
         DISPLAYED AREA
       -->
 
-
+        {{ with .Site.GetPage "page" "pages/resume.md" }}
         <div class="card tertiary-color lighten-4 no-print bg-witewall_3">
             <div class="row center">
                 <div id="photo" class="tertiary-color lighten-4 circle" >
@@ -183,9 +187,9 @@
                     </div>
 
                 <div class="col s12 l5">
-                  {{ with .Site.GetPage "page" "pages/contacts.md" }}
+                  {{ if .Params.contact }}
                     <div class="row">
-                    <p class="resume-section-header heavy secondary-color-text">//{{ .Title }}</p><hr>
+                    <p class="resume-section-header heavy secondary-color-text">//Contact</p><hr>
                         <ul class="collection tertiary-color lighten-4 z-depth-1" style="border: 0;">
                           {{ range $p := where (sort (sort .Params.contact "title") "weight") "display" "==" true}}
 
@@ -199,9 +203,9 @@
                         </ul>
                     </div>
                     {{ end }}
-                    {{ with .Site.GetPage "page" "pages/skills.md"}}
+                    {{ if .Params.skill}}
                     <div class="row">
-                    <p class="resume-section-header heavy secondary-color-text">//{{ .Title }}</p>
+                    <p class="resume-section-header heavy secondary-color-text">//Skills</p>
                     <hr>
                     <div class="row resume-bar-level-text primary-color-text text-darken-2">
                         <div class="col s3 center" style="border-top: double; border-left: double">
@@ -229,9 +233,9 @@
 
                   </div>
                   {{end}}
-                  {{ with .Site.GetPage "page" "pages/hobbies.md" }}
+                  {{ if .Params.hobby }}
                   <div class="row">
-                    <p class="resume-section-header heavy secondary-color-text">//{{ .Title }}</p><hr>
+                    <p class="resume-section-header heavy secondary-color-text">//Hobbies</p><hr>
                     <div style="margin-top: 1em;">
 
                       {{ range where (sort (sort .Params.hobby "title") "weight") "display" "==" true }}
@@ -250,6 +254,7 @@
 
             </div>
         </div>
+        {{ end }}
     </div>
 
 <!--<div class="content container">
