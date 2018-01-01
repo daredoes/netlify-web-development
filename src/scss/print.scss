@@ -14,16 +14,15 @@
     }
 
     *{
-      font-family: sans-serif !important;
+      font-family: arial !important;
     }
 
     .context-text > ul > li{
       list-style-type: square;
-      list-style-position: inside;
+      list-style-position: outside !important;
     }
 
     .print-only > * > h1{
-        font-size: 2rem;
         font-weight: 600;
     }
 
@@ -44,7 +43,7 @@
     }
 
     .print-header-items > .body {
-        padding-left: 1rem;
+        padding-left: 0.75rem;
     }
 
     .print-header-items > .title {
@@ -52,15 +51,11 @@
         padding-bottom: 1rem;
     }
     .print-header-items > h5 {
-        font-size: 1.5rem;
         font-weight: 500;
     }
 
-    .print-header {
+    h5.print-header {
         font-weight: 600;
-        h5{
-          font-size: 0.75rem;
-        }
     }
 
     hr{
@@ -73,6 +68,34 @@
         background-color: #000000;
         padding: 0.5em;
         border-radius: 1px;
+    }
+
+    #resume-name{
+      font-size: 24px;
+    }
+
+    .resume-large{
+      font-size: 24px;
+    }
+
+    .resume-medium{
+      font-size: 16px;
+    }
+
+    .resume-small{
+      font-size: 12px;
+    }
+
+    .resume-large *{
+      @extend .resume-large
+    }
+
+    .resume-medium *{
+      @extend .resume-medium
+    }
+
+    .resume-small *{
+      @extend .resume-small
     }
 
     .resume-bar-holder {
@@ -94,11 +117,6 @@
 
     .body > p, .body > div{
         margin: 0;
-    }
-
-
-    .title {
-
     }
 
     .container-fluid{
