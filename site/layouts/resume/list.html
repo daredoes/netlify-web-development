@@ -86,8 +86,12 @@
         <!--
         DISPLAYED AREA
       -->
+            {{ if .Params.resume }}
+            <div class="row">
 
-
+              <a href="{{ .Params.resume }}"><h3 class="center link-color underline">Download PDF</h3></a>
+            </div>
+            {{ end }}
             <div class="row">
                 <div class="col s12 l7">
                   {{ with .Content }}

@@ -22,6 +22,7 @@ collections: # A list of collections the CMS should be able to edit
           - {label: "Middle Name(s)", name: "middle_name", widget: "string", required: false}
           - {label: "Last Name", name: "last_name", widget: "string"}
           - {label: "Birth Date", name: "birth_date", widget: "datetime"}
+          - {label: "Resume PDF", name: "resume", widget: "file"}
           - name: "skill"
             widget: "list"
             label: "Skill"

@@ -25,12 +25,9 @@
             {{ end }}
           {{end}}
           {{ with .Site.GetPage "section" "art" }}
-          <ul id="n{{.Title|urlize}}" class="dropdown-content">
             {{ range $c := .Pages }}
-            <li><a href="{{$c.URL}}" class="primary-color-text "> {{ $c.Title }} </a></li>
+            <li><a href="{{$c.URL}}" class="link-color "> {{ $c.Title }} </a></li>
             {{ end }}
-          </ul>
-          <li><a class="dropdown-button link-color" data-hover="true" data-beloworigin="true" href="#!" data-activates="n{{.Title|urlize}}">{{ .Title }}<i class="fa fa-caret-down right"></i></a></li>
           {{ end }}
 
           {{ with .Site.GetPage "section" "project" }}
