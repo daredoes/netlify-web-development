@@ -2,7 +2,7 @@
 title: Resume
 image: ''
 first_name: Monique
-middle_name: Denalia
+middle_name: Denelia
 last_name: Mosbe
 birth_date: 1996-04-19T07:00:00.000Z
 resume: /img/uploads/resume2018.pdf
@@ -13,27 +13,27 @@ skill:
     title: Adobe Photoshop
     weight: '50'
   - display: true
-    level: '20'
+    level: '44'
     printable: true
     title: Adobe Illustrator
     weight: '50'
   - display: true
-    level: '48'
+    level: '40'
     printable: true
     title: Adobe Premier
     weight: '50'
   - display: true
-    level: '40'
+    level: '50'
     printable: true
     title: Autodesk Maya
-    weight: '50'
+    weight: '51'
   - display: true
-    level: '80'
+    level: '70'
     printable: true
     title: Paintstorm Studio
     weight: '50'
   - display: true
-    level: '70'
+    level: '80'
     printable: true
     title: PaintTool SAI
     weight: '50'
