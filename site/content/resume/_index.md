@@ -13,7 +13,7 @@ skill:
     title: Adobe Photoshop
     weight: '50'
   - display: true
-    level: '44'
+    level: '45'
     printable: true
     title: Adobe Illustrator
     weight: '50'
