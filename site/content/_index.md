@@ -4,12 +4,10 @@ url: /
 first_name: Monique
 middle_name: Denelia
 last_name: Mosbe
-birth_date: 1996-04-19T07:00:00-07:00
+birth_date: 1996-04-19T14:00:00.000Z
 ---
-I live in California working as a student and aspiring artist studying at California College of the Arts on my way towards a BA in Animation.
+Hello! I'm Monique, a determined aspiring artist with a passion for bringing to life what cannot be explained in words through art. 
 
-As an artist I enjoy drawing a variety of things in a variety of styles - I’m open to all imaginations.
+The ability to visually illustrate not only my own- but others ideas and experiences is something I've always strived for and continue to practice as I work towards my BA in Animation.  
 
-Aside from art and drawing, I also take great pleasure in DIY crafts, volunteering, cooking/baking, games, and television.
-
-Making the most out of life is what I do best, and I hope to lead a successful life in my career someday with the help of my peers, family and friends.
+As an artistic storyteller my goal is not to just evoke emotion, but to leave a lasting impression that encourages or even inspires people to think, act, and grow.
