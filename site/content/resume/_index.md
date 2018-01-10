@@ -72,6 +72,22 @@ hobby:
     icon: fa-heart
     title: Video Games
     weight: '50'
+  - display: true
+    icon: fa-heart
+    title: Baking
+    weight: '50'
+  - display: true
+    icon: fa-heart
+    title: DIY Crafts
+    weight: '50'
+  - display: true
+    icon: fa-heart
+    title: Crocheting
+    weight: '50'
+  - display: true
+    icon: fa-heart
+    title: Cosplay
+    weight: '50'
 achievements:
   - body: >-
       Co-directed The Sunken Forest group project – an animated short film
