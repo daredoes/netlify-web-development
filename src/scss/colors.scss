@@ -16,7 +16,7 @@ $tertiary-color: color("grey", "darken-1");
   $link-color: color("grey", "darken-4");
 
 .primary-color {
-  @extend .grey, .lighten-4
+  @extend .grey, .lighten-2
 }
 
 .secondary-color {
