@@ -2,7 +2,7 @@
 title: Resume
 image: ''
 first_name: Monique
-middle_name: Denalia
+middle_name: Denelia
 last_name: Mosbe
 birth_date: 1996-04-19T07:00:00.000Z
 resume: /img/uploads/resume2018.pdf
@@ -13,27 +13,27 @@ skill:
     title: Adobe Photoshop
     weight: '50'
   - display: true
-    level: '20'
+    level: '45'
     printable: true
     title: Adobe Illustrator
     weight: '50'
   - display: true
-    level: '48'
+    level: '40'
     printable: true
     title: Adobe Premier
     weight: '50'
   - display: true
-    level: '40'
+    level: '50'
     printable: true
     title: Autodesk Maya
-    weight: '50'
+    weight: '51'
   - display: true
-    level: '80'
+    level: '70'
     printable: true
     title: Paintstorm Studio
     weight: '50'
   - display: true
-    level: '70'
+    level: '80'
     printable: true
     title: PaintTool SAI
     weight: '50'
@@ -72,6 +72,22 @@ hobby:
     icon: fa-heart
     title: Video Games
     weight: '50'
+  - display: true
+    icon: fa-heart
+    title: Baking
+    weight: '50'
+  - display: true
+    icon: fa-heart
+    title: DIY Crafts
+    weight: '50'
+  - display: true
+    icon: fa-heart
+    title: Crocheting
+    weight: '50'
+  - display: true
+    icon: fa-heart
+    title: Cosplay
+    weight: '50'
 achievements:
   - body: >-
       Co-directed The Sunken Forest group project – an animated short film
@@ -102,11 +118,8 @@ achievements:
     printable: true
     weight: '50'
 ---
+Hello! I'm Monique, a determined aspiring artist with a passion for bringing to life what cannot be explained in words through art. 
 
-I live in California working as a student and aspiring artist studying at California College of the Arts on my way towards a BA in Animation.
+The ability to visually illustrate not only my own- but others ideas and experiences is something I always strive for and continue to practice as I work towards my BA in Animation.  
 
-As an artist I enjoy drawing a variety of things in a variety of styles - I'm open to all imaginations.
-
-Aside from art and drawing, I also take great pleasure in DIY crafts, volunteering, cooking/baking, games, and television.
-
-Making the most out of life is what I do best, and I hope to lead a successful life in my career someday with the help of my peers, family and friends.
+As an artistic storyteller my goal is not to just evoke emotion, but to leave a lasting impression that encourages or even inspires people to think, act, and grow.
