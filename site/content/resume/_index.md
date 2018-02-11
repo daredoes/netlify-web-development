@@ -6,6 +6,7 @@ middle_name: Denelia
 last_name: Mosbe
 birth_date: 1996-04-19T07:00:00.000Z
 resume: /img/uploads/resume2018.pdf
+show_about: false
 skill:
   - display: true
     level: '80'
@@ -56,7 +57,7 @@ contact:
     weight: '0'
   - title: Phone
     body: 818-605-2422
-    display: true
+    display: false
     external_url: 'tel:8186052422'
     icon: fa-phone
     printable: true
@@ -118,7 +119,7 @@ achievements:
     printable: true
     weight: '50'
 ---
-Hello! I'm Monique, a determined aspiring artist with a passion for bringing to life what cannot be explained in words through art. 
+Hello! I'm Monique, a determined aspiring artist with a passion for bringing to life what cannot be explained in words through art.
 
 The ability to visually illustrate not only my own- but others ideas and experiences is something I always strive for and continue to practice as I work towards my BA in Animation.  
 
