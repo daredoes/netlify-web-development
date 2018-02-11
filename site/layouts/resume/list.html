@@ -17,10 +17,10 @@
 
     </div>
 
-    {{ with .Content }}
+    {{ if .Params.show_about }}
     <hr class="condensed">
     <div class="body">
-       {{ . }}
+       {{ .Content }}
     </div>
     {{ end }}
     {{ with .Site.GetPage "section" "education" }}
