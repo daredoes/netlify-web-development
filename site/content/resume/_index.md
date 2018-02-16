@@ -6,7 +6,6 @@ middle_name: Denelia
 last_name: Mosbe
 birth_date: 1996-04-19T07:00:00.000Z
 resume: /img/uploads/resume2018.pdf
-show_about: false
 skill:
   - display: true
     level: '80'
@@ -64,11 +63,6 @@ contact:
     published: true
     weight: '0'
 hobby:
-  - display: true
-    icon: fa-heart
-    printable: false
-    title: Waiting For Death
-    weight: '0'
   - display: true
     icon: fa-heart
     title: Video Games
