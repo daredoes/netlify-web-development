@@ -1,7 +1,9 @@
 ---
-title: Senior Film
+title: Final Moments
 image: /img/uploads/SeniorCover.jpg
 date: 2017-11-15T20:28:58.598Z
+weight: '0'
+printable: true
 display: true
 albums:
   - album_id: '72157689750699454'
