@@ -3,6 +3,8 @@ title: Story
 albums:
   - album_id: '72157663778026827'
     title: Best Friend Overboard
+  - album_id: '72157687892882830'
+    title: The Stand Up
   - album_id: '72157678522215193'
     title: Concepts & Characters
     user_id: 144498668@N03
