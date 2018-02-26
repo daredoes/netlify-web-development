@@ -37,6 +37,10 @@ skill:
     printable: true
     title: PaintTool SAI
     weight: '50'
+  - display: true
+    level: '55'
+    title: TV Paint
+    weight: '50'
 contact:
   - title: Email
     body: mosbemonique63@gmail.com
