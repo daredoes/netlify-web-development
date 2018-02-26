@@ -23,6 +23,14 @@
        {{ . }}
     </div>
     {{ end }}
+    {{ with .Site.GetPage "page" "resume" }}
+    {{ if .Params.body }}
+    <hr class="condensed">
+    <div class="body">
+       {{ .Parms.body|markdownify }}
+    </div>
+    {{ end }}
+    {{ end }}
     {{ with .Site.GetPage "section" "education" }}
     {{ $pages := where (.Pages) ".Params.printable" "==" true }}
     {{ if $pages }}
@@ -50,20 +58,23 @@
     {{ end }}
     {{ end }}
     {{ end }}
-    {{ with .Site.GetPage "page" "pages/resume.md"}}
-    {{ if .Params.skill }}
-    {{ $pages := where (sort .Params.skill "weight" "desc") "printable" "==" true }}
+    {{ with .Site.GetPage "section" "skills" }}
+    {{ $pages := where .Pages.ByWeight "Params.printable" "==" true }}
     {{ if $pages }}
     <div>
     <h5 class="print-header resume-large">Skills</h5>
             <hr class="half-condensed">
-        <div class="body row resume-small">
-          {{ range $index, $p := sort $pages "level" "desc" }}
-            {{ if ne $index 0 }}<span> • </span>{{end}}<span>{{ $p.title }}</span>
+            {{ range sort $pages "Params.level" "desc" }}
+            <div class="row half-condensed">
+              <div class="col s3">
+                <span class="heavy">{{ .Title }}</span>
+              </div>
+              <div class="col s9 content-text resume-small">
+                {{ .Content }}
+              </div>
+            </div>
             {{end}}
-        </div>
     </div>
-    {{ end }}
     {{ end }}
     {{ end }}
 </div>
@@ -227,6 +238,40 @@
                         </div>
                         {{ end }}
                     </div>
+
+                  </div>
+                  {{end}}
+                  {{ with .Site.GetPage "section" "skills"}}
+                  <div class="row">
+                  <p class="resume-section-header heavy secondary-color-text">//Skills</p>
+                  <hr>
+                  <div class="row resume-bar-level-text primary-color-text text-darken-2">
+                      <div class="col s3 center" style="border-top: double; border-left: double">
+                          Beginner
+                      </div>
+                      <div class="col s3 center" style="border-top: double; border-left: double">
+                          Competent
+                      </div>
+                      <div class="col s3 center" style="border-top: double; border-left: double; border-right: double;">
+                          Expert
+                      </div>
+                      <div class="col s3 center" style="border-top: double; border-right: double">
+                          Master
+                      </div>
+                  </div>
+                  <div class="row scroll-box">
+                    <ul class="collection tertiary-color lighten-4 z-depth-1" style="border: 0;">
+                      {{ range where (sort .Pages "Params.level" "desc") "Params.display" "==" true }}
+
+                        <li class="collection-item avatar tertiary-color lighten-4" style="margin-bottom: -1.75em;">
+                              <a class="contact-button" href="#!">
+                                <i class="fa fa-heart circle secondary-color lighten-1"></i></a>
+                        <span class="title heavy">{{ .Title }}</span>
+                            <div class="context-text">{{ .Content }}</div>
+                        </li>
+                        {{ end }}
+                    </ul>
+                  </div>
 
                   </div>
                   {{end}}

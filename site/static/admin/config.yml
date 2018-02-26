@@ -16,7 +16,7 @@ collections: # A list of collections the CMS should be able to edit
         file: "site/content/pages/resume.md"
         fields:
           - {label: "Title", name: "title", widget: "string"}
-          - {label: "About Me", name: "body", widget: "markdown", required: false}
+          - {label: "Career Objective", name: "body", widget: "markdown", required: false}
           - {label: "Profile Picture", name: "image", widget: "image", required: false}
           - {label: "First Name", name: "first_name", widget: "string"}
           - {label: "Middle Name(s)", name: "middle_name", widget: "string", required: false}
@@ -129,6 +129,7 @@ collections: # A list of collections the CMS should be able to edit
     create: true
     fields:
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Level", name: "level", widget: "number", min: "0", max: "100", default: "50"}
       - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
       - {label: "Printable?", name: "printable", widget: "boolean", default: true}
