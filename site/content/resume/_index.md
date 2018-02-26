@@ -89,12 +89,6 @@ hobby:
     weight: '50'
 achievements:
   - body: >-
-      Co-directed The Sunken Forest group project – an animated short film
-      directed by a colleague for his senior thesis project
-    display: true
-    printable: true
-    weight: '50'
-  - body: >-
       Received an Excellence in Student Leadership Award for outstanding
       community service to the CCA art community
     display: true
