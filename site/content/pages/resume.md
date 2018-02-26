@@ -5,6 +5,7 @@ first_name: Daniel
 middle_name: Alexander Ross
 last_name: Evans
 birth_date: 1995-07-31T00:00:00-07:00
+body: Challenging position in programming or related areas the would best use creative solutions. Positions should have opportunities for a dedicated individual with leadership abilities.
 skill:
   - display: true
     level: '80'

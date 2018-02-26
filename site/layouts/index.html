@@ -23,11 +23,16 @@
        {{ . }}
     </div>
     {{ end }}
-    {{ with .Site.GetPage "page" "resume" }}
+    {{ with .Site.GetPage "page" "pages/resume.md" }}
     {{ if .Params.body }}
     <hr class="condensed">
-    <div class="body">
-       {{ .Parms.body|markdownify }}
+    <div class="row ">
+      <div class="col s3 no-padding">
+        <span class="heavy">Career Objective</span>
+      </div>
+      <div class="col s9 no-padding content-text resume-small">
+        {{ .Params.body|markdownify }}
+      </div>
     </div>
     {{ end }}
     {{ end }}
@@ -66,10 +71,10 @@
             <hr class="half-condensed">
             {{ range sort $pages "Params.level" "desc" }}
             <div class="row half-condensed">
-              <div class="col s3">
+              <div class="col s3 no-padding">
                 <span class="heavy">{{ .Title }}</span>
               </div>
-              <div class="col s9 content-text resume-small">
+              <div class="col s9 no-padding content-text resume-small">
                 {{ .Content }}
               </div>
             </div>
