@@ -4,7 +4,7 @@ title: 'Santa Monica, CA'
 external_url: '#!'
 date: 2017-07-13T01:42:57.000Z
 display_date: 2017- Present
-weight: '50'
+weight: '49'
 printable: true
 display: true
 ---
