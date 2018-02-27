@@ -1,5 +1,5 @@
 <div class="modal contact-modal modal-fixed-footer" id="contact-modal">
-<form class="" netlify name="contact" onsubmit="$('#contact-modal').modal('close');">
+<form class="" netlify netlify-honeypot="catchme" name="contact" onsubmit="$('#contact-modal').modal('close');">
   <div class="modal-content">
     <h3 class="center-align">Contact Form</h3>
 
@@ -12,10 +12,15 @@
           <label for="email" class="active">Your Email</label>
           <input type="email" name="email" required>
         </div>
+        <div class="input-field col s12" hidden>
+          <label for="catchme" class="active">Don't.</label>
+          <input type="text" name="catchme" >
+        </div>
         <div class="input-field col s12">
           <label for="comments" class="active">Comments</label>
           <textarea name="comments" class="materialize-textarea" required></textarea>
         </div>
+        <div netlify-recaptcha></div>
       </div>
 
   </div>
