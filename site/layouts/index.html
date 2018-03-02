@@ -286,7 +286,7 @@
                               <!--Single portfolio item -->
                               <div class="col-sm-6 col-md-4 mix category-1" data-myorder="Web Design">
                                   <figure class="effect-roxy">
-                                      <img src="{{ $p.Params.image | default "img/portfolio/thumb/kk_thumb.jpg"}}" alt="" />
+                                      <img src="{{ $p.Params.image | default "img/portfolio/thumb/placeholder_thumb.jpg"}}" alt="" />
                                       <figcaption>
                                           <h2><span>{{ $p.Title }}</span></h2>
                                           <p>{{ $p.Params.description }}</p>
@@ -296,7 +296,7 @@
                               </div>
                               <!-- Popup content -->
                               <div id="{{ $p.Title|urlize }}" class="white-popup mfp-hide">
-                                  <img src="{{ $p.Params.image | default "img/portfolio/krazykitchen_main.jpg"}}" alt="Portfolio Image">
+                                  <img src="{{ $p.Params.image | default "img/portfolio/placeholder.jpg"}}" alt="Portfolio Image">
                                   <h2 class="project-title">{{ $p.Title }}</h2>
                                   <div class="project-desc">{{ $p.Content }}</div>
                                   <a class="project-url btn" target="_blank" href="{{ $p.Params.link }}">Watch Gameplay Video</a>
