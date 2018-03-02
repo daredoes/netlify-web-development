@@ -2,7 +2,7 @@ backend:
   #name: git-gateway
   name: github #comment me out on development
   repo: daredoes/netlify-web-development # comment me out on production
-  branch: master # Branch to update (master by default)
+  branch: greg # Branch to update (master by default)
 
 media_folder: "src/img/uploads" # Folder where user uploaded files should go
 public_folder: "img/uploads"
@@ -78,13 +78,13 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Printable?", name: "printable", widget: "boolean", default: true}
       - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
 
-  - name: "experience"
-    label: "Experiences"
-    folder: "site/content/experience"
+  - name: "employment"
+    label: "Employment"
+    folder: "site/content/employment"
     create: true
     fields:
-      - {label: "Company Name", name: "name", widget: "string"}
-      - {label: "Job Title", name: "title", widget: "string"}
+      - {label: "Company Name", name: "title", widget: "string"}
+      - {label: "Job Title", name: "position", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "URL", name: "external_url", widget: "string"}
       - {label: "Start Date", name: "date", widget: "datetime"}
@@ -100,7 +100,7 @@ collections: # A list of collections the CMS should be able to edit
     fields:
       - {label: "Name", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Graduation Date", name: "graduation_date", widget: "datetime"}
+      - {label: "Start Date", name: "start_date", widget: "datetime"}
       - {label: "Date", name: "display_date", widget: "string"}
       - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
       - {label: "Printable?", name: "printable", widget: "boolean", default: true}
@@ -111,18 +111,26 @@ collections: # A list of collections the CMS should be able to edit
     folder: "site/content/project"
     create: true
     fields:
-      - {label: "Title", name: "title", widget: "string", required: false}
+      - {label: "Title", name: "title", widget: "string", required: true}
+      - {label: "Job Title", name: "position", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown", required: false}
-      - {label: "Cover Image", name: "image", widget: "image", required: false}
       - {label: "Project Date (For Sorting Purposes)", name: "date", widget: "datetime"}
       - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
       - {label: "Printable?", name: "printable", widget: "boolean", default: true}
       - {label: "Display on Site?", name: "display", widget: "boolean", default: true}
-      - name: "albums"
-        label: "Flickr Albums"
-        widget: "list"
-        required: false
-        fields:
-          - {label: "Album Title", name: "title", widget: "string", required: false}
-          - {label: "Flickr User ID", name: "user_id", widget: "string", default: "144498668@N03", required: false}
-          - {label: "Flickr Album ID", name: "album_id", widget: "string"}
+
+  - name: "portfolio"
+    label: "Portfolio"
+    folder: "site/content/portfolio"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string", required: true}
+      - {label: "Gameplay URL", name: "link", widget: "string"}
+      - { label: "Short Description", name: "description", widget: "string"}
+      - {label: "Long Description", name: "body", widget: "markdown"}
+      - {label: "Thumbnail Image", name: "thumbnail_image", widget: "image", required: false}
+      - {label: "Primary Image", name: "image", widget: "image", required: false}
+      - {label: "Project Date (For Sorting Purposes)", name: "date", widget: "datetime"}
+      - {label: "Weight", name: "weight", widget: "number", min: "0", max: "100", default: "50"}
+      - {label: "Printable?", name: "printable", widget: "boolean", default: true}
+      - {label: "Display on Site?", name: "display", widget: "boolean", default: true}

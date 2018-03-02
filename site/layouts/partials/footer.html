@@ -15,6 +15,41 @@ $(document).ready(function() {
    $(".default-children *").addClass("browser-default");
    {{ block "jquery" . }}
    {{ end}}
+   // Skills Chart
+
+   var options = {
+       //segmentShowStroke: false,
+       percentageInnerCutout: 70,
+       //animation: true,
+       animationEasing: 'easeOutQuint',
+       //animateRotate: false,
+       animateScale: true
+   };
+   var data = {};
+     {{ with .Site.GetPage "section" "skills" }}
+     {{ range $index, $p := .Pages }}
+      data["{{$p.Title | urlize | safeJS}}"] = [{
+        value: {{ $p.Params.level}},
+        color: {{ $p.Params.mainColor | default "#404148"}}
+      },{
+        value: {{ sub 100 $p.Params.level }},
+        color: {{ $p.Params.secondaryColor | default "#fff"}}
+      }]
+     {{ end }}
+     {{ end }}
+
+   var offset = 0;
+   $.each(data, function(key, data) {
+       var canvas = document.querySelector('#' + key);
+       if (canvas) {
+           offset += 250;
+           setTimeout(function() {
+               var ctx = canvas.getContext('2d');
+               var chart = new Chart(ctx);
+               chart.Doughnut(data, options);
+           }, offset);
+       }
+   });
 });
 </script>
 </body>

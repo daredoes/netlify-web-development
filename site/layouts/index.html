@@ -143,32 +143,39 @@
                           <div class="col-xs-6 education">
                               <h2>- Education -</h2>
 
+                              {{ with .Site.GetPage "section" "education"}}
                               <ul class="edu-list">
+                                {{ range $index, $p := .Pages.ByDate.ByWeight }}
                                   <li>
-                                      <h3>Santa Monica College</h3>
-                                      <h4>Game Design, Entertainment Techonology</h4>
-                                      <span>2013-2015</span>
-                                      <p></p>
+                                      <h3>{{ $p.Title }}</h3>
+                                      <h4>{{ $p.Params.position }}</h4>
+                                      <span>{{ $p.Params.display_date }}</span>
+                                      {{ with $p.Content }}
+                                      <div>
+                                        {{ .}}
+                                      </div>
+                                      {{ end }}
                                   </li>
-                                  <li>
-                                      <h3>Calabasas High School</h3>
-                                      <h4>College Preparatory, Film/Media Studies</h4>
-                                      <span>2009-2013</span>
-                                      <p></p>
-                                  </li>
+                                  {{ end }}
                               </ul>
+                              {{ end }}
                           </div>
 
                           <div class="col-xs-6 employment">
                               <h2>- Employment -</h2>
 
+                              {{ with .Site.GetPage "section" "employment"}}
                               <ul class="employment-list">
+                                {{ range $index, $p := .Pages.ByDate.ByWeight }}
                                   <li>
-                                      <h3>Virsix, Inc.</h3>
-                                      <h4>Game Designer / Programmer</h4>
-                                      <span>Dec. 2015 - Present</span>
-                                      <p>Virsix is a start-up focused on building virtual reality arcade systems and games for family entertainment centers and arcades. I worked on two shipped games here, from start to finish, both of which are being showcased in various locations around the world.</p>
+                                      <h3>{{ $p.Title }}</h3>
+                                      <h4>{{ $p.Params.position }}</h4>
+                                      <span>{{ $p.Params.display_date }}</span>
+                                      <div>
+                                        {{ $p.Content }}
+                                      </div>
                                   </li>
+                                  {{ end }}
                                 <!--  <li>
                                       <h3>Awesome Softwares</h3>
                                       <h4>Front-End Developer</h4>
@@ -182,6 +189,7 @@
                                       <p>Donec ultrices faucibus rutrum. Phasellus sodales vulputate urna, vel accumsan augue egestas ac. Donec vitae leo at sem lobortis porttitor eu consequat risus.</p>
                                   </li> -->
                               </ul>
+                              {{ end }}
                           </div>
                       </div> <!-- .container-->
                   </section>
@@ -194,137 +202,49 @@
 
                           <div class='skill-container container'>
                               <div class='row'>
+                                {{ with .Site.GetPage "section" "skills" }}
+                                  {{ range $index, $p := .Pages }}
                                   <div class='col-xs-6 col-sm-4 skill'>
                                       <figure>
-                                          <canvas height='150' id='vr' width='150'></canvas>
+                                          <canvas height='150' id='{{ $p.Title| urlize | safeJS }}' width='150'></canvas>
                                           <figcaption>
-                                              Virtual Reality
+                                              {{ .Title }}
                                           </figcaption>
                                       </figure>
                                   </div>
-                                  <div class='col-xs-6 col-sm-4 skill'>
-                                      <figure>
-                                          <canvas height='150' id='unity' width='150'></canvas>
-                                          <figcaption>
-                                              Unity 3D
-                                          </figcaption>
-                                      </figure>
-                                  </div>
-                                  <div class='col-xs-6 col-sm-4 skill'>
-                                      <figure>
-                                          <canvas height='150' id='game_design' width='150'></canvas>
-                                          <figcaption>
-                                              Game Design
-                                          </figcaption>
-                                      </figure>
-                                  </div>
-
-                                  <div class='col-xs-6 col-sm-4 skill'>
-                                      <figure>
-                                          <canvas height='150' id='c_sharp' width='150'></canvas>
-                                          <figcaption>
-                                              C#
-                                          </figcaption>
-                                      </figure>
-                                  </div>
-                                  <div class='col-xs-6 col-sm-4 skill'>
-                                      <figure>
-                                          <canvas height='150' id='javascript' width='150'></canvas>
-                                          <figcaption>
-                                              Javascript
-                                          </figcaption>
-                                      </figure>
-                                  </div>
-                                  <div class='col-xs-6 col-sm-4 skill'>
-                                      <figure>
-                                          <canvas height='150' id='python' width='150'></canvas>
-                                          <figcaption>
-                                              Python
-                                          </figcaption>
-                                      </figure>
-                                  </div>
-
-                                  <div class='col-xs-6 col-sm-4 skill'>
-                                      <figure>
-                                          <canvas height='150' id='rapid_prototyping' width='150'></canvas>
-                                          <figcaption>
-                                              Rapid Prototyping
-                                          </figcaption>
-                                      </figure>
-                                  </div>
-                                  <div class='col-xs-6 col-sm-4 skill'>
-                                      <figure>
-                                          <canvas height='150' id='agile_development' width='150'></canvas>
-                                          <figcaption>
-                                              Agile Development
-                                          </figcaption>
-                                      </figure>
-                                  </div>
-                                  <div class='col-xs-6 col-sm-4 skill'>
-                                      <figure>
-                                          <canvas height='150' id='gaming' width='150'></canvas>
-                                          <figcaption>
-                                              Gaming
-                                          </figcaption>
-                                      </figure>
-                                  </div>
+                                  {{ end }}
+                                {{ end }}
                               </div> <!-- row end-->
                           </div> <!-- Skill container -->
                   </section>
                   <!-- Skills Section end -->
-
+                  {{ with .Site.GetPage "section" "projects" }}
                   <section class="row recognition">
                       <div class="col-sm-6 rec-desc">
                           <div class="rec-inner">
                               <h2>Projects I've Worked On</h2>
-<!--
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum. </p>
--->
                           </div>
                       </div>
                       <div class="col-sm-6 rec-list">
                           <ul>
+                            {{ range $index, $p := .Pages.ByWeight }}
+                            {{ if ne $index 0}}
+                            <br>
+                            {{ end }}
                               <div>
                                   <!--<span class="fa fa-trophy fa-5x pull-left fa-fw"></span>-->
-                                  <h3>VR Cube</h3>
-                                  <h5><i>UX / Software Engineer</i></h5>
-                                  <p>The VR Cube is the world's first unattended VR arcade system. It is designed to be a plug-and-play experience with a simple and easy installation and minimal maintenance. The VR Cube currently has two fully featured games; Krazy Kitchen and Sky Ball.<br><br>
-- Created a payment system to allow users to insert money into a bill acceptor, credit card swiper, or arcade payment system to pay for a game.<br>
-- Worked with engineers to make software / hardware easily maintainable and easy to startup / shutdown by arcade staff.
-                                  </p>
+                                  <h3>{{ $p.Title }}</h3>
+                                  <h5><i>{{ $p.Params.position }}</i></h5>
+                                  <div class="context-text default-children">
+                                    {{ $p.Content }}
+                                  </div>
                               </div>
-<br>
-                              <div>
-                                  <!--<span class="fa fa-trophy fa-5x pull-left fa-fw"></span>-->
-                                  <h3>Krazy Kitchen</h3>
-                                  <h5><i>Game Designer / Programmer</i></h5>
-                                  <p>Krazy Kitchen is like Fruit Ninja in VR. The player is in a Ratatouille-esque kitchen, wielding a chef's knife, and they must slice foods that are thrown at them by the head chef.<br><br>
-                                        - Worked with a team to optimize the game to work in an arcade setting.<br>
-                                        - Designed and prototyped new game mechanics.<br>
-                                        - Implemented payment system for the VR Cube.<br>
-                                        - Made the game work with several different virtual reality SDKs and tracking systems.</p>
-                              </div>
-<br>
-                              <div>
-                                  <!--<span class="fa fa-trophy fa-5x pull-left fa-fw"></span>-->
-                                  <h3>Sky Ball</h3>
-                                  <h5><i>Game Designer / Programmer</i></h5>
-                                  <p>Sky Ball is a VR game made for SkyZone Trampoline Parks. Sky Ball is a twist on dodgeball where instead of throwing balls at other players, balls are thrown at you and you must hit them back.<br><br>
-                                        - Prototyped game very rapidly and finished development over a few short months.<br>
-                                        - Designed and programmed the game independently.<br>
-                                        - Implemented payment system for the VR Cube.<br>
-                                        - Integrated analytics to keep track of earnings and player behavior.</p>
-                              </div>
-<br>
-                        <!--      <li>
-                                  <span class="fa fa-microphone fa-5x pull-left fa-fw"></span>
-                                  <h3>UX Conference</h3>
-                                  <h5>Speaker</h5>
-                                  <h4>Dhaka, Bangladesh</h4>
-                              </li> -->
+
+                              {{ end }}
                           </ul>
                       </div>
                   </section>
+                  {{ end }}
                   <!-- Recognition section end -->
 
                   <footer class="row footer">
@@ -359,193 +279,36 @@
                               <button class="filter" data-filter=".category-3">Video / Photography</button>
                           </div>
 
+                          {{ with .Site.GetPage "section" "portfolio"}}
                           <div id="portfolio" class="portfolio-items">
 
+                            {{ range $index, $p := .Pages }}
                               <!--Single portfolio item -->
                               <div class="col-sm-6 col-md-4 mix category-1" data-myorder="Web Design">
                                   <figure class="effect-roxy">
-                                      <img src="img/portfolio/thumb/kk_thumb.jpg" alt="" />
+                                      <img src="{{ $p.Params.image | default "img/portfolio/thumb/kk_thumb.jpg"}}" alt="" />
                                       <figcaption>
-                                          <h2><span>Krazy Kitchen</span></h2>
-                                          <p>A VR game where you slice food with a giant chef's knife.</p>
-                                          <a href="#portfolio1" class="open-portfolio" >Explore</a>
+                                          <h2><span>{{ $p.Title }}</span></h2>
+                                          <p>{{ $p.Params.description }}</p>
+                                          <a href="#{{ $p.Title|urlize}}" class="open-portfolio" >Explore</a>
                                       </figcaption>
                                   </figure>
                               </div>
                               <!-- Popup content -->
-                              <div id="portfolio1" class="white-popup mfp-hide">
-                                  <img src="img/portfolio/krazykitchen_main.jpg" alt="Portfolio Image">
-                                  <h2 class="project-title">Krazy Kitchen</h2>
-                                  <p class="project-desc">Krazy Kitchen is like Fruit Ninja in VR. The player is in a Ratatouille-esque kitchen, wielding a chef's knife, and they must slice foods that are thrown at them by the head chef.</p>
-                                  <a class="project-url btn" target="_blank" href="https://www.youtube.com/watch?v=f2xhpz75TEE">Watch Gameplay Video</a>
+                              <div id="{{ $p.Title|urlize }}" class="white-popup mfp-hide">
+                                  <img src="{{ $p.Params.image | default "img/portfolio/krazykitchen_main.jpg"}}" alt="Portfolio Image">
+                                  <h2 class="project-title">{{ $p.Title }}</h2>
+                                  <div class="project-desc">{{ $p.Content }}</div>
+                                  <a class="project-url btn" target="_blank" href="{{ $p.Params.link }}">Watch Gameplay Video</a>
                               </div>
                               <!--.Single item end-->
-
-                              <!--Single portfolio item -->
-                              <div class="col-sm-6 col-md-4 mix category-1" data-myorder="Web Design">
-                                  <figure class="effect-roxy">
-                                      <img src="img/portfolio/thumb/sb_thumb.jpg" alt="" />
-                                      <figcaption>
-                                          <h2><span>Sky Ball</span></h2>
-                                          <p>A branded VR game made for Sky Zone Trampoline Parks.</p>
-                                          <a href="#portfolio2" class="open-portfolio" >Explore</a>
-                                      </figcaption>
-                                  </figure>
-                              </div>
-                              <!-- Popup content -->
-                              <div id="portfolio2" class="white-popup mfp-hide">
-                                  <img src="img/portfolio/skyball_main.jpg" alt="Portfolio Image">
-                                  <h2 class="project-title">Sky Ball</h2>
-                                  <p class="project-desc">Sky Ball is a VR game made for SkyZone Trampoline Parks. Sky Ball is a twist on dodgeball where instead of throwing balls at other players, balls are thrown at you and you must hit them back.</p>
-                                  <a class="project-url btn" target="_blank" href="https://www.youtube.com/watch?v=oLFzyJI32JM#t=4.210976">Watch Gameplay Video</a>
-                              </div>
-                              <!--.Single item end-->
-
-                              <!--Single portfolio item -->
-        <!--                      <div class="col-sm-6 col-md-4 mix category-3" data-myorder="Graphic Design">
-                                  <figure class="effect-roxy">
-                                      <img src="img/portfolio/thumb/placeholder_thumb.jpg" alt="" />
-                                      <figcaption>
-                                          <h2>Project <span>Title</span></h2>
-                                          <p>Your Awesome Project Description</p>
-                                          <a href="#portfolio3" class="open-portfolio" >Explore</a>
-                                      </figcaption>
-                                  </figure>
-                              </div>
-                              <!-- Popup content -->
-    <!--                          <div id="portfolio3" class="white-popup mfp-hide">
-                                  <img src="img/portfolio/placeholder.jpg" alt="Portfolio Image">
-                                  <h2 class="project-title">Awesome Project Title</h2>
-                                  <p class="project-desc">Lorem ipsum dolor sit amet, quo ut reque putent. Per saperet torquatos temporibus te. Nam nulla fabellas similique id, eruditi accusamus sit ex. Modo aliquid elaboraret nam id, in vel illud numquam. Evertitur consetetur voluptatum pri id, in scaevola vulputate cum. Ea vis mazim accusam, vix ea tale appareat.</p>
-                                  <a class="project-url btn" href="#">See Live</a>
-                              </div>
-                              <!--.Single item end-->
-
-                              <!--Single portfolio item -->
-  <!--                            <div class="col-sm-6 col-md-4 mix category-1" data-myorder="Web Design">
-                                  <figure class="effect-roxy">
-                                      <img src="img/portfolio/thumb/placeholder_thumb.jpg" alt="" />
-                                      <figcaption>
-                                          <h2>Project <span>Title</span></h2>
-                                          <p>Your Awesome Project Description</p>
-                                          <a href="#portfolio4" class="open-portfolio" >Explore</a>
-                                      </figcaption>
-                                  </figure>
-                              </div>
-                              <!-- Popup content -->
-    <!--                          <div id="portfolio4" class="white-popup mfp-hide">
-                                  <img src="img/portfolio/placeholder.jpg" alt="Portfolio Image">
-                                  <h2 class="project-title">Awesome Project Title</h2>
-                                  <p class="project-desc">Lorem ipsum dolor sit amet, quo ut reque putent. Per saperet torquatos temporibus te. Nam nulla fabellas similique id, eruditi accusamus sit ex. Modo aliquid elaboraret nam id, in vel illud numquam. Evertitur consetetur voluptatum pri id, in scaevola vulputate cum. Ea vis mazim accusam, vix ea tale appareat.</p>
-                                  <a class="project-url btn" href="#">See Live</a>
-                              </div>
-                              <!--.Single item end-->
-
-                              <!--Single portfolio item -->
-      <!--                        <div class="col-sm-6 col-md-4 mix category-2" data-myorder="App Development">
-                                  <figure class="effect-roxy">
-                                      <img src="img/portfolio/thumb/placeholder_thumb.jpg" alt="" />
-                                      <figcaption>
-                                          <h2>Project <span>Title</span></h2>
-                                          <p>Your Awesome Project Description</p>
-                                          <a href="#portfolio5" class="open-portfolio" >Explore</a>
-                                      </figcaption>
-                                  </figure>
-                              </div>
-                              <!-- Popup content -->
-      <!--                        <div id="portfolio5" class="white-popup mfp-hide">
-                                  <img src="img/portfolio/placeholder.jpg" alt="Portfolio Image">
-                                  <h2 class="project-title">Awesome Project Title</h2>
-                                  <p class="project-desc">Lorem ipsum dolor sit amet, quo ut reque putent. Per saperet torquatos temporibus te. Nam nulla fabellas similique id, eruditi accusamus sit ex. Modo aliquid elaboraret nam id, in vel illud numquam. Evertitur consetetur voluptatum pri id, in scaevola vulputate cum. Ea vis mazim accusam, vix ea tale appareat.</p>
-                                  <a class="project-url btn" href="#">See Live</a>
-                              </div>
-                              <!--.Single item end-->
-
-                              <!--Single portfolio item -->
-      <!--                        <div class="col-sm-6 col-md-4 mix category-3" data-myorder="Graphic Design">
-                                  <figure class="effect-roxy">
-                                      <img src="img/portfolio/thumb/placeholder_thumb.jpg" alt="" />
-                                      <figcaption>
-                                          <h2>Project <span>Title</span></h2>
-                                          <p>Your Awesome Project Description</p>
-                                          <a href="#portfolio6" class="open-portfolio" >Explore</a>
-                                      </figcaption>
-                                  </figure>
-                              </div>
-                              <!-- Popup content -->
-          <!--                    <div id="portfolio6" class="white-popup mfp-hide">
-                                  <img src="img/portfolio/placeholder.jpg" alt="Portfolio Image">
-                                  <h2 class="project-title">Awesome Project Title</h2>
-                                  <p class="project-desc">Lorem ipsum dolor sit amet, quo ut reque putent. Per saperet torquatos temporibus te. Nam nulla fabellas similique id, eruditi accusamus sit ex. Modo aliquid elaboraret nam id, in vel illud numquam. Evertitur consetetur voluptatum pri id, in scaevola vulputate cum. Ea vis mazim accusam, vix ea tale appareat.</p>
-                                  <a class="project-url btn" href="#">See Live</a>
-                              </div>
-                              <!--.Single item end-->
-
-                              <!--Single portfolio item -->
-      <!--                        <div class="col-sm-6 col-md-4 mix category-1" data-myorder="Graphic Design">
-                                  <figure class="effect-roxy">
-                                      <img src="img/portfolio/thumb/placeholder_thumb.jpg" alt="" />
-                                      <figcaption>
-                                          <h2>Project <span>Title</span></h2>
-                                          <p>Your Awesome Project Description</p>
-                                          <a href="#portfolio7" class="open-portfolio" >Explore</a>
-                                      </figcaption>
-                                  </figure>
-                              </div>
-                              <!-- Popup content -->
-          <!--                    <div id="portfolio7" class="white-popup mfp-hide">
-                                  <img src="img/portfolio/placeholder.jpg" alt="Portfolio Image">
-                                  <h2 class="project-title">Awesome Project Title</h2>
-                                  <p class="project-desc">Lorem ipsum dolor sit amet, quo ut reque putent. Per saperet torquatos temporibus te. Nam nulla fabellas similique id, eruditi accusamus sit ex. Modo aliquid elaboraret nam id, in vel illud numquam. Evertitur consetetur voluptatum pri id, in scaevola vulputate cum. Ea vis mazim accusam, vix ea tale appareat.</p>
-                                  <a class="project-url btn" href="#">See Live</a>
-                              </div>
-                              <!--.Single item end-->
-
-                              <!--Single portfolio item -->
-      <!--                        <div class="col-sm-6 col-md-4 mix category-2" data-myorder="Graphic Design">
-                                  <figure class="effect-roxy">
-                                      <img src="img/portfolio/thumb/placeholder_thumb.jpg" alt="" />
-                                      <figcaption>
-                                          <h2>Project <span>Title</span></h2>
-                                          <p>Your Awesome Project Description</p>
-                                          <a href="#portfolio8" class="open-portfolio" >Explore</a>
-                                      </figcaption>
-                                  </figure>
-                              </div>
-                              <!-- Popup content -->
-      <!--                        <div id="portfolio8" class="white-popup mfp-hide">
-                                  <img src="img/portfolio/placeholder.jpg" alt="Portfolio Image">
-                                  <h2 class="project-title">Awesome Project Title</h2>
-                                  <p class="project-desc">Lorem ipsum dolor sit amet, quo ut reque putent. Per saperet torquatos temporibus te. Nam nulla fabellas similique id, eruditi accusamus sit ex. Modo aliquid elaboraret nam id, in vel illud numquam. Evertitur consetetur voluptatum pri id, in scaevola vulputate cum. Ea vis mazim accusam, vix ea tale appareat.</p>
-                                  <a class="project-url btn" href="#">See Live</a>
-                              </div>
-                              <!--.Single item end-->
-
-                              <!--Single portfolio item -->
-        <!--                      <div class="col-sm-6 col-md-4 mix category-1" data-myorder="Web Design">
-                                  <figure class="effect-roxy">
-                                      <img src="img/portfolio/thumb/placeholder_thumb.jpg" alt="" />
-                                      <figcaption>
-                                          <h2>Project <span>Title</span></h2>
-                                          <p>Your Awesome Project Description</p>
-                                          <a href="#portfolio9" class="open-portfolio" >Explore</a>
-                                      </figcaption>
-                                  </figure>
-                              </div>
-                              <!-- Popup content -->
-        <!--                      <div id="portfolio9" class="white-popup mfp-hide">
-                                  <img src="img/portfolio/placeholder.jpg" alt="Portfolio Image">
-                                  <h2 class="project-title">Awesome Project Title</h2>
-                                  <p class="project-desc">Lorem ipsum dolor sit amet, quo ut reque putent. Per saperet torquatos temporibus te. Nam nulla fabellas similique id, eruditi accusamus sit ex. Modo aliquid elaboraret nam id, in vel illud numquam. Evertitur consetetur voluptatum pri id, in scaevola vulputate cum. Ea vis mazim accusam, vix ea tale appareat.</p>
-                                  <a class="project-url btn" href="#">See Live</a>
-                              </div>
-                              <!--.Single item end-->
-    <!--                      </div>
+                              {{ end }}
 
                           <!--Load more button-->
     <!--                      <a href="#" class="btn btn-load-more">Load More</a> -->
     <br><p>More coming soon!</p>
                       </div>
+                      {{ end }}
                       <!-- .portfolio-container -->
                   </section>
                   <!-- portfolio section end-->
