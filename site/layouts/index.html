@@ -1,257 +1,752 @@
 {{ partial "header" . }}
+<!-- Preloader -->
+  <div id="preloader">
+    <div class="loader"></div>
+  </div><!--preloader end-->
 
-<div id="mainContainer1" class="container-fluid resume-container scroll tertiary-color">
-        <div class="print-only">
-            <div class="" id="print-header">
-                <h1 class="">{{ .Params.first_name }} {{ .Params.last_name}}</h1>
-                <div style="margin-top: -1.5rem; margin-bottom: -0.5rem;" class="print-header-items print-info">
-                    <p class="condensed">
-                      {{ with .Site.GetPage "section" "contact"}}
-                      {{ $pages := where (.Pages) ".Params.printable" "==" true }}
-                      {{ range $index,$p := sort (sort $pages "Title") "Params.weight" }}
-                         {{ if ne $index 0}}| {{end}}{{ $p.Summary }}
-                      {{ end }}
-                      {{ end }}
-                    </p>
-                </div>
-            </div>
+  <main class="page-container">
 
-            {{ with .Content }}
-            <hr class="condensed">
-            <div class="body">
-               {{ . }}
-            </div>
-            {{ end }}
-            {{ with .Site.GetPage "section" "education" }}
-            {{ $pages := where (.Pages) ".Params.printable" "==" true }}
-            {{ if $pages }}
-            <h5 class="print-header">Education</h5>
-            <hr class="half-condensed">
-            {{ range sort (sort $pages "Params.graduation_date" "desc") "Params.weight" }}
-            <div class="print-header-items">
-                        <h6 class="title">{{ .Title }} <span class="right">{{ .Params.display_date }}</span></h6>
-                        <div class="body condensed context-text">{{ .Content }}</div>
-            </div>
-            {{ end }}
-            {{ end }}
-            {{ end }}
-            {{ with .Site.GetPage "section" "experience" }}
-            {{ $pages := where (.Pages) ".Params.printable" "==" true }}
-            {{ if $pages }}
-            <h5 class="print-header">Experiences</h5>
-            <hr class="half-condensed">
-            {{ range sort $pages "Params.weight" }}
-            <div class="print-header-items">
-                        <h6 class="title">{{ .Params.name }} - {{ .Title}} <span class="right">{{ .Params.display_date}}</span></h6>
+      <!-- Profile Page -->
+          <section class="single-page">
 
-                        <div class="body condensed context-text">{{ .Content }}</div>
-            </div>
-            {{ end }}
-            {{ end }}
-            {{ end }}
-            {{ with .Site.GetPage "section" "skills"}}
-            {{ $pages := where (.Pages.ByWeight) ".Params.printable" "==" true }}
-            {{ if $pages }}
-            <div>
-            <h5 class="print-header">Skills</h5>
-                    <hr class="half-condensed">
-                <div class="body row">
-                  {{ range $index, $p := sort $pages "Params.level" "desc" }}
-                    {{ if ne $index 0 }}<span> • </span>{{end}}<span>{{ $p.Title }}</span>
-                    {{end}}
-                </div>
-            </div>
-            {{ end }}
-            {{ end }}
-        </div>
+              <!-- Profile Page Title-->
+              <header class="page-title">
+                  <span><i class="fa fa-user fa-3x"></i></span>
+                  <h2>Profile</h2>
+                  <p class="menu-desc">A Brief About Me...</p>
+              </header>
+              <!-- .page-title -->
+
+      <!-- Profile Page Contents-->
+              <article class="page-info container-fluid">
+               <!-- about me -->
+                  <section class="row about-me">
+                      <div class="col-sm-5 col-sm-offset-1 profile-image">
+                          <div class="pp-container">
+                              <img src="img/avatar.png" alt="">
+                          </div>
+                          <h2><span>Greg</span><span>Sotolov</span></h2>
+                          <h3>Unity 3D &amp; Virtual Reality Game Developer</h3>
+
+                      </div>
+                      <!--.Profile image end-->
+
+                      <!-- bio-->
+                      <div class="col-sm-6 bio">
+                          <div class="bio-inner">
+                              <div class="col-md-10">
+                                  <h3>Awesome Virtual Reality Developer Located in Los Angeles</h3>
+                                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                                  <p> Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. </p>
+
+                                  <div class="buttons">
+                                      <a href="mailto:me@gregsotolov.com" class="btn hire-me">Connect With Me</a>
+                                      <a href="resume.pdf" target="_blank" class="btn download-resume">Download Resume</a>
+                                  </div>
+
+                              </div>
+                              </div>
+                      </div>
+                      <!-- .bio End -->
+                  </section>
+                  <!-- .about-me end-->
+
+                  <!-- services-->
+                  <section class="row services">
+                      <div class="over-div"></div>
+                      <div class="sec-divider"></div>
+                      <h2 class="section-title">Areas Of Expertise</h2>
+
+                      <div class="container service-list">
+
+                          <div class="row">
+                              <div class="col-sm-6 col-md-3 service">
+                                  <span><i class="fa fa-code fa-3x"></i></span>
+                                  <h3>Unity 3D</h3>
+                                  <p></p>
+                              </div> <!--single service -->
+
+                              <div class="col-sm-6 col-md-3 service">
+                                  <span><i class="fa fa-lightbulb-o fa-3x"></i></span>
+                                  <h3>Game Design</h3>
+                                  <p></p>
+                              </div><!--single service -->
+
+                              <div class="col-sm-6 col-md-3 service">
+                                  <span><i class="fa fa-eye fa-3x"></i></span>
+                                  <h3>Virtual Reality</h3>
+                                  <p></p>
+                              </div><!--single service -->
+
+                              <div class="col-sm-6 col-md-3 service">
+                                  <span><i class="fa fa-cogs fa-3x"></i></span>
+                                  <h3>Rapid Prototyping</h3>
+                                  <p></p>
+                              </div><!--single service -->
+                          </div> <!-- row of services -->
+                      </div> <!-- service list-->
+
+                  </section>
+                  <!-- #Services end-->
+<!--
+                  <section class="row fun-facts">
+                      <ul>
+                          <li>
+                              <h3>50+</h3>
+                              <h5>Happy Clients</h5>
+                          </li>
+                          <li>
+                              <h3><i class="fa fa-bicycle"></i></h3>
+                              <h5>Cyclist</h5>
+                          </li>
+                          <li>
+                              <h3>100+</h3>
+                              <h5>Projects Done</h5>
+                          </li>
+                          <li>
+                              <h3><i class="fa fa-camera-retro"></i></h3>
+                              <h5>Photographer</h5>
+                          </li>
+                          <li>
+                              <h3>200+</h3>
+                              <h5>Coffee Cups</h5>
+                          </li>
+                      </ul>
+                  </section> -->
+                  <!-- Fun facts end-->
+
+                  <footer class="row footer">
+                     <!-- <a href="http://www.rupok.me">Nazmul hasan Rupok</a> --> <span>Copyright &copy; 2016 All right reserved</span>
+                  </footer>
+                  <!--footer end-->
+
+              </article>
+              <!-- .page-info -->
+          </section> <!-- Single Page end -->
 
 
-        <!--
-        DISPLAYED AREA
-      -->
+          <!-- Resume Page -->
+
+          <section class="single-page">
+              <header class="page-title">
+                  <span><i class="fa fa-file-text fa-3x"></i></span>
+                  <h2>Resume</h2>
+                  <p class="menu-desc">My Qualifications...</p>
+              </header>
+              <!-- .page-title -->
+
+    <!-- Resume Page Contents-->
+              <article class="page-info container-fluid">
+                  <section class="row resume">
+                      <div class="over-div"></div>
+                      <div class="container">
+                          <div class="col-xs-6 education">
+                              <h2>- Education -</h2>
+
+                              <ul class="edu-list">
+                                  <li>
+                                      <h3>Santa Monica College</h3>
+                                      <h4>Game Design, Entertainment Techonology</h4>
+                                      <span>2013-2015</span>
+                                      <p></p>
+                                  </li>
+                                  <li>
+                                      <h3>Calabasas High School</h3>
+                                      <h4>College Preparatory, Film/Media Studies</h4>
+                                      <span>2009-2013</span>
+                                      <p></p>
+                                  </li>
+                              </ul>
+                          </div>
+
+                          <div class="col-xs-6 employment">
+                              <h2>- Employment -</h2>
+
+                              <ul class="employment-list">
+                                  <li>
+                                      <h3>Virsix, Inc.</h3>
+                                      <h4>Game Designer / Programmer</h4>
+                                      <span>Dec. 2015 - Present</span>
+                                      <p>Virsix is a start-up focused on building virtual reality arcade systems and games for family entertainment centers and arcades. I worked on two shipped games here, from start to finish, both of which are being showcased in various locations around the world.</p>
+                                  </li>
+                                <!--  <li>
+                                      <h3>Awesome Softwares</h3>
+                                      <h4>Front-End Developer</h4>
+                                      <span>Jan 2012-Dec 2012</span>
+                                      <p>Donec ultrices faucibus rutrum. Phasellus sodales vulputate urna, vel accumsan augue egestas ac. Donec vitae leo at sem lobortis porttitor eu consequat risus.</p>
+                                  </li>
+                                  <li>
+                                      <h3>Amazing Developers</h3>
+                                      <h4>Intern Developer</h4>
+                                      <span>Jan 2011- Dec 2011</span>
+                                      <p>Donec ultrices faucibus rutrum. Phasellus sodales vulputate urna, vel accumsan augue egestas ac. Donec vitae leo at sem lobortis porttitor eu consequat risus.</p>
+                                  </li> -->
+                              </ul>
+                          </div>
+                      </div> <!-- .container-->
+                  </section>
+                  <!-- Resume section end -->
+
+                  <section class="row skills">
+                      <div class="over-div"></div>
+                      <div class="sec-divider"></div>
+                      <h2 class="section-title">My Key Skills</h2>
+
+                          <div class='skill-container container'>
+                              <div class='row'>
+                                  <div class='col-xs-6 col-sm-4 skill'>
+                                      <figure>
+                                          <canvas height='150' id='vr' width='150'></canvas>
+                                          <figcaption>
+                                              Virtual Reality
+                                          </figcaption>
+                                      </figure>
+                                  </div>
+                                  <div class='col-xs-6 col-sm-4 skill'>
+                                      <figure>
+                                          <canvas height='150' id='unity' width='150'></canvas>
+                                          <figcaption>
+                                              Unity 3D
+                                          </figcaption>
+                                      </figure>
+                                  </div>
+                                  <div class='col-xs-6 col-sm-4 skill'>
+                                      <figure>
+                                          <canvas height='150' id='game_design' width='150'></canvas>
+                                          <figcaption>
+                                              Game Design
+                                          </figcaption>
+                                      </figure>
+                                  </div>
+
+                                  <div class='col-xs-6 col-sm-4 skill'>
+                                      <figure>
+                                          <canvas height='150' id='c_sharp' width='150'></canvas>
+                                          <figcaption>
+                                              C#
+                                          </figcaption>
+                                      </figure>
+                                  </div>
+                                  <div class='col-xs-6 col-sm-4 skill'>
+                                      <figure>
+                                          <canvas height='150' id='javascript' width='150'></canvas>
+                                          <figcaption>
+                                              Javascript
+                                          </figcaption>
+                                      </figure>
+                                  </div>
+                                  <div class='col-xs-6 col-sm-4 skill'>
+                                      <figure>
+                                          <canvas height='150' id='python' width='150'></canvas>
+                                          <figcaption>
+                                              Python
+                                          </figcaption>
+                                      </figure>
+                                  </div>
+
+                                  <div class='col-xs-6 col-sm-4 skill'>
+                                      <figure>
+                                          <canvas height='150' id='rapid_prototyping' width='150'></canvas>
+                                          <figcaption>
+                                              Rapid Prototyping
+                                          </figcaption>
+                                      </figure>
+                                  </div>
+                                  <div class='col-xs-6 col-sm-4 skill'>
+                                      <figure>
+                                          <canvas height='150' id='agile_development' width='150'></canvas>
+                                          <figcaption>
+                                              Agile Development
+                                          </figcaption>
+                                      </figure>
+                                  </div>
+                                  <div class='col-xs-6 col-sm-4 skill'>
+                                      <figure>
+                                          <canvas height='150' id='gaming' width='150'></canvas>
+                                          <figcaption>
+                                              Gaming
+                                          </figcaption>
+                                      </figure>
+                                  </div>
+                              </div> <!-- row end-->
+                          </div> <!-- Skill container -->
+                  </section>
+                  <!-- Skills Section end -->
+
+                  <section class="row recognition">
+                      <div class="col-sm-6 rec-desc">
+                          <div class="rec-inner">
+                              <h2>Projects I've Worked On</h2>
+<!--
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum. </p>
+-->
+                          </div>
+                      </div>
+                      <div class="col-sm-6 rec-list">
+                          <ul>
+                              <div>
+                                  <!--<span class="fa fa-trophy fa-5x pull-left fa-fw"></span>-->
+                                  <h3>VR Cube</h3>
+                                  <h5><i>UX / Software Engineer</i></h5>
+                                  <p>The VR Cube is the world's first unattended VR arcade system. It is designed to be a plug-and-play experience with a simple and easy installation and minimal maintenance. The VR Cube currently has two fully featured games; Krazy Kitchen and Sky Ball.<br><br>
+- Created a payment system to allow users to insert money into a bill acceptor, credit card swiper, or arcade payment system to pay for a game.<br>
+- Worked with engineers to make software / hardware easily maintainable and easy to startup / shutdown by arcade staff.
+                                  </p>
+                              </div>
+<br>
+                              <div>
+                                  <!--<span class="fa fa-trophy fa-5x pull-left fa-fw"></span>-->
+                                  <h3>Krazy Kitchen</h3>
+                                  <h5><i>Game Designer / Programmer</i></h5>
+                                  <p>Krazy Kitchen is like Fruit Ninja in VR. The player is in a Ratatouille-esque kitchen, wielding a chef's knife, and they must slice foods that are thrown at them by the head chef.<br><br>
+                                        - Worked with a team to optimize the game to work in an arcade setting.<br>
+                                        - Designed and prototyped new game mechanics.<br>
+                                        - Implemented payment system for the VR Cube.<br>
+                                        - Made the game work with several different virtual reality SDKs and tracking systems.</p>
+                              </div>
+<br>
+                              <div>
+                                  <!--<span class="fa fa-trophy fa-5x pull-left fa-fw"></span>-->
+                                  <h3>Sky Ball</h3>
+                                  <h5><i>Game Designer / Programmer</i></h5>
+                                  <p>Sky Ball is a VR game made for SkyZone Trampoline Parks. Sky Ball is a twist on dodgeball where instead of throwing balls at other players, balls are thrown at you and you must hit them back.<br><br>
+                                        - Prototyped game very rapidly and finished development over a few short months.<br>
+                                        - Designed and programmed the game independently.<br>
+                                        - Implemented payment system for the VR Cube.<br>
+                                        - Integrated analytics to keep track of earnings and player behavior.</p>
+                              </div>
+<br>
+                        <!--      <li>
+                                  <span class="fa fa-microphone fa-5x pull-left fa-fw"></span>
+                                  <h3>UX Conference</h3>
+                                  <h5>Speaker</h5>
+                                  <h4>Dhaka, Bangladesh</h4>
+                              </li> -->
+                          </ul>
+                      </div>
+                  </section>
+                  <!-- Recognition section end -->
+
+                  <footer class="row footer">
+                    <!--  <a href="http://www.rupok.me">Nazmul hasan Rupok</a> --> <span>Copyright &copy; 2016 All right reserved</span>
+                  </footer>
+                  <!--footer end-->
+
+              </article>
+              <!-- .page-info -->
+          </section><!-- Single Page end -->
 
 
-        <div class="card tertiary-color lighten-4 no-print resume">
-            <div class="row center">
-                <div id="photo" class="tertiary-color lighten-4 circle" >
-                    <img src="{{ .Params.image|default "/img/icons/avatar.gif"}}" alt="" class="darkness reverseScrollSlow circle responsive-img " style="vertical-align: middle">
-                </div>
-                <div class="col s12 no-print context-text">
+          <!-- Portfolio Page -->
 
-                    <p class="center heavy" style="margin-top: -0.2em; margin-bottom: 0; font-size: 2.5em;">Hello,</p>
-                    <p class="center heavy" style="margin-top: 0; font-size: 2em;">My name is <span class="secondary-color-text print">{{ .Params.first_name }} {{ .Params.last_name}}</span>
-                        <sup class="primary-color-text">{{ sub (time now).Year (time .Params.birth_date).Year }}YO</sup> and this is
-                      my <a class="link-secondary-color" href="//daredoes.work">resume/cv</a></p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s12 l7">
-                  {{ with .Content }}
-                    <div class="row">
-                    <p class="resume-section-header heavy secondary-color-text">//About Me</p>
-                        <div id="about_text" class="context-text">
-                            {{ . }}
-                        </div>
-                    </div>
-                    {{ end }}
-                    {{ with .Site.GetPage "section" "education"}}
-                    <div class="row">
-                    <p class="resume-section-header heavy secondary-color-text">//Education</p><hr>
-                        <ul class="z-depth-1 collection tertiary-color lighten-4" style="border: 0;">
-                            {{ range where (sort (sort .Pages "Params.graduation_date" "desc") "Params.weight") "Params.display" "==" true  }}
-                                <li class="collection-item tertiary-color lighten-4 no-padding" style="border:0; padding: 1em 0em 5em 0.5em !important;" >
-                                    <div class="left col no-padding m1 s2 l2">
-                                        <span class="badge boxed tertiary-color tertiary-color-text">{{ .Params.display_date}}</span>
-                                    </div>
-                                    <div class="col m11 s10 l10">
-                                        <span class="experience-title">{{ .Title }}</span>
-                                        <br>
-                                        <span class="context-text body">
-                                            {{ .Content }}
-                                        </span>
-                                    </div>
-                                </li>
-                            {{ end }}
-                        </ul>
-                    </div>
-                    {{ end }}
-                    {{ with .Site.GetPage "section" "experience"}}
-                    <div class="row">
-                    <p class="resume-section-header heavy secondary-color-text">//Experiences</p><hr>
-                        <div class="scroll-box">
-                            <div class="row">
-                              {{ range where .Pages.ByDate.ByWeight "Params.display" "==" true }}
-                                <div class="col s12">
-                                    <div class="card tertiary-color lighten-4">
-                                        <div class="card-content black-text content-text">
-                                            <span class="card-title"><a href="{{ .Params.external_url|safeURL }}" class="link-secondary-color">{{.Params.name }} - {{ .Title }}</a></span>
-                                            {{ .Content }}
-                                        </div>
-                                        <div class="card-action">
-                                            <span class="">{{ .Params.display_date}}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                {{ end }}
-                            </div>
-                        </div>
-                    </div>
-                    {{ end }}
-                    {{ with .Site.GetPage "section" "project"}}
-                    <div class="row">
-                    <p class="resume-section-header heavy secondary-color-text">//Projects</p><hr>
-                        <div class="scroll-box">
-                            <div class="row">
-                              {{ range where .Pages.ByDate.ByWeight "Params.display" "==" true }}
-                                <div class="col s12">
-                                    <div class="card tertiary-color lighten-4" >
-                                      <span class="activator"><div class="card-image  waves-effect waves-block waves-light">
-                                        <img class="activator tertiary-color lighten-4 darkness reverseScrollSlow" style="margin-bottom: 0;" src="{{ .Params.image| default "/img/project.png" }}">
+          <section class="single-page">
+              <header class="page-title">
+                  <span><i class="fa fa-briefcase fa-3x"></i></span>
+                  <h2>Portfolio</h2>
+                  <p class="menu-desc">Some of My Works...</p>
+              </header>
+              <!-- .page-title -->
+
+    <!-- Portfolio Page Contents-->
+              <article class="page-info container-fluid">
+                  <section class="row portfolios">
+                      <div class="portfolio-container">
+
+                          <div class="controls">
+                              <button class="filter" data-filter="all">All</button>
+                              <button class="filter" data-filter=".category-1">Virsix</button>
+                              <button class="filter" data-filter=".category-2">Prototypes / Weekend Projects</button>
+                              <button class="filter" data-filter=".category-3">Video / Photography</button>
+                          </div>
+
+                          <div id="portfolio" class="portfolio-items">
+
+                              <!--Single portfolio item -->
+                              <div class="col-sm-6 col-md-4 mix category-1" data-myorder="Web Design">
+                                  <figure class="effect-roxy">
+                                      <img src="img/portfolio/thumb/kk_thumb.jpg" alt="" />
+                                      <figcaption>
+                                          <h2><span>Krazy Kitchen</span></h2>
+                                          <p>A VR game where you slice food with a giant chef's knife.</p>
+                                          <a href="#portfolio1" class="open-portfolio" >Explore</a>
+                                      </figcaption>
+                                  </figure>
+                              </div>
+                              <!-- Popup content -->
+                              <div id="portfolio1" class="white-popup mfp-hide">
+                                  <img src="img/portfolio/krazykitchen_main.jpg" alt="Portfolio Image">
+                                  <h2 class="project-title">Krazy Kitchen</h2>
+                                  <p class="project-desc">Krazy Kitchen is like Fruit Ninja in VR. The player is in a Ratatouille-esque kitchen, wielding a chef's knife, and they must slice foods that are thrown at them by the head chef.</p>
+                                  <a class="project-url btn" target="_blank" href="https://www.youtube.com/watch?v=f2xhpz75TEE">Watch Gameplay Video</a>
+                              </div>
+                              <!--.Single item end-->
+
+                              <!--Single portfolio item -->
+                              <div class="col-sm-6 col-md-4 mix category-1" data-myorder="Web Design">
+                                  <figure class="effect-roxy">
+                                      <img src="img/portfolio/thumb/sb_thumb.jpg" alt="" />
+                                      <figcaption>
+                                          <h2><span>Sky Ball</span></h2>
+                                          <p>A branded VR game made for Sky Zone Trampoline Parks.</p>
+                                          <a href="#portfolio2" class="open-portfolio" >Explore</a>
+                                      </figcaption>
+                                  </figure>
+                              </div>
+                              <!-- Popup content -->
+                              <div id="portfolio2" class="white-popup mfp-hide">
+                                  <img src="img/portfolio/skyball_main.jpg" alt="Portfolio Image">
+                                  <h2 class="project-title">Sky Ball</h2>
+                                  <p class="project-desc">Sky Ball is a VR game made for SkyZone Trampoline Parks. Sky Ball is a twist on dodgeball where instead of throwing balls at other players, balls are thrown at you and you must hit them back.</p>
+                                  <a class="project-url btn" target="_blank" href="https://www.youtube.com/watch?v=oLFzyJI32JM#t=4.210976">Watch Gameplay Video</a>
+                              </div>
+                              <!--.Single item end-->
+
+                              <!--Single portfolio item -->
+        <!--                      <div class="col-sm-6 col-md-4 mix category-3" data-myorder="Graphic Design">
+                                  <figure class="effect-roxy">
+                                      <img src="img/portfolio/thumb/placeholder_thumb.jpg" alt="" />
+                                      <figcaption>
+                                          <h2>Project <span>Title</span></h2>
+                                          <p>Your Awesome Project Description</p>
+                                          <a href="#portfolio3" class="open-portfolio" >Explore</a>
+                                      </figcaption>
+                                  </figure>
+                              </div>
+                              <!-- Popup content -->
+    <!--                          <div id="portfolio3" class="white-popup mfp-hide">
+                                  <img src="img/portfolio/placeholder.jpg" alt="Portfolio Image">
+                                  <h2 class="project-title">Awesome Project Title</h2>
+                                  <p class="project-desc">Lorem ipsum dolor sit amet, quo ut reque putent. Per saperet torquatos temporibus te. Nam nulla fabellas similique id, eruditi accusamus sit ex. Modo aliquid elaboraret nam id, in vel illud numquam. Evertitur consetetur voluptatum pri id, in scaevola vulputate cum. Ea vis mazim accusam, vix ea tale appareat.</p>
+                                  <a class="project-url btn" href="#">See Live</a>
+                              </div>
+                              <!--.Single item end-->
+
+                              <!--Single portfolio item -->
+  <!--                            <div class="col-sm-6 col-md-4 mix category-1" data-myorder="Web Design">
+                                  <figure class="effect-roxy">
+                                      <img src="img/portfolio/thumb/placeholder_thumb.jpg" alt="" />
+                                      <figcaption>
+                                          <h2>Project <span>Title</span></h2>
+                                          <p>Your Awesome Project Description</p>
+                                          <a href="#portfolio4" class="open-portfolio" >Explore</a>
+                                      </figcaption>
+                                  </figure>
+                              </div>
+                              <!-- Popup content -->
+    <!--                          <div id="portfolio4" class="white-popup mfp-hide">
+                                  <img src="img/portfolio/placeholder.jpg" alt="Portfolio Image">
+                                  <h2 class="project-title">Awesome Project Title</h2>
+                                  <p class="project-desc">Lorem ipsum dolor sit amet, quo ut reque putent. Per saperet torquatos temporibus te. Nam nulla fabellas similique id, eruditi accusamus sit ex. Modo aliquid elaboraret nam id, in vel illud numquam. Evertitur consetetur voluptatum pri id, in scaevola vulputate cum. Ea vis mazim accusam, vix ea tale appareat.</p>
+                                  <a class="project-url btn" href="#">See Live</a>
+                              </div>
+                              <!--.Single item end-->
+
+                              <!--Single portfolio item -->
+      <!--                        <div class="col-sm-6 col-md-4 mix category-2" data-myorder="App Development">
+                                  <figure class="effect-roxy">
+                                      <img src="img/portfolio/thumb/placeholder_thumb.jpg" alt="" />
+                                      <figcaption>
+                                          <h2>Project <span>Title</span></h2>
+                                          <p>Your Awesome Project Description</p>
+                                          <a href="#portfolio5" class="open-portfolio" >Explore</a>
+                                      </figcaption>
+                                  </figure>
+                              </div>
+                              <!-- Popup content -->
+      <!--                        <div id="portfolio5" class="white-popup mfp-hide">
+                                  <img src="img/portfolio/placeholder.jpg" alt="Portfolio Image">
+                                  <h2 class="project-title">Awesome Project Title</h2>
+                                  <p class="project-desc">Lorem ipsum dolor sit amet, quo ut reque putent. Per saperet torquatos temporibus te. Nam nulla fabellas similique id, eruditi accusamus sit ex. Modo aliquid elaboraret nam id, in vel illud numquam. Evertitur consetetur voluptatum pri id, in scaevola vulputate cum. Ea vis mazim accusam, vix ea tale appareat.</p>
+                                  <a class="project-url btn" href="#">See Live</a>
+                              </div>
+                              <!--.Single item end-->
+
+                              <!--Single portfolio item -->
+      <!--                        <div class="col-sm-6 col-md-4 mix category-3" data-myorder="Graphic Design">
+                                  <figure class="effect-roxy">
+                                      <img src="img/portfolio/thumb/placeholder_thumb.jpg" alt="" />
+                                      <figcaption>
+                                          <h2>Project <span>Title</span></h2>
+                                          <p>Your Awesome Project Description</p>
+                                          <a href="#portfolio6" class="open-portfolio" >Explore</a>
+                                      </figcaption>
+                                  </figure>
+                              </div>
+                              <!-- Popup content -->
+          <!--                    <div id="portfolio6" class="white-popup mfp-hide">
+                                  <img src="img/portfolio/placeholder.jpg" alt="Portfolio Image">
+                                  <h2 class="project-title">Awesome Project Title</h2>
+                                  <p class="project-desc">Lorem ipsum dolor sit amet, quo ut reque putent. Per saperet torquatos temporibus te. Nam nulla fabellas similique id, eruditi accusamus sit ex. Modo aliquid elaboraret nam id, in vel illud numquam. Evertitur consetetur voluptatum pri id, in scaevola vulputate cum. Ea vis mazim accusam, vix ea tale appareat.</p>
+                                  <a class="project-url btn" href="#">See Live</a>
+                              </div>
+                              <!--.Single item end-->
+
+                              <!--Single portfolio item -->
+      <!--                        <div class="col-sm-6 col-md-4 mix category-1" data-myorder="Graphic Design">
+                                  <figure class="effect-roxy">
+                                      <img src="img/portfolio/thumb/placeholder_thumb.jpg" alt="" />
+                                      <figcaption>
+                                          <h2>Project <span>Title</span></h2>
+                                          <p>Your Awesome Project Description</p>
+                                          <a href="#portfolio7" class="open-portfolio" >Explore</a>
+                                      </figcaption>
+                                  </figure>
+                              </div>
+                              <!-- Popup content -->
+          <!--                    <div id="portfolio7" class="white-popup mfp-hide">
+                                  <img src="img/portfolio/placeholder.jpg" alt="Portfolio Image">
+                                  <h2 class="project-title">Awesome Project Title</h2>
+                                  <p class="project-desc">Lorem ipsum dolor sit amet, quo ut reque putent. Per saperet torquatos temporibus te. Nam nulla fabellas similique id, eruditi accusamus sit ex. Modo aliquid elaboraret nam id, in vel illud numquam. Evertitur consetetur voluptatum pri id, in scaevola vulputate cum. Ea vis mazim accusam, vix ea tale appareat.</p>
+                                  <a class="project-url btn" href="#">See Live</a>
+                              </div>
+                              <!--.Single item end-->
+
+                              <!--Single portfolio item -->
+      <!--                        <div class="col-sm-6 col-md-4 mix category-2" data-myorder="Graphic Design">
+                                  <figure class="effect-roxy">
+                                      <img src="img/portfolio/thumb/placeholder_thumb.jpg" alt="" />
+                                      <figcaption>
+                                          <h2>Project <span>Title</span></h2>
+                                          <p>Your Awesome Project Description</p>
+                                          <a href="#portfolio8" class="open-portfolio" >Explore</a>
+                                      </figcaption>
+                                  </figure>
+                              </div>
+                              <!-- Popup content -->
+      <!--                        <div id="portfolio8" class="white-popup mfp-hide">
+                                  <img src="img/portfolio/placeholder.jpg" alt="Portfolio Image">
+                                  <h2 class="project-title">Awesome Project Title</h2>
+                                  <p class="project-desc">Lorem ipsum dolor sit amet, quo ut reque putent. Per saperet torquatos temporibus te. Nam nulla fabellas similique id, eruditi accusamus sit ex. Modo aliquid elaboraret nam id, in vel illud numquam. Evertitur consetetur voluptatum pri id, in scaevola vulputate cum. Ea vis mazim accusam, vix ea tale appareat.</p>
+                                  <a class="project-url btn" href="#">See Live</a>
+                              </div>
+                              <!--.Single item end-->
+
+                              <!--Single portfolio item -->
+        <!--                      <div class="col-sm-6 col-md-4 mix category-1" data-myorder="Web Design">
+                                  <figure class="effect-roxy">
+                                      <img src="img/portfolio/thumb/placeholder_thumb.jpg" alt="" />
+                                      <figcaption>
+                                          <h2>Project <span>Title</span></h2>
+                                          <p>Your Awesome Project Description</p>
+                                          <a href="#portfolio9" class="open-portfolio" >Explore</a>
+                                      </figcaption>
+                                  </figure>
+                              </div>
+                              <!-- Popup content -->
+        <!--                      <div id="portfolio9" class="white-popup mfp-hide">
+                                  <img src="img/portfolio/placeholder.jpg" alt="Portfolio Image">
+                                  <h2 class="project-title">Awesome Project Title</h2>
+                                  <p class="project-desc">Lorem ipsum dolor sit amet, quo ut reque putent. Per saperet torquatos temporibus te. Nam nulla fabellas similique id, eruditi accusamus sit ex. Modo aliquid elaboraret nam id, in vel illud numquam. Evertitur consetetur voluptatum pri id, in scaevola vulputate cum. Ea vis mazim accusam, vix ea tale appareat.</p>
+                                  <a class="project-url btn" href="#">See Live</a>
+                              </div>
+                              <!--.Single item end-->
+    <!--                      </div>
+
+                          <!--Load more button-->
+    <!--                      <a href="#" class="btn btn-load-more">Load More</a> -->
+    <br><p>More coming soon!</p>
+                      </div>
+                      <!-- .portfolio-container -->
+                  </section>
+                  <!-- portfolio section end-->
+
+
+                  <!-- Testimonials Section
+       ================================================== -->
+  <!--                <section class="row testimonials">
+                      <div class="over-div"></div>
+                      <div class="sec-divider"></div>
+                      <h2 class="section-title">Some of my happy clients</h2>
+
+                      <div class="col-md-8 col-md-offset-2 text-container">
+                          <div id="testimonial-slides" class="owl-carousel">
+                              <div>
+                                  <blockquote>
+                                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer</p>
+                                      <cite> Jonathan Doe</cite>
+                                  </blockquote>
+                              </div> -->
+                              <!-- Single testimonial -->
+<!--
+                              <div>
+                                  <blockquote>
+                                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer</p>
+                                      <cite> Jane Doe</cite>
+                                  </blockquote>
+                              </div> -->
+                              <!-- Single testimonial -->
+<!--
+                              <div>
+                                  <blockquote>
+                                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer</p>
+                                      <cite> John Doe</cite>
+                                  </blockquote>
+                              </div>  -->
+                              <!-- Single testimonial -->
+<!--
+                          </div>
+                          <!-- Owl Carousel End -->
+  <!--                    </div>
+                      <!-- text-container ends -->
+
+        <!--          </section>
+                  <!-- Testimonials Section End-->
+
+<!--
+                  <section class="row fun-facts">
+                      <ul>
+                          <li>
+                              <h3>50+</h3>
+                              <h5>Happy Clients</h5>
+                          </li>
+                          <li>
+                              <h3> <i class="fa fa-bicycle"></i> </h3>
+                              <h5>Cyclist</h5>
+                          </li>
+                          <li>
+                              <h3>100+</h3>
+                              <h5>Projects Done</h5>
+                          </li>
+                          <li>
+                              <h3> <i class="fa fa-camera-retro"></i> </h3>
+                              <h5>Photographer</h5>
+                          </li>
+                          <li>
+                              <h3>200+</h3>
+                              <h5>Coffee Cups</h5>
+                          </li>
+                      </ul>
+                  </section>
+                  <!-- Fun facts end-->
+
+                  <footer class="row footer">
+                  <!--    <a href="http://www.rupok.me">Nazmul hasan Rupok</a> --> <span>Copyright &copy; 2016 All right reserved</span>
+                  </footer>
+              </article>
+              <!-- .page-info -->
+          </section><!-- Single Page end -->
+
+
+          <!-- Contact Page-->
+
+          <section class="single-page">
+              <header class="page-title">
+                  <span><i class="fa fa-paper-plane fa-3x"></i></span>
+                  <h2>Contact</h2>
+                  <p class="menu-desc">Way to Reach Me...</p>
+              </header>
+              <!-- .page-title -->
+
+    <!-- Contact Page Contents-->
+              <article class="page-info container-fluid">
+                  <section class="row contact">
+                      <div class="over-div"></div>
+                      <div class="sec-divider"></div>
+                      <h2 class="section-title">Drop me a line</h2>
+
+                      <!-- form -->
+                      <section class="row">
+                          <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-container">
+                              <form action="#" id="contactForm" method="post" name="contactForm">
+                                  <fieldset>
+                                      <div>
+                                          <input id="contactName" name="contactName" placeholder="Name" size="35" type="text" value="">
                                       </div>
-                                    <a href="{{ .URL }}" class="link-color"><div class="card-action center-align secondary-color">
-                                      <span class='link-color'>
-                                        Learn More
-                                      </span>
-                                    </div></a></span>
-                                      <div class="card-reveal">
 
-                                        <span class="card-title secondary-color-text">{{ .Title }}<i class="fa fa-times-circle-o right"></i></span>
-
-                                        <div class="context-text">
-                                          {{ .Summary }}
-                                        </div>
-
+                                      <div>
+                                          <input id="contactEmail" name="contactEmail" placeholder="Email" size="35" type="email" value="">
                                       </div>
 
-                                    </div>
-                                </div>
-                                {{ end }}
-                            </div>
-                        </div>
-                    </div>
-                    {{ end }}
-                    </div>
+                                      <div>
+                                          <textarea cols="5" id="contactMessage" name="contactMessage" placeholder="Message" rows="5"></textarea>
+                                      </div>
 
-                <div class="col s12 l5">
-                  {{ with .Site.GetPage "section" "contact" }}
-                    <div class="row">
-                    <p class="resume-section-header heavy secondary-color-text">//Contact</p><hr>
-                        <ul class="collection tertiary-color lighten-4 z-depth-1" style="border: 0;">
-                          {{ range $p := where (sort (sort .Pages "Title") "Params.weight") "Params.display" "==" true}}
+                                      <div>
+                                          <!-- contact-warning -->
 
-                            <li class="collection-item avatar tertiary-color lighten-4" style="margin-bottom: -1.75em;">
-                                  <a class="contact-button" href="{{ $p.Params.external_url|safeURL }}">
-                                    <i class="fa {{ $p.Params.icon}} circle secondary-color lighten-1"></i></a>
-                            <span class="title heavy">{{ $p.Title }}</span>
-                                <p>{{ $p.Content }}</p>
-                            </li>
-                            {{ end }}
-                        </ul>
-                    </div>
-                    {{ end }}
-                    {{ with .Site.GetPage "section" "skills"}}
-                    <div class="row">
-                    <p class="resume-section-header heavy secondary-color-text">//Skills</p>
-                    <hr>
-                    <div class="row resume-bar-level-text primary-color-text text-darken-2">
-                        <div class="col s3 center" style="border-top: double; border-left: double">
-                            Beginner
-                        </div>
-                        <div class="col s3 center" style="border-top: double; border-left: double">
-                            Competent
-                        </div>
-                        <div class="col s3 center" style="border-top: double; border-left: double; border-right: double;">
-                            Expert
-                        </div>
-                        <div class="col s3 center" style="border-top: double; border-right: double">
-                            Master
-                        </div>
-                    </div>
-                    <div class="row scroll-box">
-                      {{ range where (sort .Pages "Params.level" "desc") "Params.display" "==" true }}
-                        <div class="resume-bar-holder secondary-color accent-4">
-                            <div class="resume-bar secondary-color" style="width: {{.Params.level}}%;">
-                                <span class=" resume-bar-text tertiary-color-text">{{.Title }}</span>
-                            </div>
-                        </div>
-                        {{ end }}
-                    </div>
+                                          <div id="message-warning">
+                                              Error boy
+                                          </div>
+                                          <button class="submit">Send <i class="fa fa-angle-right"></i>
+                                          </button>
+                                          <span id="image-loader"><img alt="" src="img/svg-loaders/mail-loader.svg"></span>
+                                      </div>
+                                  </fieldset>
+                              </form>
+                              <!-- Form End -->
+                              <!-- contact-success -->
 
-                  </div>
-                  {{end}}
-                  {{ with .Site.GetPage "section" "hobbies" }}
-                  <div class="row">
-                    <p class="resume-section-header heavy secondary-color-text">//Hobbies</p><hr>
-                    <div style="margin-top: 1em;">
-
-                      {{ range where .Pages.ByTitle.ByWeight "Params.display" "==" true }}
-                    <div class="chip secondary-color tertiary-color-text">
-                        <i class="fa fa-heart primary-color-text"></i> {{.Title}}
-                    </div>
-                    {{ end }}
-
-                  </div>
-
-                    </div>
-                              {{ end }}
-
-                </div>
+                              <div id="message-success">
+                                  <i class="fa fa-check"></i>Your message was sent, thank you!
+                                  <br>
+                              </div>
+                          </div>
+                     </section>
+                      <!-- Form Container End -->
 
 
-            </div>
-        </div>
-    </div>
+                      <section class="row social">
+                          <div class="col-md-6 address">
+                              <div class="row location">
+                                  <div class="col-md-12 col-lg-10 col-lg-offset-1">
+                                      <ul>
+                                          <li>
+                                              <img src="img/icons/location-map.svg" alt="">
+                                              <h4>Los Angeles, California</h4>
+                                          </li>
+                                          <li>
+                                              <img src="img/icons/phone-icon.svg" alt="">
+                                              <h4>+1 (818) 465-8711	</h4>
+                                          </li>
+                                          <li>
+                                              <img src="img/icons/email-icon.svg" alt="">
+                                              <h4>me@gregsotolov.com</h4>
+                                          </li>
+                                      </ul>
+                                  </div>
+                              </div>
 
-<!--<div class="content container">
-  <div class="row">
-    <div class="col s12 m6">
-      {{ .Content }}
-    </div>
-    <div class="col s12 m6">
-      <img src="/img/uploads/profile_picture.png">
-    </div>
-  </div>
-</div>-->
+                              <nav class="row social-profiles">
+                                  <div class="col-md-12 col-lg-9 col-lg-offset-2">
+                                      <ul>
+                                          <li><a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+                                          </li>
+                                          <li><a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+                                          </li>
+                                          <li><a href="#"><i class="fa fa-google-plus fa-2x"></i></a>
+                                          </li>
+                                          <li><a href="#"><i class="fa fa-github fa-2x"></i></a>
+                                          </li>
+                                          <li><a href="#"><i class="fa fa-dribbble fa-2x"></i></a>
+                                          </li>
+                                          <li><a href="#"><i class="fa fa-slideshare fa-2x"></i></a>
+                                          </li>
+                                      </ul>
+                                  </div>
+                              </nav>
+                          </div>
+                          <div class="col-md-6 map-container">
+                              <div id="map"></div>
+                          </div>
+
+                      </section>
+                      <!--Social End-->
+                  </section>
+                  <!--Contact End-->
+                  <footer class="row footer">
+                   <!--   <a href="http://www.rupok.me">Nazmul hasan Rupok</a> --> <span>Copyright &copy; 2016 All right reserved</span>
+                  </footer>
+
+              </article>
+              <!-- .page-info -->
+          </section><!-- Single Page end -->
+
+      <a href="#" class="page-close">Close</a>
+      <a href="#" class="page-scroll">Scroll</a>
+  </main>
+  <!-- .page-container -->
+
+
 <script>
   if (window.netlifyIdentity) {
     window.netlifyIdentity.on("init", user => {

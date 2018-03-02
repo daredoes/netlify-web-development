@@ -1,34 +1,18 @@
 </main>
-<footer class="page-footer primary-color darken-4 no-print darkness z-depth-4">
-  {{ with .Site.GetPage "page" "pages/footer.md" }}
-         <div class="container">
-           <div class="row center-align link-color">
-             {{ range .Params.icons }}
-             {{ partial "icon_range" (dict "Icon" . "Color" "primary-color" "TextColor"  "link-color" "BackgroundBrightness" "darken-2" "URLClass" "social-media" "IconClass" "fa-lg social-media-icon") }}
-             {{ end }}
-
-           </div>
-         </div>
-         <div class="footer-copyright">
-           <div class="container">
-           <span>{{ .Params.copyright }}</span>
-           <span class="context-text right">{{ .Params.slogan|markdownify }}</span>
-           </div>
-         </div>
-     {{ end }}
-       </footer>
 <script src="/js/siema.min.js"></script>
 <script src="/app.js"></script>
-<script src="/js/jquery.min.js"></script>
-<script src="/js/materialize.min.js"></script>
-<script src="/js/jquery.nanogallery2.min.js"></script>
+<script src="/js/jquery-2.1.1.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&AMP;sensor=false"></script>
+<script src="/js/gmaps.js"></script>
+<script src="/js/jquery.magnific-popup.js"></script>
+<script src="/js/jquery.mixitup.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js"></script>
+<script src="js/scripts.js"></script>
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>
 $(document).ready(function() {
-   $(".button-collapse").sideNav();
-   $('.slider').slider();
    $(".default-children *").addClass("browser-default");
-   $(".modal").modal();
    {{ block "jquery" . }}
    {{ end}}
 });
