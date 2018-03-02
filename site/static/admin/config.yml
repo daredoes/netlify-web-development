@@ -108,7 +108,7 @@ collections: # A list of collections the CMS should be able to edit
 
   - name: "project"
     label: "Projects"
-    folder: "site/content/project"
+    folder: "site/content/projects"
     create: true
     fields:
       - {label: "Title", name: "title", widget: "string", required: true}
