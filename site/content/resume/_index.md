@@ -38,7 +38,7 @@ skill:
     title: PaintTool SAI
     weight: '50'
   - display: true
-    level: '55'
+    level: '50'
     title: TV Paint
     weight: '50'
 contact:
