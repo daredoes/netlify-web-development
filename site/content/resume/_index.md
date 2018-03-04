@@ -28,7 +28,7 @@ skill:
     title: Autodesk Maya
     weight: '51'
   - display: true
-    level: '70'
+    level: '60'
     printable: true
     title: Paintstorm Studio
     weight: '50'
