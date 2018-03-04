@@ -5,7 +5,7 @@ first_name: Monique
 middle_name: Denelia
 last_name: Mosbe
 birth_date: 1996-04-19T07:00:00.000Z
-resume: /img/uploads/resume2018.pdf
+resume: /img/uploads/moniquemosbe_resume2018.pdf
 skill:
   - display: true
     level: '80'
