@@ -1,6 +1,8 @@
 ---
 title: Story
 albums:
+  - album_id: '72157689750699464'
+    title: Final Moments - Senior Thesis Film
   - album_id: '72157663778026827'
     title: Best Friend Overboard
   - album_id: '72157687892882830'
