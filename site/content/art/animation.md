@@ -13,4 +13,4 @@ albums:
     title: Concepts & Characters
     user_id: 144498668@N03
 ---
-<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/watch?v=EFN97hlVwLg&list=PLzPhAJdvWwBC8odZHQqp6sFqL7U0UdZ9D" frameborder="0" gesture="media" allowfullscreen class="video"></iframe></div>
+<div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/playlist?list=PLzPhAJdvWwBC8odZHQqp6sFqL7U0UdZ9D" frameborder="0" gesture="media" allowfullscreen class="video"></iframe></div>
