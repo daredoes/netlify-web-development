@@ -2,8 +2,8 @@
 name: CCA Student Affairs Office
 title: 'San Francisco, CA'
 external_url: '#!'
-date: 2015-03-03T00:00:00-08:00
-display_date: 2015 - Present
+date: 2015-03-03T08:00:00.000Z
+display_date: 2015 - 2018
 weight: '50'
 printable: true
 display: true
