@@ -1,12 +1,12 @@
 ---
-title: 'California College of the Arts (CCA)'
-graduation_date: 2018-05-15T18:47:17-07:00
+title: California College of the Arts (CCA)
+graduation_date: 2018-05-16T01:47:17.000Z
 pre_date: ''
-display_date: 2015 - Current
+display_date: 2015 - 2018
 weight: '50'
 printable: true
 display: true
 ---
 Major: Animation
 
-Expected Graduation May 2018
+Bachelor of Fine Arts in Animation
