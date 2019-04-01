@@ -1,6 +1,6 @@
 ---
-name: Fitivity
-title: 'Santa Monica, CA'
+name: 'Fitivity - Santa Monica, CA'
+title: Illustrator
 external_url: '#!'
 date: 2017-07-13T01:42:57.000Z
 display_date: Jul 2017- Dec 2017
