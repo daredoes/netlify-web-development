@@ -1,6 +1,6 @@
 ---
-name: CCA Student Affairs Office
-title: 'San Francisco, CA'
+name: 'CCA Student Affairs Office - San Francisco, CA'
+title: Intermediate Front Desk Assistant
 external_url: '#!'
 date: 2015-03-03T08:00:00.000Z
 display_date: 2015 - 2018
