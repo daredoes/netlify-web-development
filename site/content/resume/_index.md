@@ -41,6 +41,10 @@ skill:
     level: '50'
     title: TV Paint
     weight: '50'
+  - display: true
+    level: '45'
+    title: Storyboard Pro
+    weight: '0'
 contact:
   - title: Email
     body: mosbemonique63@gmail.com
@@ -111,8 +115,6 @@ achievements:
     printable: true
     weight: '50'
 ---
-Hello! I'm Monique, a determined aspiring artist with a passion for bringing to life what cannot be explained in words through art.
+Hello, I'm Monique! I am a graduate from California College of the Arts with a BA in Animation. I currently reside in the Los Angeles area following my passion in illustration and storytelling to bring life to what cannot be explained in words through art.
 
-The ability to visually illustrate not only my own- but others ideas and experiences is something I always strive for and continue to practice as I work towards my BA in Animation.  
-
-As an artistic storyteller my goal is not to just evoke emotion, but to leave a lasting impression that encourages or even inspires people to think, act, and grow.
+The ability to visually illustrate not only my own- but others ideas and experiences is something I always strive for and continue to practice.
