@@ -3,7 +3,7 @@ name: 'Juicy Ladies Organic Juice Bar & Cafe - Woodland Hills, CA'
 title: Cashier & Server
 external_url: '#!'
 date: 2015-01-12T08:00:00.000Z
-display_date: 2015 - 2017
+display_date: May 2015 - Aug 2017
 weight: '50'
 printable: true
 display: true
