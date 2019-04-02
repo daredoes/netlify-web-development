@@ -115,6 +115,6 @@ achievements:
     printable: true
     weight: '50'
 ---
-Hello, I'm Monique! I am a graduate from California College of the Arts with a BA in Animation. I currently reside in the Los Angeles area following my passion in illustration and storytelling to bring life to what cannot be explained in words through art.
+Hello, I'm Monique! I am a graduate from California College of the Arts with a BFA in Animation. I currently reside in the Los Angeles area following my passion in illustration and storytelling to bring life to what cannot be explained in words through art.
 
 The ability to visually illustrate not only my own- but others ideas and experiences is something I always strive for and continue to practice.
