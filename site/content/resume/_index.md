@@ -42,7 +42,7 @@ skill:
     title: TV Paint
     weight: '50'
   - display: true
-    level: '45'
+    level: '40'
     title: Storyboard Pro
     weight: '0'
 contact:
