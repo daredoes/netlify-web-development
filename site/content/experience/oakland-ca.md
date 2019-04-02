@@ -3,7 +3,7 @@ name: 'The Sunken Forest - Oakland, CA'
 title: Co-director & BG Painter
 external_url: '#!'
 date: 2016-08-18T03:02:56.000Z
-display_date: 2016-2017
+display_date: Aug 2016 - May 2017
 weight: '50'
 printable: true
 display: true
