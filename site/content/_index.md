@@ -6,8 +6,6 @@ middle_name: Denelia
 last_name: Mosbe
 birth_date: 1996-04-19T14:00:00.000Z
 ---
-Hello! I'm Monique, a determined aspiring artist with a passion for bringing to life what cannot be explained in words through art. 
+Hello, I'm Monique! I am a graduate from California College of the Arts with a BFA in Animation. I currently reside in the Los Angeles area following my passion in illustration and storytelling to bring life to what cannot be explained in words through art.
 
-The ability to visually illustrate not only my own- but others ideas and experiences is something I love and continue to advance in with my Bachelor of Fine Arts in Animation.
-
-As a story artist my goal is not to just evoke emotion, but to leave a lasting impression that encourages or even inspires people to think, act, and grow.
+The ability to visually illustrate not only my own- but others ideas and experiences is something I always strive for and continue to practice
