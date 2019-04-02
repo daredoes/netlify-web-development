@@ -3,7 +3,7 @@ name: Redbubble - Redbubble.com
 title: Illustrator
 external_url: 'https://redbubble.com/people/kyuupeach'
 date: 2014-07-20T07:00:00.000Z
-display_date: 2014 - Present
+display_date: Jan 2014 - Present
 weight: '50'
 printable: true
 display: true
