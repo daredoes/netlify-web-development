@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import SectionHeader from '../../components/SectionHeader'
 
 class SkillItem extends React.Component {
     constructor(props) {
@@ -41,7 +42,7 @@ export default class SkillTemplate extends React.Component {
           })
         return (
             <div>
-                <p className="is-size-2">/// Skills</p>
+                <SectionHeader title="Skills" />
                 <div className="flex-row">
                     {children}
                 </div>

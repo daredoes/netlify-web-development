@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import SectionHeader from '../../components/SectionHeader'
 
 class EducationItem extends React.Component {
     constructor(props) {
@@ -38,7 +39,7 @@ export default class EducationTemplate extends React.Component {
           })
         return (
             <div>
-                <p className="is-size-2">/// Education</p>
+                <SectionHeader title="Education" />
                 <div>
                     {children}
                 </div>

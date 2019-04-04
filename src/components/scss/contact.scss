@@ -2,3 +2,45 @@
     background-color: red;
     border-radius: 50px;
 }
+
+.contact-item.box {
+    padding: 0.5rem;
+}
+
+.contact-item.box > .columns {
+    padding: 0 0.5rem;
+}
+
+.contact-item.box .icon {
+    background-color: $primary;
+    border-radius: 100px;
+}
+.contactIcon {
+    $size: 50% !important;
+    height: $size;
+    width: $size;
+    color: $primary-invert;
+}
+
+.iconAnchor:hover {
+    .icon {
+        background-color: darken($primary, 10%);
+    }
+}
+
+.iconAnchor:active {
+    .icon {
+        background-color: darken($primary, 30%);
+    }
+
+    
+}
+
+.contact-item.box .flex-centered {
+    display: flex !important;
+    padding: 0;
+}
+
+.contact-item.box:not(:last-child) {
+    margin-bottom: 0.25rem;
+}

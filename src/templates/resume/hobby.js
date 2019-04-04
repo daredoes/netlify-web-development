@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import SectionHeader from '../../components/SectionHeader'
 
 class HobbyItem extends React.Component {
     constructor(props) {
@@ -41,7 +41,7 @@ export default class HobbyTemplate extends React.Component {
           })
         return (
             <div>
-                <p className="is-size-2">/// Hobbies</p>
+                <SectionHeader title="Hobbies" />
                 <div className="flex-row">
                     {children}
                 </div>

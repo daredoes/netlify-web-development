@@ -54,7 +54,7 @@ const Navbar = class extends React.Component {
                 }}
               >
                 <span className="icon">
-                  <FontAwesomeIcon icon={['fab', 'github']} inverse={this.state.activeNav != "github"} />
+                  <FontAwesomeIcon icon={['fab', 'github']} inverse={this.state.activeNav !== "github"} />
                 </span>
               </a>
     );

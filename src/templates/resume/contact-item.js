@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import SectionHeader from '../../components/SectionHeader'
 
 class ContactItem extends React.Component {
     constructor(props) {
@@ -8,24 +9,28 @@ class ContactItem extends React.Component {
     }
 
     render() {
-        const { title, icon } = this.props.frontmatter;
+        const { title, icon, external_url } = this.props.frontmatter;
         const { html } = this.props;
         return (
             <div className="contact-item box">
-                <article className="media">
-                    <div className="media-left is-centered">
-                    <FontAwesomeIcon icon={icon} size="2x" fixedWidth className="contactIcon"/>
+                <div className="columns">
+                    <div className="flex-centered column is-2">
+                        <a href={external_url} className="iconAnchor">
+                            <div class="icon is-large">
+                                <FontAwesomeIcon icon={icon} fixedWidth className="contactIcon"/>    
+                            </div>
+                        </a>
                     </div>
-                    <div className="media-content">
+                    <div className="column is-10">
                         <div className="content">
-                            <p>
+                            <span>
                                 {title}
-                            </p>
+                            </span>
                             <div dangerouslySetInnerHTML={{ __html: html}}>
                             </div>
                         </div>
                     </div>
-                </article>
+                </div>
             </div>
         )
     }
@@ -54,7 +59,7 @@ export default class ContactItemTemplate extends React.Component {
           })
         return (
             <div>
-                <p className="is-size-2">/// Contact</p>
+                <SectionHeader title="Contact" />
                 <div>
                     {children}
                 </div>

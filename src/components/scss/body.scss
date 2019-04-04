@@ -1,7 +1,12 @@
-
 .resume.content {
     background-image: url('/img/patterns/witewall_3.png');
     margin: 7rem 50rem;
+}
+
+.section-header {
+    margin: 0.5rem 0;
+    height: 4px;
+    background-color: $primary;
 }
 
 .resume-container {
@@ -18,4 +23,10 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
+}
+
+.flex-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
