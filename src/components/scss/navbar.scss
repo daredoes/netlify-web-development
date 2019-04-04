@@ -1,0 +1,7 @@
+.navbar, .navbar-menu {
+    background-image: url('/img/patterns/binding_dark.png');
+}
+
+.navbar-menu.hamburger .navbar-item:hover {
+    cursor: pointer;
+}
