@@ -15,34 +15,27 @@ const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
   const columns = [
     [ // The Left Column
-      [EducationTemplate, data.educations.edges, "Education"],
+      [EducationTemplate, data.educations.edges],
     ],
     [ // The Right Column
-      [ContactItemTemplate, data.contacts.edges, "Contact Info"],
-      [SkillTemplate, data.skills.edges, "Skills"],
-      [HobbyTemplate, data.hobbies.edges, "Hobbies"],
+      [ContactItemTemplate, data.contacts.edges],
+      [SkillTemplate, data.skills.edges],
+      [HobbyTemplate, data.hobbies.edges],
     ]
   ];
 
   const columnSections = columns.map(function(column, i) {
     // For each column, return an Element made from its values
-    const columnElements = column.map(function(values) {
+    const columnElements = column.map(function(values, ii) {
       const Type = values[0];
-      // For each data object in the value, return an element of its type
-      const children = values[1].map(function(edge) {
-        return <Type key={edge.node.id} {...edge.node} />
-      })
       // For each column's returned element, put a header for the category
       return  (
-        <div key={values[2]}>
-          <p className="is-size-2">/// {values[2]}</p>
-          {children}
-        </div>
+        <Type key={ii} elements={values[1]} />
       )
     });
     // Return each wrapped column
     return (
-      <div key={i} className="column is-quarter">
+      <div key={i} className={`column is-full ${i % 2 ? 'is-5-desktop' : 'is-7-desktop'}`}>
         {columnElements}
       </div>
     )

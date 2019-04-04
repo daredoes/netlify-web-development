@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default class EducationTemplate extends React.Component {
+class EducationItem extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -14,7 +14,7 @@ export default class EducationTemplate extends React.Component {
     }
 }
 
-EducationTemplate.propTypes = {
+EducationItem.propTypes = {
     frontmatter: PropTypes.shape({
         title: PropTypes.string,
         weight: PropTypes.number,
@@ -24,4 +24,29 @@ EducationTemplate.propTypes = {
         display_date: PropTypes.string,
     }),
     html: PropTypes.string
+}
+
+export default class EducationTemplate extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        const { elements } = this.props;
+        const children = elements.map(function(edge) {
+            return <EducationItem key={edge.node.id} {...edge.node} />
+          })
+        return (
+            <div>
+                <p className="is-size-2">/// Education</p>
+                <div>
+                    {children}
+                </div>
+            </div>
+        )
+    }
+}
+
+EducationTemplate.propTypes = {
+    elements: PropTypes.object
 }

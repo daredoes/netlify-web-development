@@ -1,7 +1,15 @@
-.navbar, .navbar-menu {
+.navbar, .navbar-menu, .footer {
     background-image: url('/img/patterns/binding_dark.png');
+}
+
+.navbar {
+    line-height: 64px;
 }
 
 .navbar-menu.hamburger .navbar-item:hover {
     cursor: pointer;
+}
+
+.footer {
+    
 }

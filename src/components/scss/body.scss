@@ -1,9 +1,21 @@
+
 .resume.content {
     background-image: url('/img/patterns/witewall_3.png');
-    border: 2px black dashed;
-    margin-top: 2rem;
+    margin: 7rem 50rem;
 }
 
 .resume-container {
     
+}
+
+body {
+    background-image: url('/img/patterns/stardust.png');
+    @extend .scroll;
+}
+
+.flex-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }

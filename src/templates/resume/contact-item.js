@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export default class ContactItemTemplate extends React.Component {
+class ContactItem extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -31,7 +31,7 @@ export default class ContactItemTemplate extends React.Component {
     }
 }
 
-ContactItemTemplate.propTypes = {
+ContactItem.propTypes = {
     frontmatter: PropTypes.shape({
         title: PropTypes.string,
         printable: PropTypes.bool,
@@ -40,4 +40,29 @@ ContactItemTemplate.propTypes = {
         icon: PropTypes.string,
     }),
     html: PropTypes.string
+}
+
+export default class ContactItemTemplate extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        const { elements } = this.props;
+        const children = elements.map(function(edge) {
+            return <ContactItem key={edge.node.id} {...edge.node} />
+          })
+        return (
+            <div>
+                <p className="is-size-2">/// Contact</p>
+                <div>
+                    {children}
+                </div>
+            </div>
+        )
+    }
+}
+
+ContactItemTemplate.propTypes = {
+    elements: PropTypes.object
 }
