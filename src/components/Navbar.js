@@ -53,7 +53,7 @@ const Navbar = class extends React.Component {
                   })
                 }}
               >
-                <span className="icon">
+                <span className="icon has-text-light">
                   <FontAwesomeIcon icon={['fab', 'github']} inverse={this.state.activeNav !== "github"} />
                 </span>
               </a>
@@ -66,7 +66,7 @@ const Navbar = class extends React.Component {
       >
         <div className="container">
           <div className="navbar-brand">
-            <Link to="/" className="is-size-3">{title}</Link>
+            <Link to="/" className="is-size-3 has-text-light">{title}</Link>
             {/* Hamburger menu */}
             <div
               className={`navbar-burger burger ${this.state.navBarActiveClass}`}

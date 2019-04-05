@@ -12,11 +12,11 @@ class EducationItem extends React.Component {
         const { html } = this.props;
         return (
             <div className="contact-item box">
-                <div className="columns">
+                <div className="columns is-mobile is-tablet is-desktop">
                     <div className="column is-2 is-paddingless flex-centered">
-                        <span class="tag">
+                        <p className="has-text-centered">
                             {graduation_date}
-                        </span>
+                        </p>
                     </div>
                     <div className="column is-10">
                         <div className="content">

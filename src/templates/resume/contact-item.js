@@ -13,7 +13,7 @@ class ContactItem extends React.Component {
         const { html } = this.props;
         return (
             <div className="contact-item box">
-                <div className="columns">
+                <div className="columns is-mobile is-tablet is-desktop">
                     <div className="flex-centered column is-2">
                         <a href={external_url} className="iconAnchor">
                             <div class="icon is-large">
