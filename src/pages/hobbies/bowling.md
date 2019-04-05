@@ -1,6 +1,6 @@
 ---
 title: 'Bowling'
-icon: 'fa-heart'
+icon: ['fas', 'bowling-ball']
 weight: 50
 printable: true
 visible: true

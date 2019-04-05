@@ -1,7 +1,7 @@
 ---
 title: Phone
 external_url: 'tel:8182160587'
-icon: phone
+icon: ['fas', 'phone']
 weight: 50
 printable: true
 visible: true

@@ -1,6 +1,6 @@
 ---
 title: 'Programming'
-icon: 'fa-heart'
+icon: ['fas', 'keyboard']
 weight: 50
 printable: true
 visible: true

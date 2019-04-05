@@ -1,6 +1,6 @@
 ---
 title: 'Billiards'
-icon: 'fa-heart'
+icon: ['fas', 'heart']
 weight: 50
 printable: true
 visible: true

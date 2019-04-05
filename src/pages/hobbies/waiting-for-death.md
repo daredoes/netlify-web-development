@@ -1,6 +1,6 @@
 ---
 title: 'Waiting For Death'
-icon: 'fa-heart'
+icon: ['fas', 'skull-crossbones']
 weight: 1
 printable: true
 visible: true

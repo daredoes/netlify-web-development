@@ -6,11 +6,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 class HobbyItem extends React.Component {
 
     render() {
-        const { title } = this.props.frontmatter;
+        const { title, icon } = this.props.frontmatter;
         return (
             <div className="flex-item">
                 <span className="tag is-primary">
-                    <FontAwesomeIcon icon="heart" />&nbsp;{title}
+                    <FontAwesomeIcon icon={icon} />&nbsp;{title}
                 </span>
             </div>
         )
@@ -23,6 +23,7 @@ HobbyItem.propTypes = {
         weight: PropTypes.number,
         printable: PropTypes.bool,
         visible: PropTypes.bool,
+        icon: PropTypes.array
     }),
     html: PropTypes.string
 }
@@ -49,5 +50,5 @@ export default class HobbyTemplate extends React.Component {
 }
 
 HobbyTemplate.propTypes = {
-    elements: PropTypes.object
+    elements: PropTypes.array
 }

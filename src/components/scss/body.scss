@@ -41,3 +41,9 @@ body {
 .is-underlined {
     text-decoration: underline;
 }
+
+.half-size-icon {
+    $size: 50% !important;
+    height: $size;
+    width: $size;
+}

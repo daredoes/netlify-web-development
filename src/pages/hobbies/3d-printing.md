@@ -1,6 +1,6 @@
 ---
 title: '3D Printing'
-icon: 'fa-heart'
+icon: ['fas', 'print']
 weight: 50
 printable: true
 visible: true

@@ -67,5 +67,5 @@ export default class EducationTemplate extends React.Component {
 }
 
 EducationTemplate.propTypes = {
-    elements: PropTypes.object
+    elements: PropTypes.array
 }

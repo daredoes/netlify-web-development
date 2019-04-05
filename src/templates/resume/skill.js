@@ -52,5 +52,5 @@ export default class SkillTemplate extends React.Component {
 }
 
 SkillTemplate.propTypes = {
-    elements: PropTypes.object
+    elements: PropTypes.array
 }

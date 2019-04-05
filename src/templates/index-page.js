@@ -16,8 +16,8 @@ const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
   const columns = [
     [ // The Left Column
-      [EducationTemplate, data.educations.edges],
       [ExperienceTemplate, data.experiences.edges],
+      [EducationTemplate, data.educations.edges],
     ],
     [ // The Right Column
       [ContactItemTemplate, data.contacts.edges],

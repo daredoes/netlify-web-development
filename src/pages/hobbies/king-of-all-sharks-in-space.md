@@ -1,6 +1,6 @@
 ---
 title: 'King of all Sharks in Space'
-icon: 'fa-heart'
+icon: ['fas', 'crown']
 weight: 50
 printable: true
 visible: true

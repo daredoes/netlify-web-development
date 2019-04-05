@@ -1,6 +1,6 @@
 ---
 title: 'Video Games'
-icon: 'fa-heart'
+icon: ['fas', 'gamepad']
 weight: 50
 printable: true
 visible: true

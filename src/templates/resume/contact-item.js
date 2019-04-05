@@ -16,7 +16,7 @@ class ContactItem extends React.Component {
                 <div className="columns is-mobile is-tablet is-desktop">
                     <div className="flex-centered column is-2">
                         <a href={external_url} className="iconAnchor">
-                            <div class="icon is-large">
+                            <div className="icon is-large">
                                 <FontAwesomeIcon icon={icon} fixedWidth className="contactIcon"/>    
                             </div>
                         </a>
@@ -42,7 +42,7 @@ ContactItem.propTypes = {
         printable: PropTypes.bool,
         visible: PropTypes.bool,
         external_url: PropTypes.string,
-        icon: PropTypes.string,
+        icon: PropTypes.array,
     }),
     html: PropTypes.string
 }
@@ -69,5 +69,5 @@ export default class ContactItemTemplate extends React.Component {
 }
 
 ContactItemTemplate.propTypes = {
-    elements: PropTypes.object
+    elements: PropTypes.array
 }
