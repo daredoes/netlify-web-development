@@ -1,18 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import SectionHeader from '../../components/SectionHeader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class HobbyItem extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         const { title } = this.props.frontmatter;
         return (
             <div className="flex-item">
-                <span className="tag is-black">
-                    {title}
+                <span className="tag is-primary">
+                    <FontAwesomeIcon icon="heart" />&nbsp;{title}
                 </span>
             </div>
         )

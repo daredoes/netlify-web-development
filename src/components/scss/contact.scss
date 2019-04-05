@@ -1,10 +1,6 @@
-.contact-item.box > .media > .media-left {
-    background-color: red;
-    border-radius: 50px;
-}
-
 .contact-item.box {
     padding: 0.5rem;
+    background-color: $secondary;
 }
 
 .contact-item.box > .columns {

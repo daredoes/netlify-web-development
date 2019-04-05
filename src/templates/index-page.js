@@ -35,7 +35,7 @@ const IndexPage = ({ data }) => {
     });
     // Return each wrapped column
     return (
-      <div key={i} className={`column is-full ${i % 2 ? 'is-5-desktop' : 'is-7-desktop'}`}>
+      <div key={i} className={`column resume-column is-full ${i % 2 ? 'is-5-desktop' : 'is-7-desktop'}`}>
         {columnElements}
       </div>
     )
@@ -45,8 +45,8 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <div className="full-width has-text-centered">
-        <p className="is-size-1">Hello,</p>
-        <p className="is-size-4 is-uppercase">My name is {frontmatter.first_name} {frontmatter.last_name} and this is my Resume/CV</p>
+        <span className="is-size-1 has-text-weight-semi-bold">Hello,</span>
+        <p className="is-size-3 is-uppercase has-text-weight-semi-bold">My name is <span className="has-text-primary">{frontmatter.first_name} {frontmatter.last_name}</span> and this is my <a className="has-text-primary is-underlined" onClick={() => {window.print()}}>Resume/CV</a></p>
       </div>
       <div className="columns">
         {columnSections}

@@ -7,7 +7,7 @@ export default class SectionHeader extends React.Component {
         const { title } = this.props;
         return (
             <div>
-                <span className="is-size-5 is-uppercase has-text-weight-bold">// {title}</span>
+                <span className="is-size-4 is-uppercase has-text-weight-semi-bold">//{title}</span>
                 <hr className="section-header"/>
             </div>
         )

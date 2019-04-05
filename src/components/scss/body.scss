@@ -1,12 +1,16 @@
 .resume.content {
     background-image: url('/img/patterns/witewall_3.png');
-    margin: 7rem 50rem;
+    margin: 7rem 0;
+}
+
+.resume-column > *:not(:last-child) {
+    margin-bottom: 0.75rem;
 }
 
 .section-header {
-    margin: 0.5rem 0;
+    margin: 1rem 0;
     height: 4px;
-    background-color: $primary;
+    background-color: $secondary;
 }
 
 .resume-container {
@@ -20,13 +24,20 @@ body {
 
 .flex-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
+    & > * {
+        margin-right: 0.75rem;
+    }
 }
 
 .flex-centered {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.is-underlined {
+    text-decoration: underline;
 }
