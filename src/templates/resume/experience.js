@@ -2,30 +2,29 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import SectionHeader from '../../components/SectionHeader'
 
-class EducationItem extends React.Component {
+class ExperienceItem extends React.Component {
     constructor(props) {
         super(props);
     }
 
     render() {
-        const { title, graduation_date } = this.props.frontmatter;
+        const { title, display_date } = this.props.frontmatter;
         const { html } = this.props;
         return (
             <div className="contact-item box">
-                <div className="columns">
-                    <div className="column is-2 is-paddingless flex-centered">
-                        <span class="tag">
-                            {graduation_date}
+                <div className="content">
+                    <div className="is-full-width has-text-centered">
+                        <span className="is-size-5 is-underlined">
+                            {title}
                         </span>
                     </div>
-                    <div className="column is-10">
-                        <div className="content">
-                            <span className="is-size-5 is-underlined">
-                                {title}
-                            </span>
-                            <div dangerouslySetInnerHTML={{ __html: html}}>
-                            </div>
-                        </div>
+                    <div className="is-full-width has-text-centered">
+                        <span className="is-size-7">
+                            {display_date}
+                        </span>
+                    </div>
+                    <br />
+                    <div dangerouslySetInnerHTML={{ __html: html}}>
                     </div>
                 </div>
             </div>
@@ -33,19 +32,21 @@ class EducationItem extends React.Component {
     }
 }
 
-EducationItem.propTypes = {
+ExperienceItem.propTypes = {
     frontmatter: PropTypes.shape({
         title: PropTypes.string,
         weight: PropTypes.number,
         printable: PropTypes.bool,
         visible: PropTypes.bool,
-        graduation_date: PropTypes.string,
+        date: PropTypes.string,
         display_date: PropTypes.string,
+        external_url: PropTypes.string,
+        name: PropTypes.string
     }),
     html: PropTypes.string
 }
 
-export default class EducationTemplate extends React.Component {
+export default class ExperienceTemplate extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -53,7 +54,7 @@ export default class EducationTemplate extends React.Component {
     render() {
         const { elements } = this.props;
         const children = elements.map(function(edge) {
-            return <EducationItem key={edge.node.id} {...edge.node} />
+            return <ExperienceItem key={edge.node.id} {...edge.node} />
           })
         return (
             <div>
@@ -66,6 +67,6 @@ export default class EducationTemplate extends React.Component {
     }
 }
 
-EducationTemplate.propTypes = {
+ExperienceTemplate.propTypes = {
     elements: PropTypes.object
 }

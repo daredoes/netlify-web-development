@@ -2,4 +2,5 @@
 $family-primary: "Oswald", $family-sans-serif;
 
 $primary: darken($green, 10%);
-$secondary: $grey-lighter;
+$secondary: lighten($grey-lighter, 10%);
+

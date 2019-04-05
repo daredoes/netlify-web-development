@@ -6,8 +6,9 @@ import Layout from '../components/Layout'
 import Features from '../components/Features'
 import BlogRoll from '../components/BlogRoll'
 
-import ContactItemTemplate from './resume/contact-item'
-import EducationTemplate from './resume/education'
+import ContactItemTemplate from './resume/contact-item';
+import EducationTemplate from './resume/education';
+import ExperienceTemplate from './resume/experience';
 import HobbyTemplate from './resume/hobby';
 import SkillTemplate from './resume/skill';
 
@@ -16,6 +17,7 @@ const IndexPage = ({ data }) => {
   const columns = [
     [ // The Left Column
       [EducationTemplate, data.educations.edges],
+      [ExperienceTemplate, data.experiences.edges],
     ],
     [ // The Right Column
       [ContactItemTemplate, data.contacts.edges],

@@ -10,7 +10,4 @@ key: 'education'
 ---
 _B.S. Software Engineering_
 
-{{< no_print >}}
 _Transferred in after 2 years at SJSU_
-
-{{< /no_print >}}
