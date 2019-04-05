@@ -44,14 +44,18 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <div className="full-width has-text-centered">
-        <span className="is-size-1 has-text-weight-semi-bold">Hello,</span>
-        <p className="is-size-3 is-uppercase has-text-weight-semi-bold">My name is <span className="has-text-primary">{frontmatter.first_name} {frontmatter.last_name}</span> and this is my <a className="has-text-primary is-underlined" onClick={() => {window.print()}}>Resume/CV</a></p>
+      <div className="print-only">
+        Hello
       </div>
-      <div className="columns">
-        {columnSections}
+      <div className="no-print">
+        <div className="full-width has-text-centered">
+          <span className="is-size-1 has-text-weight-semi-bold">Hello,</span>
+          <p className="is-size-3 is-uppercase has-text-weight-semi-bold">My name is <span className="has-text-primary">{frontmatter.first_name} {frontmatter.last_name}</span> and this is my <a className="has-text-primary is-underlined" onClick={() => {window.print()}}>Resume/CV</a></p>
+        </div>
+        <div className="columns">
+          {columnSections}
+        </div>
       </div>
-      
     </Layout>
   )
 }

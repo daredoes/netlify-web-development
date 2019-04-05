@@ -93,17 +93,17 @@ collections:
       - {label: "Visible", name: "visible", widget: "boolean", default: true}
 
   - name: "pages"
-      label: "Pages"
-      files:
-        - file: "src/pages/index.md"
-          label: "Landing Page"
-          name: "index"
-          fields:
-            - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
-            - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-            - {label: "Body", name: "body", widget: "markdown", required: false}
-            - {label: "Profile Picture", name: "image", widget: "image", required: false}
-            - {label: "First Name", name: "first_name", widget: "string"}
-            - {label: "Middle Name(s)", name: "middle_name", widget: "string", required: false}
-            - {label: "Last Name", name: "last_name", widget: "string"}
-            - {label: "Birth Date", name: "birth_date", widget: "datetime"}
+    label: "Pages"
+    files:
+      - file: "src/pages/index.md"
+        label: "Landing Page"
+        name: "index"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
+          - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+          - {label: "Body", name: "body", widget: "markdown", required: false}
+          - {label: "Profile Picture", name: "image", widget: "image", required: false}
+          - {label: "First Name", name: "first_name", widget: "string"}
+          - {label: "Middle Name(s)", name: "middle_name", widget: "string", required: false}
+          - {label: "Last Name", name: "last_name", widget: "string"}
+          - {label: "Birth Date", name: "birth_date", widget: "datetime"}
