@@ -53,7 +53,9 @@ export default class EducationTemplate extends React.Component {
     render() {
         const { elements } = this.props;
         const children = elements.map(function(edge) {
-            return <EducationItem key={edge.node.id} {...edge.node} />
+            if (edge.node.frontmatter && edge.node.frontmatter.visible) {
+                return <EducationItem key={edge.node.id} {...edge.node} />
+            }
           })
         return (
             <div>

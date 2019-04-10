@@ -36,7 +36,9 @@ export default class HobbyTemplate extends React.Component {
     render() {
         const { elements } = this.props;
         const children = elements.map(function(edge) {
-            return <HobbyItem key={edge.node.id} {...edge.node} />
+            if (edge.node.frontmatter && edge.node.frontmatter.visible) {
+                return <HobbyItem key={edge.node.id} {...edge.node} />
+            }
           })
         return (
             <div>

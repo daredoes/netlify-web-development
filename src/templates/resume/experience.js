@@ -70,7 +70,9 @@ export default class ExperienceTemplate extends React.Component {
         super(props);
         let scrollActive = this.scrollActive;
         this.experiences = this.props.elements.map(function(edge) {
-            return <ExperienceItem key={edge.node.id} {...edge.node} scroll={scrollActive} />;
+            if (edge.node.frontmatter && edge.node.frontmatter.visible) {
+                return <ExperienceItem key={edge.node.id} {...edge.node} scroll={scrollActive} />;
+            }
         });
         this.state = {
             active: 0

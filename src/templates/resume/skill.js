@@ -38,7 +38,9 @@ export default class SkillTemplate extends React.Component {
     render() {
         const { elements } = this.props;
         const children = elements.map(function(edge) {
-            return <SkillItem key={edge.node.id} {...edge.node} />
+            if (edge.node.frontmatter && edge.node.frontmatter.visible) {
+                return <SkillItem key={edge.node.id} {...edge.node} />
+            }
           })
         return (
             <div>

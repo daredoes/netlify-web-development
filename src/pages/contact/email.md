@@ -8,4 +8,4 @@ visible: true
 published: true
 key: 'contact'
 ---
-me@daredoes.work
+[me@daredoes.work](mail:me@daredoes.work)

@@ -55,7 +55,9 @@ export default class ContactItemTemplate extends React.Component {
     render() {
         const { elements } = this.props;
         const children = elements.map(function(edge) {
-            return <ContactItem key={edge.node.id} {...edge.node} />
+            if (edge.node.frontmatter && edge.node.frontmatter.visible) {
+                return <ContactItem key={edge.node.id} {...edge.node} />
+            }
           })
         return (
             <div>
