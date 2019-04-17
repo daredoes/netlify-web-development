@@ -18,7 +18,7 @@ class ExperienceItem extends React.Component {
     }
 
     render() {
-        const { title, display_date } = this.props.frontmatter;
+        const { title, display_date, name, external_url } = this.props.frontmatter;
         const { html } = this.props;
         const leftScroll = this.makeScrollElement(false);
         const rightScroll = this.makeScrollElement(true);
@@ -28,10 +28,13 @@ class ExperienceItem extends React.Component {
                     <div className="columns is-mobile is-tablet is-desktop">
                         {leftScroll}
                         <div className="column has-text-centered">
-                            <span className="is-size-5 is-underlined">
+                            <span className="is-size-4 has-text-weight-bold">
                                 {title}
                             </span>
-                            <div className="is-full-width has-text-centered">
+                            <div className="is-full-width has-text-centered is-underlined is-size-5">
+                                { external_url ? <a href={external_url}>{name}</a> : <span>{name}</span>}
+                            </div>
+                            <div className="is-full-width has-text-centered has-text-primary">
                                 <span className="is-size-7">
                                     {display_date}
                                 </span>
@@ -88,10 +91,11 @@ export default class ExperienceTemplate extends React.Component {
     }
 
     render() {
+        const title = <span>Experiences #{this.state.active+1}/{this.experiences.length}</span>
         if (this.experiences) {
             return (
                 <div>
-                    <SectionHeader title={`Experiences #${this.state.active+1}/${this.experiences.length}`} />
+                    <SectionHeader title={title} />
                     <div>
                         {this.experiences[this.state.active]}
                     </div>

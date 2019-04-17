@@ -1,6 +1,6 @@
 ---
 title: 'Management'
-level: 85
+level: 10
 printable: true
 visible: true
 key: 'skill'

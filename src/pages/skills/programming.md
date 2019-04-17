@@ -1,6 +1,6 @@
 ---
 title: 'Programming'
-level: 85
+level: 100
 printable: true
 visible: true
 key: 'skill'

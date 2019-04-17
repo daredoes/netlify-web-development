@@ -4,7 +4,7 @@ title: 'Co-Chair of MAGWest'
 external_url: 'https://magfest.org/'
 date: 2017-12-27T05:04:35.882Z
 display_date: 'December 2015 - August 2018'
-weight: 1
+weight: 50
 printable: true
 visible: true
 key: 'experience'

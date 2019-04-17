@@ -22,6 +22,33 @@ body {
     @extend .scroll;
 }
 
+.darkness {
+    background-image: url('/img/patterns/darkness.png');
+}
+
+.profile-photo {
+    $size: 160px;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 5px;
+    display: inline-block;
+    margin-top: -80px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $light;
+
+    img {
+        $imgsize: 150px;
+        width: $imgsize;
+        height: $imgsize;
+        max-width: 100%;
+        border-radius: 50%;
+        @extend .darkness, .reverseScrollSlow;
+    }
+}
+
 .flex-row {
     display: flex;
     justify-content: flex-start;

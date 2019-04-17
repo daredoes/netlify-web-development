@@ -3,7 +3,7 @@ name: 'Rinse, Inc.'
 title: 'Software Engineer'
 external_url: 'https://rinse.com'
 date: '2018-04-02T08:00:00-07:00'
-display_date: '04/01/2019 8:00AM'
+display_date: 'April 2018 - March 2019'
 weight: 50
 printable: true
 visible: true

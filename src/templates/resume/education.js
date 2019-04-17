@@ -14,13 +14,13 @@ class EducationItem extends React.Component {
             <div className="contact-item box">
                 <div className="columns is-mobile is-tablet is-desktop">
                     <div className="column is-2 is-paddingless flex-centered">
-                        <p className="has-text-centered">
+                        <p className="has-text-centered has-text-primary">
                             {graduation_date}
                         </p>
                     </div>
                     <div className="column is-10">
                         <div className="content">
-                            <span className="is-size-5 is-underlined">
+                            <span className="is-size-5 has-text-weight-bold">
                                 {title}
                             </span>
                             <div dangerouslySetInnerHTML={{ __html: html}}>

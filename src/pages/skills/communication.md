@@ -1,6 +1,6 @@
 ---
 title: 'Self-Aware'
-level: 85
+level: 50
 printable: true
 visible: true
 key: 'skill'

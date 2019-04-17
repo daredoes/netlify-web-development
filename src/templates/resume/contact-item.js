@@ -23,7 +23,7 @@ class ContactItem extends React.Component {
                     </div>
                     <div className="column is-10">
                         <div className="content">
-                            <span>
+                            <span class='has-text-weight-bold'>
                                 {title}
                             </span>
                             <div dangerouslySetInnerHTML={{ __html: html}}>

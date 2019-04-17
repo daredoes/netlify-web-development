@@ -10,4 +10,5 @@ key: 'education'
 ---
 _B.S. Software Engineering_
 
-_Transferred in after 2 years at SJSU_
+[[noprint]]
+| _Transferred in after 2 years at SJSU_

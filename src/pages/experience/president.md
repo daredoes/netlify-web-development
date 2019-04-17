@@ -1,7 +1,7 @@
 ---
 name: 'good game San Jose (ggSJ)'
 title: 'President'
-external_url: '#'
+external_url: ''
 date: 2015-01-01T13:44:25-08:00
 display_date: 'January 2015-2016'
 weight: 50

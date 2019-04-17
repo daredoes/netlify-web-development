@@ -58,6 +58,22 @@ module.exports = {
               destinationDir: 'static',
             },
           },
+          {
+            resolve: "gatsby-remark-embed-youtube",
+          },
+          {
+            resolve: "gatsby-remark-custom-blocks",
+            options: {
+              blocks: {
+                print: {
+                  classes: "print-only",
+                },
+                noprint: {
+                  classes: "no-print",
+                },
+              },
+            },
+          },
         ],
       },
     },

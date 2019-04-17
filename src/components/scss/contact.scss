@@ -18,6 +18,10 @@
     color: $primary-invert;
 }
 
+.iconAnchor:hover .contactIcon, .iconAnchor:active .contactIcon, .contactIcon:hover, .contactIcon:active {
+    color: inherit;
+}
+
 .iconAnchor:hover {
     .icon {
         background-color: darken($primary, 10%);
