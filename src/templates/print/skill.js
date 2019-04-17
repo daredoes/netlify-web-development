@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import SectionHeader from '../../components/SectionHeader'
+import SectionHeader from '../../components/PrintableSectionHeader'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class SkillItem extends React.Component {
@@ -11,11 +11,9 @@ class SkillItem extends React.Component {
     render() {
         const { title } = this.props.frontmatter;
         return (
-            <div className="flex-item">
-                <span className="tag is-primary">
-                    <FontAwesomeIcon icon="keyboard" />&nbsp;{title}
-                </span>
-            </div>
+            <span className="">
+                {title}
+            </span>
         )
     }
 }
@@ -37,18 +35,25 @@ export default class SkillTemplate extends React.Component {
     }
 
     render() {
-        const { elements } = this.props;
-       
+        let { elements } = this.props;
+        elements = elements.filter(function(edge) {
+            return edge.node.frontmatter && edge.node.frontmatter.printable;
+        })
         const children = elements.map(function(edge) {
-            if (edge.node.frontmatter && edge.node.frontmatter.visible) {
-                return <SkillItem key={edge.node.id} {...edge.node} />
-            }
-          })
+            return <SkillItem key={edge.node.id} {...edge.node} />
+        })
+        const modifiedChildren = [];
+        children.forEach(function(v, i) {
+            modifiedChildren.push(v);
+            if (i < children.length-1) {
+                modifiedChildren.push(<span> • </span>)
+            }            
+        })
         return (
             <div>
-                <SectionHeader title={<span><s>Buzz Words</s><br/>// Skills & Software</span>} />
-                <div className="flex-row">
-                    {children}
+                <SectionHeader title="Skills & Software" />
+                <div className="is-size-7">
+                    {modifiedChildren}
                 </div>
             </div>
         )

@@ -7,4 +7,4 @@ printable: true
 visible: false
 key: 'contact'
 ---
-818-216-0587
+[818-216-0587](tel:8182160587)

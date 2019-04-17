@@ -16,6 +16,20 @@
       font-family: arial !important;
     }
 
+    .resume.content {
+      margin: 0 !important;
+    }
+
+    hr {
+      border: groove !important;
+      margin: 0 !important;
+      margin-bottom: 0.5rem !important;
+    }
+
+    .printable-contact-items > *:not(:last-child) {
+      border-right: solid;
+    }
+
     .context-text > ul > li{
       list-style-type: square;
       list-style-position: outside !important;
@@ -57,11 +71,7 @@
         font-weight: 600;
     }
 
-    hr{
-        border: groove;
-        margin-bottom: 0.5rem;
-
-    }
+    
 
     .resume-bar {
         background-color: #000000;

@@ -1,7 +1,7 @@
 ---
 title: Email
 external_url: 'mail:me@daredoes.work'
-icon: ['fas', 'compass']
+icon: ['fas', 'envelope']
 weight: 50
 printable: true
 visible: true

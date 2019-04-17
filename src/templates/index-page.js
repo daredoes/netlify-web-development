@@ -3,14 +3,17 @@ import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
-import Features from '../components/Features'
-import BlogRoll from '../components/BlogRoll'
+import ContactItemTemplate from './resume/contact-item'
+import EducationTemplate from './resume/education'
+import ExperienceTemplate from './resume/experience'
+import HobbyTemplate from './resume/hobby'
+import SkillTemplate from './resume/skill'
 
-import ContactItemTemplate from './resume/contact-item';
-import EducationTemplate from './resume/education';
-import ExperienceTemplate from './resume/experience';
-import HobbyTemplate from './resume/hobby';
-import SkillTemplate from './resume/skill';
+import PrintableContactItemTemplate from './print/contact-item'
+import PrintableEducationTemplate from './print/education'
+import PrintableExperienceTemplate from './print/experience'
+import PrintableHobbyTemplate from './print/hobby'
+import PrintableSkillTemplate from './print/skill'
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
@@ -44,10 +47,26 @@ const IndexPage = ({ data }) => {
   }
   );
 
+  const printOrder = [
+    [PrintableContactItemTemplate, data.contacts.edges],
+    [PrintableEducationTemplate, data.educations.edges],
+    [PrintableExperienceTemplate, data.experiences.edges],
+    [PrintableSkillTemplate, data.skills.edges],
+  ];
+
+  const printColumnSections = printOrder.map(function(values, i) {
+    const Type = values[0];
+    // For each column's returned element, put a header for the category
+    return  (
+      <Type key={i} elements={values[1]} />
+    )
+  });
+
   return (
     <Layout>
       <div className="print-only">
-        Hello
+      <span className="is-size-4 has-text-weight-bold">{frontmatter.first_name} {frontmatter.last_name}</span>
+        {printColumnSections}
       </div>
       <div className="no-print">
       
@@ -158,6 +177,7 @@ export const pageQuery = graphql`
           }
           id
           html
+          excerpt
         }
       }
     },
@@ -177,7 +197,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    skills: allMarkdownRemark(filter: {frontmatter: { key:{ eq:"skill"}}}, sort: { fields: [frontmatter___weight, frontmatter___title]}) {
+    skills: allMarkdownRemark(filter: {frontmatter: { key:{ eq:"skill"}}}, sort: { fields: [frontmatter___weight, frontmatter___level, frontmatter___title], order: [ASC, DESC, ASC]}) {
       edges{
         node{
           frontmatter {
