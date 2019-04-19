@@ -39,7 +39,7 @@ const IndexPage = ({ data }) => {
     });
     // Return each wrapped column
     return (
-      <div key={i} className={`column resume-column is-full ${i % 2 ? 'is-5-desktop' : 'is-7-desktop'}`}>
+      <div key={i} className={`column resume-column is-full ${i % 2 ? 'is-5-desktop is-5-tablet' : 'is-7-desktop is-7-tablet'}`}>
         {columnElements}
       </div>
     )
