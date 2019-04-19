@@ -3,10 +3,6 @@ import PropTypes from 'prop-types'
 import SectionHeader from '../../components/SectionHeader'
 
 class EducationItem extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const { title, graduation_date } = this.props.frontmatter;
         const { html } = this.props;
@@ -46,17 +42,10 @@ EducationItem.propTypes = {
 }
 
 export default class EducationTemplate extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
-        const { elements } = this.props;
-        const children = elements.map(function(edge) {
-            if (edge.node.frontmatter && edge.node.frontmatter.visible) {
-                return <EducationItem key={edge.node.id} {...edge.node} />
-            }
-          })
+        let { elements } = this.props;
+        elements = elements.filter((edge) => edge.node.frontmatter && edge.node.frontmatter.visible);
+        const children = elements.map((edge) => <EducationItem key={edge.node.id} {...edge.node} />);
         return (
             <div>
                 <SectionHeader title="Education" />

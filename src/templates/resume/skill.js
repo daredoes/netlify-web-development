@@ -4,10 +4,6 @@ import SectionHeader from '../../components/SectionHeader'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class SkillItem extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const { title } = this.props.frontmatter;
         return (
@@ -32,21 +28,13 @@ SkillItem.propTypes = {
 }
 
 export default class SkillTemplate extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
-        const { elements } = this.props;
-       
-        const children = elements.map(function(edge) {
-            if (edge.node.frontmatter && edge.node.frontmatter.visible) {
-                return <SkillItem key={edge.node.id} {...edge.node} />
-            }
-          })
+        let { elements } = this.props;
+        elements = elements.filter((edge) => edge.node.frontmatter && edge.node.frontmatter.visible);
+        const children = elements.map((edge) => <SkillItem key={edge.node.id} {...edge.node} />);
         return (
             <div>
-                <SectionHeader title={<span><s>Buzz Words</s><br/>// Skills & Software</span>} />
+                <SectionHeader title={<span><s>Buzz Words</s><br/>&#47;&#47; Skills & Software</span>} />
                 <div className="flex-row">
                     {children}
                 </div>

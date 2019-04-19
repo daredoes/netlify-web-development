@@ -29,17 +29,10 @@ HobbyItem.propTypes = {
 }
 
 export default class HobbyTemplate extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
-        const { elements } = this.props;
-        const children = elements.map(function(edge) {
-            if (edge.node.frontmatter && edge.node.frontmatter.visible) {
-                return <HobbyItem key={edge.node.id} {...edge.node} />
-            }
-          })
+        let { elements } = this.props;
+        elements = elements.filter((edge) => edge.node.frontmatter && edge.node.frontmatter.visible);
+        const children = elements.map((edge) => <HobbyItem key={edge.node.id} {...edge.node} />);
         return (
             <div>
                 <SectionHeader title="Hobbies" />

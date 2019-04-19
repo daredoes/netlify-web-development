@@ -4,10 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import SectionHeader from '../../components/SectionHeader'
 
 class ContactItem extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const { title, icon, external_url } = this.props.frontmatter;
         const { html } = this.props;
@@ -48,17 +44,10 @@ ContactItem.propTypes = {
 }
 
 export default class ContactItemTemplate extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
-        const { elements } = this.props;
-        const children = elements.map(function(edge) {
-            if (edge.node.frontmatter && edge.node.frontmatter.visible) {
-                return <ContactItem key={edge.node.id} {...edge.node} />
-            }
-          })
+        let { elements } = this.props;
+        elements = elements.filter((edge) => edge.node.frontmatter && edge.node.frontmatter.visible);
+        const children = elements.map((edge) => <ContactItem key={edge.node.id} {...edge.node} />);
         return (
             <div>
                 <SectionHeader title="Contact" />

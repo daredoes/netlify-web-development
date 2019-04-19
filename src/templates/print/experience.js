@@ -1,27 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import SectionHeader from '../../components/PrintableSectionHeader'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Link from '../../components/Link'
 
 class ExperienceItem extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    makeScrollElement(forwards) {
-        return (
-            <Link className="column is-1 flex-centered"  onClick={() => {this.props.scroll(forwards)}}>
-                <FontAwesomeIcon size="4x" icon={['fas', `caret-${forwards ? 'right' : 'left'}`]} />
-            </Link>
-        )
-    }
-
     render() {
-        const { title, display_date, name, external_url } = this.props.frontmatter;
+        const { title, display_date, name } = this.props.frontmatter;
         const { html } = this.props;
-        const leftScroll = this.makeScrollElement(false);
-        const rightScroll = this.makeScrollElement(true);
         return (
             <div className="print-header-items">
                     <span className="is-narrow is-size-6 has-text-weight-bold">
@@ -57,12 +41,8 @@ export default class ExperienceTemplate extends React.Component {
     
     constructor(props) {
         super(props);
-        this.experiences = this.props.elements.filter(function(edge) {
-            return edge.node.frontmatter && edge.node.frontmatter.printable;
-        })
-        this.experiences = this.experiences.map(function(edge) {
-            return <ExperienceItem key={edge.node.id} {...edge.node}/>;
-        });
+        this.experiences = this.props.elements.filter((edge) => edge.node.frontmatter && edge.node.frontmatter.printable);
+        this.experiences = this.experiences.map((edge) => <ExperienceItem key={edge.node.id} {...edge.node}/>);
     }
 
     render() {

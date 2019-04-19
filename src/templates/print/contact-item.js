@@ -1,13 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import SectionHeader from '../../components/PrintableSectionHeader'
 
 class ContactItem extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const { excerpt } = this.props;
         return (
@@ -28,21 +22,10 @@ ContactItem.propTypes = {
 }
 
 export default class ContactItemTemplate extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         let { elements } = this.props;
-        elements = elements.filter(function(edge) {
-            return edge.node.frontmatter && edge.node.frontmatter.printable;
-        })
-        const children = elements.map(function(edge) {
-            if (edge.node.frontmatter && edge.node.frontmatter.printable) {
-                return <ContactItem key={edge.node.id} {...edge.node} />
-            }
-        });
-        
+        elements = elements.filter((edge) => edge.node.frontmatter && edge.node.frontmatter.printable);
+        const children = elements.map((edge) => <ContactItem key={edge.node.id} {...edge.node} />);
         const modifiedChildren = [];
         children.forEach(function(v, i) {
             modifiedChildren.push(v);

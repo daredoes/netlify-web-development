@@ -5,10 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from '../../components/Link'
 
 class ExperienceItem extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     makeScrollElement(forwards) {
         return (
             <Link className="column is-1 flex-centered"  onClick={() => {this.props.scroll(forwards)}}>
@@ -72,11 +68,8 @@ export default class ExperienceTemplate extends React.Component {
     constructor(props) {
         super(props);
         let scrollActive = this.scrollActive;
-        this.experiences = this.props.elements.map(function(edge) {
-            if (edge.node.frontmatter && edge.node.frontmatter.visible) {
-                return <ExperienceItem key={edge.node.id} {...edge.node} scroll={scrollActive} />;
-            }
-        });
+        this.experiences = this.props.elements.filter((edge) => edge.node.frontmatter && edge.node.frontmatter.visible);
+        this.experiences = this.experiences.map((edge) => <ExperienceItem key={edge.node.id} {...edge.node} scroll={scrollActive} />);
         this.state = {
             active: 0
         }

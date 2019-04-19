@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import ContactItemTemplate from './resume/contact-item'
@@ -12,7 +12,6 @@ import SkillTemplate from './resume/skill'
 import PrintableContactItemTemplate from './print/contact-item'
 import PrintableEducationTemplate from './print/education'
 import PrintableExperienceTemplate from './print/experience'
-import PrintableHobbyTemplate from './print/hobby'
 import PrintableSkillTemplate from './print/skill'
 
 const IndexPage = ({ data }) => {
@@ -72,12 +71,12 @@ const IndexPage = ({ data }) => {
       
         <div className="full-width has-text-centered">
           <div className="profile-photo">
-            <img src="/img/uploads/profile_pic.gif"/>
+            <img alt='A drawing of my face' src="/img/uploads/profile_pic.gif"/>
           </div>
           <br/>
           <span className="is-size-2 has-text-weight-semi-bold is-uppercase">Hello,</span>
           <p className="is-size-3 is-uppercase has-text-weight-semi-bold">My name is <span className="has-text-primary">{frontmatter.first_name} {frontmatter.last_name}</span>.<br/>
-          <a className="has-text-info is-underlined" onClick={() => {window.print()}}>Print this page</a> to convert my life into my <a className="has-text-info is-underlined" onClick={() => {window.print()}}>Resumé/CV</a></p>
+          <a href="#print" className="has-text-info is-underlined" onClick={() => {window.print()}}>Print this page</a> to convert my life into my <a href="#print"  className="has-text-info is-underlined" onClick={() => {window.print()}}>Resumé/CV</a></p>
         </div>
         <div className="columns">
           {columnSections}
