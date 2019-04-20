@@ -32,8 +32,7 @@ ExperienceItem.propTypes = {
         external_url: PropTypes.string,
         name: PropTypes.string
     }),
-    html: PropTypes.string,
-    scroll: PropTypes.func.isRequired
+    html: PropTypes.string
 }
 
 

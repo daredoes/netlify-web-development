@@ -33,7 +33,7 @@ export default class SkillTemplate extends React.Component {
         children.forEach(function(v, i) {
             modifiedChildren.push(v);
             if (i < children.length-1) {
-                modifiedChildren.push(<span> • </span>)
+                modifiedChildren.push(<span key={i}> • </span>)
             }            
         })
         return (

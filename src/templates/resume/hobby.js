@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import SectionHeader from '../../components/SectionHeader'
+import Section from '../../components/Section'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class HobbyItem extends React.Component {
@@ -34,12 +34,7 @@ export default class HobbyTemplate extends React.Component {
         elements = elements.filter((edge) => edge.node.frontmatter && edge.node.frontmatter.visible);
         const children = elements.map((edge) => <HobbyItem key={edge.node.id} {...edge.node} />);
         return (
-            <div>
-                <SectionHeader title="Hobbies" />
-                <div className="flex-row">
-                    {children}
-                </div>
-            </div>
+            <Section elements={<div className="flex-row">{children}</div>} title="Hobbies" />
         )
     }
 }

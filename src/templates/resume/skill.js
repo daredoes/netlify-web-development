@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import SectionHeader from '../../components/SectionHeader'
+import Section from '../../components/Section'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class SkillItem extends React.Component {
@@ -33,12 +33,7 @@ export default class SkillTemplate extends React.Component {
         elements = elements.filter((edge) => edge.node.frontmatter && edge.node.frontmatter.visible);
         const children = elements.map((edge) => <SkillItem key={edge.node.id} {...edge.node} />);
         return (
-            <div>
-                <SectionHeader title={<span><s>Buzz Words</s><br/>&#47;&#47; Skills & Software</span>} />
-                <div className="flex-row">
-                    {children}
-                </div>
-            </div>
+            <Section elements={<div className="flex-row">{children}</div>} title={<span><s>Buzz Words</s><br/>&#47;&#47; Skills & Software</span>} />
         )
     }
 }

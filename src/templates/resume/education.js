@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import SectionHeader from '../../components/SectionHeader'
+import Section from '../../components/Section'
 
 class EducationItem extends React.Component {
     render() {
@@ -47,12 +47,7 @@ export default class EducationTemplate extends React.Component {
         elements = elements.filter((edge) => edge.node.frontmatter && edge.node.frontmatter.visible);
         const children = elements.map((edge) => <EducationItem key={edge.node.id} {...edge.node} />);
         return (
-            <div>
-                <SectionHeader title="Education" />
-                <div>
-                    {children}
-                </div>
-            </div>
+            <Section title="Education" elements={children} />
         )
     }
 }

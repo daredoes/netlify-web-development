@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import SectionHeader from '../../components/SectionHeader'
+import Section from '../../components/Section'
 
 class ContactItem extends React.Component {
     render() {
@@ -19,7 +19,7 @@ class ContactItem extends React.Component {
                     </div>
                     <div className="column is-10">
                         <div className="content">
-                            <span class='has-text-weight-bold'>
+                            <span className='has-text-weight-bold'>
                                 {title}
                             </span>
                             <div dangerouslySetInnerHTML={{ __html: html}}>
@@ -49,12 +49,7 @@ export default class ContactItemTemplate extends React.Component {
         elements = elements.filter((edge) => edge.node.frontmatter && edge.node.frontmatter.visible);
         const children = elements.map((edge) => <ContactItem key={edge.node.id} {...edge.node} />);
         return (
-            <div>
-                <SectionHeader title="Contact" />
-                <div>
-                    {children}
-                </div>
-            </div>
+            <Section title="Contact" elements={children} />
         )
     }
 }

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
+import BlogRoll from '../components/BlogRoll'
 import ContactItemTemplate from './resume/contact-item'
 import EducationTemplate from './resume/education'
 import ExperienceTemplate from './resume/experience'
@@ -18,11 +19,12 @@ const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
   const columns = [
     [ // The Left Column
-      [EducationTemplate, data.educations.edges],
       [ExperienceTemplate, data.experiences.edges],
+      [BlogRoll, null],
     ],
     [ // The Right Column
       [ContactItemTemplate, data.contacts.edges],
+      [EducationTemplate, data.educations.edges],
       [SkillTemplate, data.skills.edges],
       [HobbyTemplate, data.hobbies.edges],
     ]

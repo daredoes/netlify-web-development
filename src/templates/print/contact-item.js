@@ -30,7 +30,7 @@ export default class ContactItemTemplate extends React.Component {
         children.forEach(function(v, i) {
             modifiedChildren.push(v);
             if (i < children.length-1) {
-                modifiedChildren.push(<span>&nbsp;|&nbsp;</span>)
+                modifiedChildren.push(<span key={i}>&nbsp;|&nbsp;</span>)
             }            
         })
         return (
