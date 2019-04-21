@@ -1,6 +1,7 @@
 ---
 title: 'Self-Aware'
-level: 50
+icon: ['fas', 'eye']
+weight: 50
 printable: true
 visible: true
 key: 'skill'

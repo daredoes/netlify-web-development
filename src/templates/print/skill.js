@@ -16,7 +16,7 @@ class SkillItem extends React.Component {
 SkillItem.propTypes = {
     frontmatter: PropTypes.shape({
         title: PropTypes.string,
-        level: PropTypes.number,
+        icon: PropTypes.arrayOf([PropTypes.string]),
         weight: PropTypes.number,
         printable: PropTypes.bool,
         visible: PropTypes.bool,

@@ -1,6 +1,7 @@
 ---
 title: 'Spreadsheets'
-level: 50
+icon: ['fas', 'file-csv']
+weight: 50
 printable: true
 visible: true
 key: 'skill'

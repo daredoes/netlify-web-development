@@ -5,11 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class SkillItem extends React.Component {
     render() {
-        const { title } = this.props.frontmatter;
+        const { title, icon } = this.props.frontmatter;
         return (
             <div className="flex-item">
                 <span className="tag is-primary">
-                    <FontAwesomeIcon icon="keyboard" />&nbsp;{title}
+                    <FontAwesomeIcon icon={icon || "keyboard"} />&nbsp;{title}
                 </span>
             </div>
         )
@@ -19,7 +19,7 @@ class SkillItem extends React.Component {
 SkillItem.propTypes = {
     frontmatter: PropTypes.shape({
         title: PropTypes.string,
-        level: PropTypes.number,
+        icon: PropTypes.arrayOf([PropTypes.string]),
         weight: PropTypes.number,
         printable: PropTypes.bool,
         visible: PropTypes.bool,

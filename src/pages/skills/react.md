@@ -1,6 +1,6 @@
 ---
-title: 'Git'
-icon: ['fab', 'github']
+title: 'React + Native'
+icon: ['fab', 'react']
 weight: 50
 printable: true
 visible: true

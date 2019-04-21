@@ -201,7 +201,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    skills: allMarkdownRemark(filter: {frontmatter: { key:{ eq:"skill"}}}, sort: { fields: [frontmatter___weight, frontmatter___level, frontmatter___title], order: [ASC, DESC, ASC]}) {
+    skills: allMarkdownRemark(filter: {frontmatter: { key:{ eq:"skill"}}}, sort: { fields: [frontmatter___weight, frontmatter___title], order: [ASC, ASC]}) {
       edges{
         node{
           frontmatter {
@@ -210,7 +210,7 @@ export const pageQuery = graphql`
             printable
             visible
             key
-            level
+            icon
           } 
           id
           html

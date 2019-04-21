@@ -1,6 +1,7 @@
 ---
-title: 'Programming'
-level: 100
+title: 'Python'
+icon: ['fab', 'python']
+weight: 50
 printable: true
 visible: true
 key: 'skill'

@@ -1,6 +1,7 @@
 ---
-title: 'Management'
-level: 10
+title: 'Social'
+icon: ['fas', 'user']
+weight: 50
 printable: true
 visible: true
 key: 'skill'
