@@ -5,7 +5,7 @@ external_url: 'http://my.sjsu.edu/help/'
 date: 2014-05-07T13:48:12-07:00
 display_date: 'May 2014 - August 2015'
 weight: 50
-printable: true
+printable: false
 visible: true
 key: 'experience'
 ---

@@ -5,7 +5,7 @@ external_url: 'https://sjsugamedev.com/'
 date: 2014-08-07T13:47:06-07:00
 display_date: 'August 2014 - September 2015'
 weight: 50
-printable: true
+printable: false
 visible: true
 key: 'experience'
 ---
