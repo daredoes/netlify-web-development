@@ -1,5 +1,6 @@
 var proxy = require("http-proxy-middleware")
-process.env.GATSBY_BUILDTIME = new Date()
+var moment = require("moment")
+process.env.GATSBY_BUILDTIME = moment().toISOString()
 
 module.exports = {
   siteMetadata: {
