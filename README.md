@@ -1,120 +1,80 @@
-# Victor Hugo CMS Template
-<!-- Markdown snippet -->
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/bdougie/restaurant-template-cms&stack=cms)
+# Gatsby + Netlify CMS Starter
 
-![casper theme image](https://s3-us-west-1.amazonaws.com/publis-brian-images/restaurant.jpg)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b654c94e-08a6-4b79-b443-7837581b1d8d/deploy-status)](https://app.netlify.com/sites/gatsby-starter-netlify-cms-ci/deploys)
 
-**A [Hugo](http://gohugo.io/) boilerplate for creating truly epic websites**
+**Note:** This starter uses [Gatsby v2](https://www.gatsbyjs.org/blog/2018-09-17-gatsby-v2/).
 
-This is a boilerplate for using Hugo as a static site generator and Gulp + Weback as your
-asset pipeline.
+This repo contains an example business website that is built with [Gatsby](https://www.gatsbyjs.org/), and [Netlify CMS](https://www.netlifycms.org): **[Demo Link](https://gatsby-netlify-cms.netlify.com/)**.
 
-It's setup to use post-css and babel for CSS and JavaScript.
+It follows the [JAMstack architecture](https://jamstack.org) by using Git as a single source of truth, and [Netlify](https://www.netlify.com) for continuous deployment, and CDN distribution.
 
-## Usage
-Be sure that you have the latest node, npm and [Hugo](https://gohugo.io/overview/installing/) installed. If you need to install hugo, run:
+## Features ##
 
-Clone this repository and run:
+- A simple landing page with blog functionality built with Netlify CMS
+- Editabe Pages: Landing, About, Product, Blog-Collection and Contact page with Netlify Form support
+- Create Blog posts from Netlify CMS
+- Tags: Separate page for posts under each tag
+- Basic directory organization
+- Uses Bulma for styling, but size is reduced by `purge-css-plugin`
+- Blazing fast loading times thanks to pre-rendered HTML and automatic chunk loading of JS files
+- Uses `gatbsy-image` with Netlify-CMS preview support
+- Separate components for everything
+- Netlify deploy configuration
+- Netlify function support, see `src/lambda` folder
+- Perfect score on Lighthouse for SEO, Accessibility and Performance (wip:PWA)
+- ..and more
 
-```bash
-npm install
-npm start
+## Prerequisites
+
+- Node (I recommend using v8.2.0 or higher)
+- [Gatsby CLI](https://www.gatsbyjs.org/docs/)
+
+## Getting Started (Recommended)
+
+Netlify CMS can run in any frontend web environment, but the quickest way to try it out is by running it on a pre-configured starter site with Netlify. The example here is the Kaldi coffee company template (adapted from [One Click Hugo CMS](https://github.com/netlify-templates/one-click-hugo-cms)). Use the button below to build and deploy your own copy of the repository:
+
+<a href="https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/gatsby-starter-netlify-cms&amp;stack=cms"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a>
+
+After clicking that button, you’ll authenticate with GitHub and choose a repository name. Netlify will then automatically create a repository in your GitHub account with a copy of the files from the template. Next, it will build and deploy the new site on Netlify, bringing you to the site dashboard when the build is complete. Next, you’ll need to set up Netlify’s Identity service to authorize users to log in to the CMS.
+
+### Access Locally
+```
+$ git clone https://github.com/[GITHUB_USERNAME]/[REPO_NAME].git
+$ cd [REPO_NAME]
+$ yarn
+$ npm run start
+```
+To test the CMS locally, you'll need run a production build of the site:
+```
+$ npm run build
+$ npm run serve
 ```
 
-Then visit http://localhost:3000/ - BrowserSync will automatically reload CSS or
-refresh the page when stylesheets or content changes.
-
-To build your static output to the `/dist` folder, use:
-
-```bash
-npm run build
+## Getting Started (Without Netlify)
+```
+$ gatsby new [SITE_DIRECTORY_NAME] https://github.com/netlify-templates/gatsby-starter-netlify-cms/
+$ cd [SITE_DIRECTORY_NAME]
+$ npm run build
+$ npm run serve
 ```
 
-## Structure
+### Setting up the CMS
+Follow the [Netlify CMS Quick Start Guide](https://www.netlifycms.org/docs/quick-start/#authentication) to set up authentication, and hosting.
 
+## Debugging
+Windows users might encounter ```node-gyp``` errors when trying to npm install.
+To resolve, make sure that you have both Python 2.7 and the Visual C++ build environment installed.
 ```
-|--site                // Everything in here will be built with hugo
-|  |--content          // Pages and collections - ask if you need extra pages
-|  |--data             // YAML data files with any data for use in examples
-|  |--layouts          // This is where all templates go
-|  |  |--partials      // This is where includes live
-|  |  |--index.html    // The index page
-|  |--static           // Files in here ends up in the public folder
-|--src                 // Files that will pass through the asset pipeline
-|  |--css              // CSS files in the root of this folder will end up in /css/...
-|  |--js               // app.js will be compiled to /js/app.js with babel
+npm config set python python2.7
+npm install --global --production windows-build-tools
 ```
-## CMS
 
-### How it works
+[Full details here](https://www.npmjs.com/package/node-gyp 'NPM node-gyp page')
 
-Netlify CMS is a single-page app that you pull into the `/admin` part of your site.
+## Purgecss
+This plugin uses [gatsby-plugin-purgecss](https://www.gatsbyjs.org/packages/gatsby-plugin-purgecss/) and [bulma](https://bulma.io/). The bulma builds are usually ~170K but reduced 90% by purgecss.
 
-It presents a clean UI for editing content stored in a Git repository.
+# CONTRIBUTING
 
-You setup a YAML config to describe the content model of your site, and typically
-tweak the main layout of the CMS a bit to fit your own site.
-
-### Setup GitHub as a Backend
-
-In the `config.yml` file [change the GitHub owner and repo](https://github.com/bdougie/strata-cms-template/blob/master/site/static/admin/config.yml#L3) to reflect your repo:
-
-```yaml
-backend:
-  name: github
-  repo: owner/repo # Path to your Github repository
-  branch: master # Branch to update (master by default)
-  
-  ...
-```
-When a user navigates to `/admin` she'll be prompted to login, and once authenticated
-she'll be able to create new content or edit existing content.
-The default Github-based authenticator integrates with Netlify's [Authentication Provider feature](https://www.netlify.com/docs/authentication-providers) and the repository
-backend integrates directly with Github's API.
-
-To get everything hooked up, setup continuous deployment from Github to Netlify
-and then follow [the documentation](https://www.netlify.com/docs/authentication-providers)
-to setup Github as an authentication provider.
-
-That's it, now you should be able to go to the `/admin` section of your site and
-log in.
-
-### Find out more and contribute
-
-Visit the [Netlify CMS](https://github.com/netlify/netlify-cms/) to find out more and contribute. 
-
-## Basic Concepts
-
-You can read more about Hugo's template language in their documentation here:
-
-https://gohugo.io/templates/overview/
-
-The most useful page there is the one about the available functions:
-
-https://gohugo.io/templates/functions/
-
-For assets that are completely static and don't need to go through the asset pipeline,
-use the `site/static` folder. Images, font-files, etc, all go there.
-
-Files in the static folder ends up in the web root. So a file called `site/static/favicon.ico`
-will end up being available as `/favicon.ico` and so on...
-
-The `src/js/app.js` file is the entrypoint for webpack and will be built to `/dist/app.js`.
-
-You can use ES6 and use both relative imports or import libraries from npm.
-
-Any CSS file directly under the `src/css/` folder will get compiled with [PostCSS Next](http://cssnext.io/)
-to `/dist/css/{filename}.css`. Import statements will be resolved as part of the build
-
-## Deploying to netlify
-
-- Push your clone to your own GitHub repository.
-- [Create a new site on Netlify](https://app.netlify.com/start) and link the repository.
-
-Now netlify will build and deploy your site whenever you push to git.
-
-##  Enjoy!!
-
-#### License
-
-[MIT](LICENSE)
+Contributions are always welcome, no matter how large or small. Before contributing,
+please read the [code of conduct](CODE_OF_CONDUCT.md).

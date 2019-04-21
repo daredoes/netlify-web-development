@@ -1,6 +1,0 @@
-baseurl = "/"
-languageCode = "en-us"
-title = "DareDoes.Work"
-
-[params]
-  description = "The homepage of Daniel A.R. Evans, or Dare."

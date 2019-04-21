@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+$family-primary: "Oswald", $family-sans-serif;
+
+$primary: darken($green, 10%);
+$info: darken($green, 20%);
+$secondary: lighten($grey-lighter, 10%);
+
+$link: $primary;
+
+$footer-padding: 1rem 1.5rem !default;
+
+.is-primary.link:hover {
+    background-color: darken($primary, 5%);
+}
+
+.is-primary.link:active {
+    background-color: darken($primary, 10%);
+}
+
+.clean-text {
+    text-decoration: none !important;
+}
