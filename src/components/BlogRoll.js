@@ -4,6 +4,7 @@ import { graphql, StaticQuery } from 'gatsby'
 import Section from './Section'
 import Link from './Link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { kebabCase } from 'lodash'
 
 class BlogRoll extends React.Component {
   constructor(props) {
@@ -19,17 +20,27 @@ class BlogRoll extends React.Component {
               {post.frontmatter.title}
             </Link>
             <span> &bull; </span>
+            
             <span className="subtitle is-size-5 is-block">
               {post.frontmatter.date}
             </span>
           </p>
           <p>
-            {post.excerpt}
-            <br />
-            <br />
+            <div className="content" dangerouslySetInnerHTML={{__html: post.excerpt}}></div>
             <Link className="button" to={post.fields.slug}>
               Keep Reading →
             </Link>
+            <br />
+            <br />
+            <div class="flex-row">
+            {post.frontmatter.tags.map(tag => (
+               <Link key={tag + `tag`} className="flex-item clean-text" to={`/tags/${kebabCase(tag)}/`}>
+                  <span className="tag is-primary link">
+                      <FontAwesomeIcon icon="tag" />&nbsp;{tag}
+                  </span>
+              </Link>
+            ))}
+              </div>
           </p>
         </article>
       </div>
@@ -83,7 +94,9 @@ export default () => (
         ) {
           edges {
             node {
-              excerpt(pruneLength: 400)
+              excerpt(
+                pruneLength: 500
+              )
               id
               fields {
                 slug
@@ -92,6 +105,7 @@ export default () => (
                 title
                 templateKey
                 date(formatString: "MMMM DD, YYYY")
+                tags
               }
             }
           }
