@@ -15,7 +15,10 @@ import PrintableEducationTemplate from './print/education'
 import PrintableExperienceTemplate from './print/experience'
 import PrintableSkillTemplate from './print/skill'
 
+import moment from 'moment'
+
 const IndexPage = ({ data }) => {
+  const buildtime = moment(process.env.GATSBY_BUILDTIME);
   const { frontmatter } = data.markdownRemark
   const columns = [
     [ // The Left Column
@@ -66,7 +69,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <div className="print-only">
-      <span className="is-size-4 has-text-weight-bold">{frontmatter.first_name} {frontmatter.last_name}</span>
+      <span className="is-size-4 has-text-weight-bold">{frontmatter.first_name} {frontmatter.last_name} <span className="is-size-5">• {buildtime.format('L')}</span></span>
         {printColumnSections}
       </div>
       <div className="no-print">

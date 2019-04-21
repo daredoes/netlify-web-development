@@ -1,4 +1,5 @@
 var proxy = require("http-proxy-middleware")
+process.env.GATSBY_BUILDTIME = new Date()
 
 module.exports = {
   siteMetadata: {

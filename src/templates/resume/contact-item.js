@@ -11,7 +11,7 @@ class ContactItem extends React.Component {
             <div className="contact-item box">
                 <div className="columns is-mobile is-tablet is-desktop">
                     <div className="flex-centered column is-2">
-                        <a href={external_url} className="iconAnchor">
+                        <a href={external_url} className="iconAnchor" target="_blank" rel="noopener noreferrer">
                             <div className="icon is-large">
                                 <FontAwesomeIcon icon={icon} fixedWidth className="contactIcon"/>    
                             </div>

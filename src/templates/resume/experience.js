@@ -10,6 +10,8 @@ class ExperienceItem extends React.Component {
         const LinkOrSpan = external_url ? <Link
         className="title has-text-primary is-size-4"
         to={external_url}
+        target="_blank"
+        rel="noopener noreferrer"
       >
         {name}
       </Link> : <span
