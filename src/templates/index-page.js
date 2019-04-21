@@ -53,8 +53,8 @@ const IndexPage = ({ data }) => {
 
   const printOrder = [
     [PrintableContactItemTemplate, data.contacts.edges],
-    [PrintableEducationTemplate, data.educations.edges],
     [PrintableExperienceTemplate, data.experiences.edges],
+    [PrintableEducationTemplate, data.educations.edges],
     [PrintableSkillTemplate, data.skills.edges],
   ];
 
