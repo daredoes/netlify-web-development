@@ -69,7 +69,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <div className="print-only">
-      <span className="is-size-4 has-text-weight-bold">{frontmatter.first_name} {frontmatter.last_name} <span className="is-size-5">• {buildtime.format('L')}</span></span>
+      <span className="is-size-4 has-text-weight-bold">{frontmatter.first_name} {frontmatter.last_name}</span>
         {printColumnSections}
       </div>
       <div className="no-print">
