@@ -2,7 +2,7 @@
 templateKey: "blog-post"
 title: MAGFest Registration and Account Management System
 image: /img/uploads/trust-squarewave.png
-date: 2014-02-07T04:38:53.000Z
+date: 2014-02-08T04:38:53.000Z
 weight: 50
 printable: true
 visible: true
