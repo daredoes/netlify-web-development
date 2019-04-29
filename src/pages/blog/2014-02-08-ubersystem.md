@@ -14,7 +14,7 @@ tags:
   - volunteer
   - development
 ---
-### MAGFest's Registration and Account Management System, better known as
+### MAGFest's [Registration and Account Management System](https://github.com/magfest/ubersystem), better known as
 
 ## Ubersystem, or Uber for short!
 
@@ -32,10 +32,10 @@ A promotional code may have unlimited uses, or a number of remaining uses. A pro
 
 ##### There is more than just Ubersystem.
 
-In addition to MAGFest's Ubersystem, I was also a lead developer on a previous iteration of [MAGFest's Website](https://magfest.org). This iteration of MAGFest's web development used a stack built and hosted by [WebHook](http://www.webhook.com/). This meant we had a static-site, with a CMS, webpack, and access to Javascript/jQuery.
+In addition to MAGFest's Ubersystem, I was also a lead developer on a [previous iteration](https://github.com/magfest/webhooktheme) of [MAGFest's Website](https://magfest.org). This iteration of MAGFest's web development used a stack built and hosted by [WebHook](http://www.webhook.com/). This meant we had a static-site, with a CMS, webpack, and access to Javascript/jQuery.
 
 For this site I handled many miscellaneous tasks. I converted all of the CSS into SASS, with variables to allow for easier color themeing. I wrote a script to use WebHook's CMS API to upload a copy of MAGFest's game database. I added pages featuring the dogs and cats of MAGFest staff. I wrote a script to scrape the website for show information that would be uploaded to our event [Guidebook](https://guidebook.com/).
 
 ##### MAGFest's website was my first major experience being a web developer.
 
-#### MAGFest was my first major experience being a developer.
+#### MAGFest was my first major experience [being a developer](https://github.com/magfest/ubersystem/pulls?q=is%3Apr+author%3Adaredoes+is%3Aclosed).
