@@ -5,7 +5,7 @@ class ContactItem extends React.Component {
     render() {
         const { excerpt } = this.props;
         return (
-            <span>{excerpt}</span>
+            <div className="column is-narrow">{excerpt}</div>
         )
     }
 }
@@ -30,12 +30,12 @@ export default class ContactItemTemplate extends React.Component {
         children.forEach(function(v, i) {
             modifiedChildren.push(v);
             if (i < children.length-1) {
-                modifiedChildren.push(<span key={i}>&nbsp;|&nbsp;</span>)
-            }            
+                modifiedChildren.push(<div className="column is-narrow" key={i}>&nbsp;|&nbsp;</div>)
+            }    
         })
         return (
             <div>
-                <div className="has-text-weight-bold">
+                <div className="columns is-multiline is-gapless is-mobile has-text-weight-bold">
                     {modifiedChildren}
                 </div>
             </div>
