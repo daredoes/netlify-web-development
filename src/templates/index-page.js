@@ -81,7 +81,7 @@ const IndexPage = ({ data }) => {
           <br/>
           <span className="is-size-2 has-text-weight-semi-bold is-uppercase">Hello,</span>
           <p className="is-size-3 is-uppercase has-text-weight-semi-bold">My name is <span className="has-text-primary">{frontmatter.first_name} {frontmatter.last_name}</span>.<br/>
-          <a href="#print" className="has-text-info is-underlined" onClick={() => {window.print()}}>Print this page</a> to convert my life into my <a href="#print"  className="has-text-info is-underlined" onClick={() => {window.print()}}>Resumé/CV</a></p>
+          <a role="button" tabIndex="0" className="has-text-info is-underlined" onClick={() => {window.print()}}>Print this page</a> to convert my life into my <a role="button" tabIndex="0"  className="has-text-info is-underlined" onClick={() => {window.print()}}>Resumé/CV</a></p>
         </div>
         <div className="columns">
           {columnSections}
