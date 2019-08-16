@@ -11,10 +11,6 @@
     "start": "gulp server",
     "lint": "eslint src"
   },
-  "engines": {
-    "node": "10.15.3",
-    "npm": "6.9.0"
-  },
   "author": "",
   "license": "MIT",
   "dependencies": {
