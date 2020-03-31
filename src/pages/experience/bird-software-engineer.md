@@ -3,7 +3,7 @@ name: "Bird Rides, Inc."
 title: "Software Engineer"
 external_url: "https://bird.co"
 date: "2019-10-07T08:00:00-07:00"
-display_date: "October 2019 - April 2019"
+display_date: "October 2019 - April 2020"
 weight: 50
 printable: true
 visible: true
