@@ -5,13 +5,13 @@
   "author": "Austin Green",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.17",
-    "bulma": "^0.7.4",
+    "bulma": "0.8.1",
     "foundation-sites": "^6.5.3",
     "gatsby": "^2.12.0",
     "gatsby-image": "^2.0.23",
     "gatsby-plugin-netlify": "^2.0.6",
-    "gatsby-plugin-netlify-cms": "^3.0.15",
-    "gatsby-plugin-purgecss": "^3.1.0",
+    "gatsby-plugin-netlify-cms": "4.2.2",
+    "gatsby-plugin-purgecss": "5.0.0",
     "gatsby-plugin-react-helmet": "^3.0.4",
     "gatsby-plugin-sass": "^2.0.7",
     "gatsby-plugin-sharp": "^2.0.15",
@@ -19,7 +19,7 @@
     "gatsby-remark-custom-blocks": "^2.0.7",
     "gatsby-remark-embed-youtube": "0.0.7",
     "gatsby-remark-images": "^3.0.1",
-    "gatsby-remark-relative-images": "^0.2.1",
+    "gatsby-remark-relative-images": "^0.3.0",
     "gatsby-source-filesystem": "^2.0.26",
     "gatsby-transformer-remark": "^2.3.4",
     "gatsby-transformer-sharp": "^2.1.9",
@@ -36,7 +36,7 @@
     "react-dom": "^16.8.4",
     "react-foundation": "^0.9.6",
     "react-helmet": "^5.2.0",
-    "uuid": "^3.2.1"
+    "uuid": "^7.0.3"
   },
   "keywords": [
     "gatsby"
@@ -62,10 +62,10 @@
     "@fortawesome/free-regular-svg-icons": "^5.8.1",
     "@fortawesome/free-solid-svg-icons": "^5.8.1",
     "@fortawesome/react-fontawesome": "^0.1.4",
-    "http-proxy-middleware": "^0.19.1",
+    "http-proxy-middleware": "1.0.3",
     "netlify-lambda": "^1.4.3",
     "npm-run-all": "^4.1.5",
-    "prettier": "^1.15.3",
-    "rimraf": "^2.6.2"
+    "prettier": "^2.0.2",
+    "rimraf": "^3.0.2"
   }
 }
