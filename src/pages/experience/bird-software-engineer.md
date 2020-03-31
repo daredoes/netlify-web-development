@@ -18,7 +18,3 @@ A large majority of my time was spent working on BirdPay, a QR-based payment sol
 - Worked in high-velocity weekly sprints with unexpected high priority tasks, or high priority bugs to troubleshoot
 - Provided direct engineering support to various projects for teams within the company
   - CRM, IT, Operations, Service Centers
-
-[[noprint]]
-
-Working with such a large team of talented people at Bird was an honor. I had an amazing mentor, who always pushed me in the right ways to be a better engineer. I worked with an incredible team of people who were bright, fun, and communicative. The engineering organization as a whole was made up of so many uniquely talented people, all with such incredible backgrounds. My time at Bird is a time I'll never forget.
