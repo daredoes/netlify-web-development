@@ -1,10 +1,11 @@
 ---
 title: Phone
-external_url: 'tel:8182160587'
-icon: ['fas', 'phone']
+external_url: "tel:8182160587"
+icon: ["fas", "phone"]
 weight: 50
-printable: true
+printable: false
 visible: false
-key: 'contact'
+key: "contact"
 ---
+
 [818-216-0587](tel:8182160587)
